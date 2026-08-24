@@ -40,14 +40,17 @@ jobs:
         run: |
           SHA=$(git rev-parse HEAD)
           RAW="https://raw.githubusercontent.com/${{ github.repository }}/$SHA/${{ steps.gen.outputs.file }}"
+          {
+            echo "> ${{ steps.gen.outputs.quote }}"
+            echo "> — ${{ steps.gen.outputs.author }}"
+            echo ""
+            echo "![draft]($RAW)"
+            echo ""
+            echo "file: ${{ steps.gen.outputs.file }}"
+            echo ""
+            echo "Reply **yes** to post it to the story, **skip** to reject."
+          } > /tmp/body.md
           gh issue create \
             --title "Story draft ${{ steps.gen.outputs.date }} — approve?" \
             --label draft \
-            --body "> ${{ steps.gen.outputs.quote }}
-> — ${{ steps.gen.outputs.author }}
-
-![draft]($RAW)
-
-file: ${{ steps.gen.outputs.file }}
-
-Reply **yes** to post it to the story, **skip** to reject."
+            --body-file /tmp/body.md
