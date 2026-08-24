@@ -1,0 +1,53 @@
+name: daily draft
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 9am ET
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: render story card
+        id: gen
+        run: |
+          pip install --quiet pillow
+          META=$(python3 scripts/gen_story.py)
+          echo "meta=$META" >> "$GITHUB_OUTPUT"
+          echo "file=$(echo "$META" | python3 -c 'import json,sys; print(json.load(sys.stdin)["file"])')" >> "$GITHUB_OUTPUT"
+          echo "quote=$(echo "$META" | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d["quote"])')" >> "$GITHUB_OUTPUT"
+          echo "author=$(echo "$META" | python3 -c 'import json,sys; print(json.load(sys.stdin)["author"])')" >> "$GITHUB_OUTPUT"
+          echo "date=$(echo "$META" | python3 -c 'import json,sys; print(json.load(sys.stdin)["date"])')" >> "$GITHUB_OUTPUT"
+
+      - name: commit draft
+        run: |
+          git config user.name "$(git log -1 --pretty=%an 2>/dev/null || echo AssiamahS)"
+          git config user.email "$(git log -1 --pretty=%ae 2>/dev/null || echo AssiamahS@users.noreply.github.com)"
+          git add queue/pending state/used.json
+          git commit -m "draft: story for ${{ steps.gen.outputs.date }}"
+          git push
+
+      - name: open approval issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          SHA=$(git rev-parse HEAD)
+          RAW="https://raw.githubusercontent.com/${{ github.repository }}/$SHA/${{ steps.gen.outputs.file }}"
+          gh issue create \
+            --title "Story draft ${{ steps.gen.outputs.date }} — approve?" \
+            --label draft \
+            --body "> ${{ steps.gen.outputs.quote }}
+> — ${{ steps.gen.outputs.author }}
+
+![draft]($RAW)
+
+file: ${{ steps.gen.outputs.file }}
+
+Reply **yes** to post it to the story, **skip** to reject."

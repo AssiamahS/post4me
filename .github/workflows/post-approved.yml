@@ -1,0 +1,84 @@
+name: post approved
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  decide:
+    if: >
+      contains(github.event.issue.labels.*.name, 'draft') &&
+      github.event.comment.author_association == 'OWNER'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: parse decision
+        id: parse
+        env:
+          COMMENT: ${{ github.event.comment.body }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          BODY=$(echo "$COMMENT" | tr '[:upper:]' '[:lower:]' | xargs)
+          case "$BODY" in
+            yes|approve|approved|post|ship|y) echo "verdict=approve" >> "$GITHUB_OUTPUT" ;;
+            no|skip|reject|nah|n)             echo "verdict=reject"  >> "$GITHUB_OUTPUT" ;;
+            *)                                echo "verdict=ignore"  >> "$GITHUB_OUTPUT" ;;
+          esac
+          echo "file=$(echo "$ISSUE_BODY" | grep -o 'file: .*' | head -1 | cut -d' ' -f2)" >> "$GITHUB_OUTPUT"
+
+      - name: install composio cli
+        if: steps.parse.outputs.verdict == 'approve'
+        run: |
+          curl -fsSL https://composio.dev/install | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: post to instagram story
+        if: steps.parse.outputs.verdict == 'approve'
+        id: post
+        env:
+          COMPOSIO_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+        run: |
+          composio login --user-api-key "$COMPOSIO_KEY" -y --no-skill-install
+          IG_USER=$(python3 -c 'import json; print(json.load(open("config.json"))["ig_user_id"])')
+          ACCOUNT=$(python3 -c 'import json; print(json.load(open("config.json"))["composio_account"])')
+          FILE="${{ steps.parse.outputs.file }}"
+          CONTAINER=$(composio execute INSTAGRAM_POST_IG_USER_MEDIA --account "$ACCOUNT" \
+            -d "{\"ig_user_id\":\"$IG_USER\",\"media_type\":\"STORIES\",\"image_file\":\"$PWD/$FILE\"}")
+          echo "$CONTAINER"
+          CID=$(echo "$CONTAINER" | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["successful"], d; print(d["data"]["id"])')
+          RESULT=$(composio execute INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH --account "$ACCOUNT" \
+            -d "{\"ig_user_id\":\"$IG_USER\",\"creation_id\":\"$CID\",\"max_wait_seconds\":120}")
+          echo "$RESULT"
+          MID=$(echo "$RESULT" | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["successful"], d; print(d["data"]["id"])')
+          echo "media_id=$MID" >> "$GITHUB_OUTPUT"
+
+      - name: archive file
+        if: steps.parse.outputs.verdict != 'ignore'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          FILE="${{ steps.parse.outputs.file }}"
+          if [ "${{ steps.parse.outputs.verdict }}" = "approve" ]; then
+            DEST="queue/posted/$(basename "$FILE")"
+            NOTE="posted — media id ${{ steps.post.outputs.media_id }} 📤"
+            MSG="post: $(basename "$FILE" .jpg) story live"
+          else
+            DEST="queue/rejected/$(basename "$FILE")"
+            NOTE="skipped, archived to rejected/"
+            MSG="chore: skip $(basename "$FILE" .jpg) draft"
+          fi
+          git config user.name "$(git log -1 --pretty=%an)"
+          git config user.email "$(git log -1 --pretty=%ae)"
+          mkdir -p "$(dirname "$DEST")"
+          git mv "$FILE" "$DEST"
+          git commit -m "$MSG"
+          git push
+          gh issue comment ${{ github.event.issue.number }} --body "$NOTE"
+          gh issue close ${{ github.event.issue.number }}
