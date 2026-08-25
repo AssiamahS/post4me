@@ -70,7 +70,7 @@ jobs:
           cp "build/${{ steps.pick.outputs.date }}/cover.jpg" "queue/reels/covers/${{ steps.pick.outputs.date }}.jpg"
           git add queue/reels state/reel_cursor.json
           git commit -m "reel: stage ${{ steps.pick.outputs.date }} — ${{ steps.pick.outputs.series }}" || echo "nothing to commit"
-          git push
+          git pull --rebase -q origin main && git push || (git pull --rebase -q origin main && git push)
 
       - name: install composio cli
         if: steps.pick.outputs.mode == 'auto' && github.event.inputs.dry_run != 'true'
@@ -103,7 +103,7 @@ jobs:
           EOF
           git add queue/reels
           git commit -m "reel: ${{ steps.pick.outputs.date }} live"
-          git push
+          git pull --rebase -q origin main && git push || (git pull --rebase -q origin main && git push)
 
       - name: notify (auto mode)
         if: steps.post.outcome == 'success'
