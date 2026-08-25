@@ -1,0 +1,4 @@
+- 2026-08-25: Composio CLI prints every id as `<REDACTED>` when env `CI=true` (GitHub Actions sets it) — the reel container id got parsed as the literal string and publish failed with "Invalid creation_id format". Fix: run `composio execute` with `CI=false` (publish_reel.py sets it; story step in post-approved.yml has `CI: "false"`).
+- 2026-08-25: INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH caps `max_wait_seconds` at 300 (schema max) — 600 fails input validation before the API is hit.
+- 2026-08-25: ffmpeg `crop`/`zoompan` can't take `t` in w/h; slow zoom = `scale=w=iw*(1+k*t/T):h=...:eval=frame` then `crop=1080:1920`. Concat demuxer paths resolve relative to the list file — write absolute paths.
+- 2026-08-25: edge-tts default `boundary="SentenceBoundary"` → zero WordBoundary events; pass `boundary="WordBoundary"` for caption timing.
