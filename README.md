@@ -1,37 +1,68 @@
 # post4me
 
-Approval-gated Instagram story pipeline. Runs entirely on GitHub Actions — the Mac can be off.
+Two Instagram pipelines for @sl.ysl.yy, both on GitHub Actions so the Mac can be off:
 
-## how it works
+1. **Daily story** (9am ET) — a 90s/00s rap quote card, approval-gated from your phone.
+2. **Daily reel** (12pm ET) — a faceless voiceover + kinetic-caption reel from a 6-month
+   roadmap, published automatically (or approval-gated, your call). Cross-posted to
+   YouTube Shorts from the Mac.
 
-1. **9am ET daily** (`daily-draft.yml`): renders the next unused quote from `quotes/quotes.json`
-   onto a themed 1080x1920 story card, commits it to `queue/pending/`, and opens an issue with
-   the image embedded.
-2. **You, from your phone** (GitHub app): look at the draft, comment `yes` to post or `skip` to reject.
-3. **`post-approved.yml`**: on `yes`, uploads the card as a story via Composio
-   (create media container → publish), verifies the API said `successful: true`, moves the file
-   to `queue/posted/`, and closes the issue. On `skip` it archives to `queue/rejected/`.
+## the reel engine
 
-Only comments from the repo owner count. Anything that isn't a clear yes/no is ignored.
+This is the "Claude + Instagram" method, with every paid tool swapped for something free:
 
-## layout
+| step | the pitch says | here |
+|---|---|---|
+| competitor analytics | viralfindr | `scripts/competitors.py` — Instagram's own web endpoints via the Dia session |
+| 6-month roadmap | paste usernames into Claude | `scripts/roadmap.py` — `claude -p` writes `roadmap/STRATEGY.md` + 30 scripts/month |
+| editing | Canva AI | `scripts/render_reel.py` — edge-tts voice + PIL caption cards + ffmpeg |
+| scheduling | later.com | `.github/workflows/daily-reel.yml` cron |
+| cross-post | — | `scripts/yt_shorts.py` — YouTube Shorts via Dia CDP, launchd 12:40pm |
 
-- `quotes/quotes.json` — the content bank (90s/00s rap quotes). Add more anytime; `state/used.json` tracks what's been drafted.
-- `scripts/gen_story.py` — card renderer. 6 rotating color themes, auto text wrapping/sizing, Playfair Display (OFL, vendored in `fonts/`).
+### day-to-day (fully automatic)
+
+`daily-reel.yml` at 16:00 UTC: `next_reel.py` takes the next roadmap entry (cursor in
+`state/reel_cursor.json`, one entry per run — a missed day shifts the calendar), renders it,
+uploads the mp4 as a 14-day artifact, commits the staged entry + cover to `queue/reels/`, then:
+
+- `post_mode: "auto"` → publishes as a REEL via Composio, writes the media id + permalink back
+  into `queue/reels/<date>.json`, opens a `reel-log` issue with the cover so your phone gets pinged.
+- `post_mode: "approve"` → opens a `reel-draft` issue with cover + full script; comment `yes`
+  or `skip`. `post-approved.yml` downloads the artifact and publishes.
+
+`yt_shorts.py` (launchd `com.sly.post4me-shorts`, 12:40pm local) picks the newest posted reel
+without a `youtube` field, pulls the artifact with `gh run download`, uploads through the
+logged-in Dia session (`open -a Dia --args --remote-debugging-port=9223`), commits the link.
+
+### refresh (Mac, when you want)
+
+```
+/opt/homebrew/bin/python3 scripts/competitors.py        # research/competitors.{json,md}
+python3 scripts/roadmap.py --strategy                    # roadmap/STRATEGY.md
+python3 scripts/roadmap.py --month 7                     # extend past month 6
+```
+
+`competitors.py` needs Dia logged into Instagram; `roadmap.py` needs the `claude` CLI.
+Edit `roadmap/month-NN.json` by hand any time — entries are plain JSON. Switch modes,
+voice, competitors or niche in `config.json` → `reels`.
+
+### test a render locally
+
+```
+~/.yt-dlp-venv/bin/python scripts/render_reel.py build/stub.json build/stub
+```
+
+## the story pipeline
+
+- `quotes/quotes.json` — the content bank; `state/used.json` tracks what's been drafted.
+- `scripts/gen_story.py` — card renderer (6 rotating themes, Playfair Display).
 - `queue/pending|posted|rejected` — the approval state machine, as folders.
-- `config.json` — IG user id, composio account selector, handle watermark.
 
 ## setup notes
 
-- Needs one repo secret: `COMPOSIO_API_KEY` (Composio user API key; the CLI logs in with
-  `composio login --user-api-key`).
+- One repo secret: `COMPOSIO_API_KEY` (`composio login --user-api-key`).
 - Composio gotcha: `INSTAGRAM_POST_IG_USER_MEDIA` has two file-uploadable fields, so `--file`
-  errors out — pass the local path directly as `image_file` in `-d` instead.
-- Stories API only takes images/videos you provide. No licensed/trending audio via API —
-  that's app-only, and copyrighted audio baked into a video gets muted or struck.
-
-## roadmap
-
-- more series: this-day-in-hip-hop, album anniversaries, sample genealogy, versus polls
-- reels: kinetic-typography quote videos (ffmpeg), original audio only
-- second stage account for experiments before anything touches the main page
+  errors out — pass the local path directly as `image_file` / `video_file` in `-d`.
+- Reels are voice-only original audio. No licensed/trending music via API (app-only), and
+  copyrighted audio baked into a video gets muted or struck.
+- Fonts vendored in `fonts/` (Playfair Display, Montserrat — both OFL).

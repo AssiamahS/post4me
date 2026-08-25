@@ -7,11 +7,12 @@ on:
 permissions:
   contents: write
   issues: write
+  actions: read
 
 jobs:
   decide:
     if: >
-      contains(github.event.issue.labels.*.name, 'draft') &&
+      (contains(github.event.issue.labels.*.name, 'draft') || contains(github.event.issue.labels.*.name, 'reel-draft')) &&
       github.event.comment.author_association == 'OWNER'
     runs-on: ubuntu-latest
     steps:
@@ -32,6 +33,9 @@ jobs:
             *)                                echo "verdict=ignore"  >> "$GITHUB_OUTPUT" ;;
           esac
           echo "file=$(echo "$ISSUE_BODY" | grep -o 'file: .*' | head -1 | cut -d' ' -f2)" >> "$GITHUB_OUTPUT"
+          echo "run=$(echo "$ISSUE_BODY" | grep -o 'run: [0-9]*' | head -1 | cut -d' ' -f2)" >> "$GITHUB_OUTPUT"
+          if echo "${{ join(github.event.issue.labels.*.name, ',') }}" | grep -q reel-draft; then
+            echo "kind=reel" >> "$GITHUB_OUTPUT"; else echo "kind=story" >> "$GITHUB_OUTPUT"; fi
 
       - name: install composio cli
         if: steps.parse.outputs.verdict == 'approve'
@@ -40,7 +44,7 @@ jobs:
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: post to instagram story
-        if: steps.parse.outputs.verdict == 'approve'
+        if: steps.parse.outputs.verdict == 'approve' && steps.parse.outputs.kind == 'story'
         id: post
         env:
           COMPOSIO_KEY: ${{ secrets.COMPOSIO_API_KEY }}
@@ -59,25 +63,68 @@ jobs:
           MID=$(echo "$RESULT" | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["successful"], d; print(d["data"]["id"])')
           echo "media_id=$MID" >> "$GITHUB_OUTPUT"
 
-      - name: archive file
+      - name: fetch rendered reel
+        if: steps.parse.outputs.verdict == 'approve' && steps.parse.outputs.kind == 'reel'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          DATE=$(basename "${{ steps.parse.outputs.file }}" .json)
+          mkdir -p "build/$DATE"
+          gh run download "${{ steps.parse.outputs.run }}" -n "reel-$DATE" -D "build/$DATE"
+          ls -la "build/$DATE"
+
+      - name: post reel
+        if: steps.parse.outputs.verdict == 'approve' && steps.parse.outputs.kind == 'reel'
+        id: reel
+        env:
+          COMPOSIO_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+        run: |
+          composio login --user-api-key "$COMPOSIO_KEY" -y --no-skill-install
+          DATE=$(basename "${{ steps.parse.outputs.file }}" .json)
+          RES=$(python3 scripts/publish_reel.py "build/$DATE/reel.mp4" "${{ steps.parse.outputs.file }}")
+          echo "$RES"
+          python3 - "$RES" <<'EOF'
+          import json, sys
+          res = json.loads(sys.argv[1]); p = "${{ steps.parse.outputs.file }}"
+          e = json.load(open(p))
+          e["posted"] = {"media_id": res["media_id"], "permalink": res.get("permalink"),
+                         "run_id": "${{ steps.parse.outputs.run }}", "artifact": "reel-" + e["date"]}
+          json.dump(e, open(p, "w"), indent=1, ensure_ascii=False)
+          EOF
+          echo "media_id=$(echo "$RES" | python3 -c 'import json,sys; print(json.load(sys.stdin)["media_id"])')" >> "$GITHUB_OUTPUT"
+          echo "permalink=$(echo "$RES" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("permalink") or "")')" >> "$GITHUB_OUTPUT"
+
+      - name: archive
         if: steps.parse.outputs.verdict != 'ignore'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           FILE="${{ steps.parse.outputs.file }}"
-          if [ "${{ steps.parse.outputs.verdict }}" = "approve" ]; then
-            DEST="queue/posted/$(basename "$FILE")"
-            NOTE="posted — media id ${{ steps.post.outputs.media_id }} 📤"
-            MSG="post: $(basename "$FILE" .jpg) story live"
-          else
-            DEST="queue/rejected/$(basename "$FILE")"
-            NOTE="skipped, archived to rejected/"
-            MSG="chore: skip $(basename "$FILE" .jpg) draft"
-          fi
           git config user.name "$(git log -1 --pretty=%an)"
           git config user.email "$(git log -1 --pretty=%ae)"
-          mkdir -p "$(dirname "$DEST")"
-          git mv "$FILE" "$DEST"
+          if [ "${{ steps.parse.outputs.kind }}" = "reel" ]; then
+            if [ "${{ steps.parse.outputs.verdict }}" = "approve" ]; then
+              NOTE="posted — ${{ steps.reel.outputs.permalink }} (media id ${{ steps.reel.outputs.media_id }})"
+              MSG="reel: $(basename "$FILE" .json) live"
+            else
+              python3 -c "import json; p='$FILE'; e=json.load(open(p)); e['skipped']=True; json.dump(e, open(p,'w'), indent=1, ensure_ascii=False)"
+              NOTE="skipped"
+              MSG="chore: skip reel $(basename "$FILE" .json)"
+            fi
+            git add "$FILE"
+          else
+            if [ "${{ steps.parse.outputs.verdict }}" = "approve" ]; then
+              DEST="queue/posted/$(basename "$FILE")"
+              NOTE="posted — media id ${{ steps.post.outputs.media_id }} 📤"
+              MSG="post: $(basename "$FILE" .jpg) story live"
+            else
+              DEST="queue/rejected/$(basename "$FILE")"
+              NOTE="skipped, archived to rejected/"
+              MSG="chore: skip $(basename "$FILE" .jpg) draft"
+            fi
+            mkdir -p "$(dirname "$DEST")"
+            git mv "$FILE" "$DEST"
+          fi
           git commit -m "$MSG"
           git push
           gh issue comment ${{ github.event.issue.number }} --body "$NOTE"

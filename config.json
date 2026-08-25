@@ -3,5 +3,21 @@
   "composio_account": "instagram_andron-depa",
   "handle": "sl.ysl.yy",
   "series_tag": "REWIND / DAILY",
-  "graph_api_version": "v21.0"
+  "graph_api_version": "v21.0",
+  "reels": {
+    "niche": "hip-hop culture and DJ life: 90s/00s rap history, sample and break stories, DJ craft, crate digging, the records and moments every head should know",
+    "about": "a working DJ (Sly / Dj451) who plays hip-hop, amapiano and jersey club sets and grew up on 90s/00s rap",
+    "competitors": [
+      "okayplayer",
+      "hiphopdx",
+      "complexmusic",
+      "xxl",
+      "djmagofficial"
+    ],
+    "post_mode": "auto",
+    "voice": "en-US-AndrewNeural",
+    "rate": "+6%",
+    "audio_name": "Sly Rewind",
+    "youtube_shorts": true
+  }
 }

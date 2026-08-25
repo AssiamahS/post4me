@@ -1,0 +1,147 @@
+name: daily reel
+
+on:
+  schedule:
+    - cron: "0 16 * * *"   # 12pm ET — midday reel slot
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Post date (YYYY-MM-DD); defaults to today"
+        required: false
+      dry_run:
+        description: "Render only, do not publish"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: daily-reel
+  cancel-in-progress: false
+
+jobs:
+  reel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: deps
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg > /dev/null
+          pip install --quiet pillow edge-tts
+
+      - name: pick today's entry
+        id: pick
+        run: |
+          DATE="${{ github.event.inputs.date }}"; DATE="${DATE:-$(date -u +%F)}"
+          OUT=$(python3 scripts/next_reel.py --date "$DATE")
+          echo "$OUT" | python3 -c 'import json,sys; d=json.load(sys.stdin); e=d["entry"]; print("hook:", e["hook"]); print("series:", e["series"])'
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          echo "path=$(echo "$OUT" | python3 -c 'import json,sys; print(json.load(sys.stdin)["path"])')" >> "$GITHUB_OUTPUT"
+          echo "hook=$(echo "$OUT" | python3 -c 'import json,sys; print(json.load(sys.stdin)["entry"]["hook"])')" >> "$GITHUB_OUTPUT"
+          echo "series=$(echo "$OUT" | python3 -c 'import json,sys; print(json.load(sys.stdin)["entry"]["series"])')" >> "$GITHUB_OUTPUT"
+          echo "mode=$(python3 -c 'import json; print(json.load(open("config.json"))["reels"]["post_mode"])')" >> "$GITHUB_OUTPUT"
+
+      - name: render
+        id: render
+        run: |
+          python3 scripts/render_reel.py "${{ steps.pick.outputs.path }}" "build/${{ steps.pick.outputs.date }}"
+          echo "duration=$(python3 -c 'import json; print(json.load(open("build/${{ steps.pick.outputs.date }}/render.json"))["duration"])')" >> "$GITHUB_OUTPUT"
+
+      - name: keep the render (for Shorts cross-post + approval)
+        uses: actions/upload-artifact@v4
+        with:
+          name: reel-${{ steps.pick.outputs.date }}
+          path: |
+            build/${{ steps.pick.outputs.date }}/reel.mp4
+            build/${{ steps.pick.outputs.date }}/cover.jpg
+            build/${{ steps.pick.outputs.date }}/render.json
+          retention-days: 14
+
+      - name: commit staged entry + cover
+        run: |
+          git config user.name "$(git log -1 --pretty=%an)"
+          git config user.email "$(git log -1 --pretty=%ae)"
+          mkdir -p queue/reels/covers
+          cp "build/${{ steps.pick.outputs.date }}/cover.jpg" "queue/reels/covers/${{ steps.pick.outputs.date }}.jpg"
+          git add queue/reels state/reel_cursor.json
+          git commit -m "reel: stage ${{ steps.pick.outputs.date }} — ${{ steps.pick.outputs.series }}" || echo "nothing to commit"
+          git push
+
+      - name: install composio cli
+        if: steps.pick.outputs.mode == 'auto' && github.event.inputs.dry_run != 'true'
+        run: |
+          curl -fsSL https://composio.dev/install | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: publish reel
+        if: steps.pick.outputs.mode == 'auto' && github.event.inputs.dry_run != 'true'
+        id: post
+        env:
+          COMPOSIO_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+        run: |
+          composio login --user-api-key "$COMPOSIO_KEY" -y --no-skill-install
+          RES=$(python3 scripts/publish_reel.py "build/${{ steps.pick.outputs.date }}/reel.mp4" "${{ steps.pick.outputs.path }}")
+          echo "$RES"
+          echo "media_id=$(echo "$RES" | python3 -c 'import json,sys; print(json.load(sys.stdin)["media_id"])')" >> "$GITHUB_OUTPUT"
+          echo "permalink=$(echo "$RES" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("permalink") or "")')" >> "$GITHUB_OUTPUT"
+
+      - name: record post
+        if: steps.post.outcome == 'success'
+        run: |
+          python3 - <<'EOF'
+          import json
+          p = "${{ steps.pick.outputs.path }}"
+          e = json.load(open(p))
+          e["posted"] = {"media_id": "${{ steps.post.outputs.media_id }}", "permalink": "${{ steps.post.outputs.permalink }}",
+                         "run_id": "${{ github.run_id }}", "artifact": "reel-${{ steps.pick.outputs.date }}"}
+          json.dump(e, open(p, "w"), indent=1, ensure_ascii=False)
+          EOF
+          git add queue/reels
+          git commit -m "reel: ${{ steps.pick.outputs.date }} live"
+          git push
+
+      - name: notify (auto mode)
+        if: steps.post.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          SHA=$(git rev-parse HEAD)
+          RAW="https://raw.githubusercontent.com/${{ github.repository }}/$SHA/queue/reels/covers/${{ steps.pick.outputs.date }}.jpg"
+          {
+            echo "**${{ steps.pick.outputs.series }}** — ${{ steps.pick.outputs.hook }}"
+            echo ""
+            echo "${{ steps.pick.outputs.permalink }}"
+            echo ""
+            echo "![cover]($RAW)"
+            echo ""
+            echo "${{ steps.render.outputs.duration }}s · media id ${{ steps.post.outputs.media_id }} · run ${{ github.run_id }}"
+          } > /tmp/body.md
+          gh issue create --title "Reel live ${{ steps.pick.outputs.date }} — ${{ steps.pick.outputs.hook }}" \
+            --label reel-log --body-file /tmp/body.md
+
+      - name: open approval issue (approve mode)
+        if: steps.pick.outputs.mode == 'approve' && github.event.inputs.dry_run != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          SHA=$(git rev-parse HEAD)
+          RAW="https://raw.githubusercontent.com/${{ github.repository }}/$SHA/queue/reels/covers/${{ steps.pick.outputs.date }}.jpg"
+          python3 - > /tmp/body.md <<'EOF'
+          import json
+          e = json.load(open("${{ steps.pick.outputs.path }}"))
+          print(f"**{e['series']}** — {e['hook']}\n")
+          print("![cover](RAWURL)\n")
+          print("**Voiceover**\n\n> " + e["voiceover"].replace("\n", "\n> ") + "\n")
+          print("**Caption**\n\n> " + e["caption"].replace("\n", "\n> ") + "\n")
+          print("#" + " #".join(e["hashtags"]) + "\n")
+          print("file: ${{ steps.pick.outputs.path }}")
+          print("run: ${{ github.run_id }}")
+          print("\nReply **yes** to post it as a reel, **skip** to reject.")
+          EOF
+          sed -i "s|RAWURL|$RAW|" /tmp/body.md
+          gh issue create --title "Reel draft ${{ steps.pick.outputs.date }} — approve?" --label reel-draft --body-file /tmp/body.md
