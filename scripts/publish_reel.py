@@ -48,8 +48,17 @@ def main():
     cid = container["id"]
     print(f"container {cid}", file=sys.stderr)
 
-    published = composio("INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH",
-                         {"ig_user_id": ig, "creation_id": cid, "max_wait_seconds": 600}, acct)
+    # tool caps max_wait_seconds at 300; reels can take longer to process, so give it 3 windows
+    published = None
+    for attempt in range(3):
+        try:
+            published = composio("INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH",
+                                 {"ig_user_id": ig, "creation_id": cid, "max_wait_seconds": 300}, acct)
+            break
+        except SystemExit as ex:
+            print(f"publish attempt {attempt + 1} failed: {str(ex)[:300]}", file=sys.stderr)
+            if attempt == 2:
+                raise
     mid = published["id"]
 
     permalink = None
