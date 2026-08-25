@@ -48,6 +48,7 @@ jobs:
         id: post
         env:
           COMPOSIO_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          CI: "false"   # composio cli redacts ids to <REDACTED> when CI=true
         run: |
           composio login --user-api-key "$COMPOSIO_KEY" -y --no-skill-install
           IG_USER=$(python3 -c 'import json; print(json.load(open("config.json"))["ig_user_id"])')

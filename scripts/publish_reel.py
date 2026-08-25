@@ -15,8 +15,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def composio(tool, data, account):
+    # the CLI replaces every id with "<REDACTED>" when CI=true (GitHub sets it) — we need the container id back
+    env = {**os.environ, "CI": "false"}
     p = subprocess.run(["composio", "execute", tool, "--account", account, "-d", json.dumps(data)],
-                       capture_output=True, text=True, timeout=900)
+                       capture_output=True, text=True, timeout=900, env=env)
     out = p.stdout.strip()
     try:
         d = json.loads(out[out.index("{"):out.rindex("}") + 1])
