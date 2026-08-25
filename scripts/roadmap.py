@@ -37,8 +37,12 @@ ENTRY_SPEC = """Each entry is an object with EXACTLY these keys:
 
 def claude(prompt, max_retries=2):
     for attempt in range(max_retries + 1):
-        p = subprocess.run(["claude", "-p", prompt, "--output-format", "text"],
-                           capture_output=True, text=True, timeout=1800)
+        try:
+            p = subprocess.run(["claude", "-p", prompt, "--output-format", "text"],
+                               capture_output=True, text=True, timeout=1500)
+        except subprocess.TimeoutExpired:
+            print(f"claude attempt {attempt} timed out", file=sys.stderr)
+            continue
         if p.returncode == 0 and p.stdout.strip():
             return p.stdout
         print(f"claude attempt {attempt} failed: {p.stderr[-300:]}", file=sys.stderr)
@@ -113,7 +117,8 @@ def month(n):
     strat = read("roadmap/STRATEGY.md")
     if not strat:
         sys.exit("run --strategy first")
-    digest = read("research/competitors.md")
+    # month 1 gets the raw digest; the strategy already distilled it, so later months run leaner
+    digest = read("research/competitors.md") if n == 1 else "(see hook rules in the strategy)"
     prior = used_titles()
     prior_txt = "\n".join(f"- {t}" for t in prior[-200:]) or "- (none yet)"
     prompt = f"""You are writing month {n} of 6 of a daily Instagram Reels roadmap. Follow the strategy exactly.
