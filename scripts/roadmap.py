@@ -32,6 +32,9 @@ ENTRY_SPEC = """Each entry is an object with EXACTLY these keys:
 - "caption": Instagram caption 40-90 words that adds context or a question; may use 1-2 emojis
 - "hashtags": array of 12-18 hashtags without the # sign, mixed niche + broad
 - "cover_text": 3-6 words for the cover card (can equal the hook if short)
+- "subject": exact English Wikipedia article title of the person/group whose photo goes behind the
+  captions (the recognisable name in the story; for DJ CRAFT a fitting well-photographed DJ or gear)
+- "subject_alt": second choice, also a Wikipedia title (the other party in the story), never equal to subject
 """ % DAYS
 
 

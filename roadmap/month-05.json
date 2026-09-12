@@ -25,7 +25,21 @@
    "boombap"
   ],
   "cover_text": "Good Day is an Isleys record",
-  "month": 5
+  "month": 5,
+  "subject": "Ice Cube",
+  "subject_alt": "The Isley Brothers",
+  "photo": {
+   "file": "File:Water Cube Ice Cube Beijing 2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Water_Cube_Ice_Cube_Beijing_2.jpg/1920px-Water_Cube_Ice_Cube_Beijing_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Water_Cube_Ice_Cube_Beijing_2.jpg",
+   "license": "CC BY-SA 3.0 de",
+   "artist": "Arne Müseler",
+   "credit": "photo: Arne Müseler · CC BY-SA 3.0 de · Wikimedia Commons",
+   "subject": "Ice Cube",
+   "via": "commons_search",
+   "orig_width": 6720,
+   "orig_height": 4480
+  }
  },
  {
   "day": 2,
@@ -54,7 +68,21 @@
    "soul"
   ],
   "cover_text": "Blind Alley, Kane to Mariah",
-  "month": 5
+  "month": 5,
+  "subject": "The Emotions",
+  "subject_alt": "Big Daddy Kane",
+  "photo": {
+   "file": "File:TheEmotionsgroup.png",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/TheEmotionsgroup.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/The_Emotions",
+   "license": "Public domain",
+   "artist": "Unknown authorUnknown author",
+   "credit": "photo: Unknown authorUnknown author · Public domain · Wikimedia Commons",
+   "subject": "The Emotions",
+   "via": "wikipedia_page_image",
+   "orig_width": 753,
+   "orig_height": 609
+  }
  },
  {
   "day": 3,
@@ -82,7 +110,21 @@
    "djadvice"
   ],
   "cover_text": "When the rewind is earned",
-  "month": 5
+  "month": 5,
+  "subject": "Funkmaster Flex",
+  "subject_alt": "Technics SL-1200",
+  "photo": {
+   "file": "File:Ford Expedition Funkmaster Flex Edition Las Vegas Fall 2025.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Ford_Expedition_Funkmaster_Flex_Edition_Las_Vegas_Fall_2025.jpg/1920px-Ford_Expedition_Funkmaster_Flex_Edition_Las_Vegas_Fall_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Ford_Expedition_Funkmaster_Flex_Edition_Las_Vegas_Fall_2025.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "TaurusEmerald",
+   "credit": "photo: TaurusEmerald · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "Funkmaster Flex",
+   "via": "commons_search",
+   "orig_width": 4030,
+   "orig_height": 2716
+  }
  },
  {
   "day": 4,
@@ -110,7 +152,21 @@
    "hiphop"
   ],
   "cover_text": "Regulate is a Michael McDonald record",
-  "month": 5
+  "month": 5,
+  "subject": "Warren G",
+  "subject_alt": "Michael McDonald",
+  "photo": {
+   "file": "File:Warren G and Kurupt (cropped).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Warren_G_and_Kurupt_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Warren_G",
+   "license": "CC BY-SA 2.0",
+   "artist": "Connie Lodge",
+   "credit": "photo: Connie Lodge · CC BY-SA 2.0 · Wikimedia Commons",
+   "subject": "Warren G",
+   "via": "wikipedia_page_image",
+   "orig_width": 913,
+   "orig_height": 1244
+  }
  },
  {
   "day": 5,
@@ -138,7 +194,21 @@
    "nowspinning"
   ],
   "cover_text": "Own this Ohio Players record",
-  "month": 5
+  "month": 5,
+  "subject": "Ohio Players",
+  "subject_alt": "Dr. Dre",
+  "photo": {
+   "file": "File:Ohio Players band.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Ohio_Players_band.jpg/1920px-Ohio_Players_band.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Ohio_Players",
+   "license": "Public domain",
+   "artist": "Mercury Records",
+   "credit": "photo: Mercury Records · Public domain · Wikimedia Commons",
+   "subject": "Ohio Players",
+   "via": "wikipedia_page_image",
+   "orig_width": 2795,
+   "orig_height": 1843
+  }
  },
  {
   "day": 6,
@@ -166,7 +236,21 @@
    "djculture"
   ],
   "cover_text": "Trap and club, same tempo",
-  "month": 5
+  "month": 5,
+  "subject": "Serato",
+  "subject_alt": "Pioneer DJ",
+  "photo": {
+   "file": "File:Bruno Serato mangia spaghetti con Motel Kids.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Bruno_Serato_mangia_spaghetti_con_Motel_Kids.jpg/1920px-Bruno_Serato_mangia_spaghetti_con_Motel_Kids.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Bruno_Serato_mangia_spaghetti_con_Motel_Kids.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Chiara FRRR",
+   "credit": "photo: Chiara FRRR · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "Serato",
+   "via": "commons_search",
+   "orig_width": 5760,
+   "orig_height": 3840
+  }
  },
  {
   "day": 7,
@@ -194,7 +278,21 @@
    "duckdown"
   ],
   "cover_text": "Dah Shinin' at 32",
-  "month": 5
+  "month": 5,
+  "subject": "Smif-N-Wessun",
+  "subject_alt": "Da Beatminerz",
+  "photo": {
+   "file": "File:Smifnwessun.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Smifnwessun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Smif-N-Wessun",
+   "license": "CC BY-SA 3.0",
+   "artist": "PDTantisocial at English Wikipedia",
+   "credit": "photo: PDTantisocial at English Wikipedia · CC BY-SA 3.0 · Wikimedia Commons",
+   "subject": "Smif-N-Wessun",
+   "via": "wikipedia_page_image",
+   "orig_width": 800,
+   "orig_height": 526
+  }
  },
  {
   "day": 8,
@@ -222,7 +320,21 @@
    "musichistory"
   ],
   "cover_text": "Planet Rock replayed Kraftwerk",
-  "month": 5
+  "month": 5,
+  "subject": "Afrika Bambaataa",
+  "subject_alt": "Kraftwerk",
+  "photo": {
+   "file": "File:Africa bambaataa-08.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Africa_bambaataa-08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Afrika_Bambaataa",
+   "license": "CC BY-SA 4.0",
+   "artist": "Mika Väisänen",
+   "credit": "photo: Mika Väisänen · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "Afrika Bambaataa",
+   "via": "wikipedia_page_image",
+   "orig_width": 992,
+   "orig_height": 992
+  }
  },
  {
   "day": 9,
@@ -251,7 +363,21 @@
    "sampling"
   ],
   "cover_text": "The Big Beat, 1980 to Jay",
-  "month": 5
+  "month": 5,
+  "subject": "Billy Squier",
+  "subject_alt": "Jay-Z",
+  "photo": {
+   "file": "File:Billy Squier 1982 press photo (cropped).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Billy_Squier_1982_press_photo_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Billy_Squier",
+   "license": "Public domain",
+   "artist": "Distributed by Premier Talent Agency",
+   "credit": "photo: Distributed by Premier Talent Agency · Public domain · Wikimedia Commons",
+   "subject": "Billy Squier",
+   "via": "wikipedia_page_image",
+   "orig_width": 929,
+   "orig_height": 1095
+  }
  },
  {
   "day": 10,
@@ -279,7 +405,21 @@
    "turntablism"
   ],
   "cover_text": "Cut. Don't blend rap.",
-  "month": 5
+  "month": 5,
+  "subject": "Kid Capri",
+  "subject_alt": "DJ Jazzy Jeff",
+  "photo": {
+   "file": "File:Kid Capri black shirt.png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Kid_Capri_black_shirt.png/1920px-Kid_Capri_black_shirt.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Kid_Capri",
+   "license": "CC BY-SA 4.0",
+   "artist": "Osmosisleverman",
+   "credit": "photo: Osmosisleverman · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "Kid Capri",
+   "via": "wikipedia_page_image",
+   "orig_width": 2732,
+   "orig_height": 4096
+  }
  },
  {
   "day": 11,
@@ -307,7 +447,21 @@
    "hiphop"
   ],
   "cover_text": "Electric Relaxation is a Blue Note record",
-  "month": 5
+  "month": 5,
+  "subject": "A Tribe Called Quest",
+  "subject_alt": "Ronnie Foster",
+  "photo": {
+   "file": "File:A Tribe Called Quest montage.png",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/A_Tribe_Called_Quest_montage.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/A_Tribe_Called_Quest",
+   "license": "CC BY-SA 4.0",
+   "artist": "Various",
+   "credit": "photo: Various · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "A Tribe Called Quest",
+   "via": "wikipedia_page_image",
+   "orig_width": 722,
+   "orig_height": 1079
+  }
  },
  {
   "day": 12,
@@ -335,7 +489,21 @@
    "70sfunk"
   ],
   "cover_text": "The Kool and the Gang record",
-  "month": 5
+  "month": 5,
+  "subject": "Kool & the Gang",
+  "subject_alt": "Will Smith",
+  "photo": {
+   "file": "File:Kool & the Gang - Leverkusener Jazztage 2017-1889.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Kool_%26_the_Gang_-_Leverkusener_Jazztage_2017-1889.jpg/1920px-Kool_%26_the_Gang_-_Leverkusener_Jazztage_2017-1889.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Kool_%26_the_Gang_-_Leverkusener_Jazztage_2017-1889.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Foto: Andreas Lawen, Fotandi",
+   "credit": "photo: Foto: Andreas Lawen, Fotandi · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "Kool & the Gang",
+   "via": "commons_search",
+   "orig_width": 4233,
+   "orig_height": 6349
+  }
  },
  {
   "day": 13,
@@ -363,7 +531,21 @@
    "djculture"
   ],
   "cover_text": "My last 3 records",
-  "month": 5
+  "month": 5,
+  "subject": "Grandmaster Flash",
+  "subject_alt": "Technics SL-1200",
+  "photo": {
+   "file": "File:Grandmaster Flash - James Lavelle's Meltdown Festival 2014 (cropped).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Grandmaster_Flash_-_James_Lavelle%27s_Meltdown_Festival_2014_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Grandmaster_Flash",
+   "license": "CC BY 2.0",
+   "artist": "Victor Frankowski / Southbank Centre",
+   "credit": "photo: Victor Frankowski / Southbank Centre · CC BY 2.0 · Wikimedia Commons",
+   "subject": "Grandmaster Flash",
+   "via": "wikipedia_page_image",
+   "orig_width": 1186,
+   "orig_height": 1586
+  }
  },
  {
   "day": 14,
@@ -391,7 +573,21 @@
    "jazzrap"
   ],
   "cover_text": "Do You Want More at 32",
-  "month": 5
+  "month": 5,
+  "subject": "The Roots",
+  "subject_alt": "Questlove",
+  "photo": {
+   "file": "File:The Roots 2016 Holiday Tour - Orlando (31139328734).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/The_Roots_2016_Holiday_Tour_-_Orlando_%2831139328734%29.jpg/1920px-The_Roots_2016_Holiday_Tour_-_Orlando_%2831139328734%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/The_Roots",
+   "license": "CC BY 2.0",
+   "artist": "Michael Seeley from Melbourne, FL, United States",
+   "credit": "photo: Michael Seeley from Melbourne, FL, United States · CC BY 2.0 · Wikimedia Commons",
+   "subject": "The Roots",
+   "via": "wikipedia_page_image",
+   "orig_width": 2921,
+   "orig_height": 1701
+  }
  },
  {
   "day": 15,
@@ -419,7 +615,21 @@
    "musichistory"
   ],
   "cover_text": "Big Energy is Tom Tom Club",
-  "month": 5
+  "month": 5,
+  "subject": "Latto",
+  "subject_alt": "Tom Tom Club",
+  "photo": {
+   "file": "File:Vista dal secondo latto del Ponte Azzone Visconti,Lecco.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Vista_dal_secondo_latto_del_Ponte_Azzone_Visconti%2CLecco.jpg/1920px-Vista_dal_secondo_latto_del_Ponte_Azzone_Visconti%2CLecco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Vista_dal_secondo_latto_del_Ponte_Azzone_Visconti,Lecco.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Igbowoman",
+   "credit": "photo: Igbowoman · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "Latto",
+   "via": "commons_search",
+   "orig_width": 3000,
+   "orig_height": 4000
+  }
  },
  {
   "day": 16,
@@ -448,7 +658,21 @@
    "sampling"
   ],
   "cover_text": "Different Strokes, PE to Wu",
-  "month": 5
+  "month": 5,
+  "subject": "Syl Johnson",
+  "subject_alt": "Public Enemy",
+  "photo": {
+   "file": "File:SylJohnson1997.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/SylJohnson1997.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Syl_Johnson",
+   "license": "CC BY-SA 3.0",
+   "artist": "Masahiro Sumori",
+   "credit": "photo: Masahiro Sumori · CC BY-SA 3.0 · Wikimedia Commons",
+   "subject": "Syl Johnson",
+   "via": "wikipedia_page_image",
+   "orig_width": 1316,
+   "orig_height": 940
+  }
  },
  {
   "day": 17,
@@ -476,7 +700,21 @@
    "residentdj"
   ],
   "cover_text": "Don't touch the mic. Mostly.",
-  "month": 5
+  "month": 5,
+  "subject": "DJ Kool Herc",
+  "subject_alt": "DJ Khaled",
+  "photo": {
+   "file": "File:Kool Herc.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Kool_Herc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/DJ_Kool_Herc",
+   "license": "CC BY 3.0",
+   "artist": "Richard Alexander Caraballo",
+   "credit": "photo: Richard Alexander Caraballo · CC BY 3.0 · Wikimedia Commons",
+   "subject": "DJ Kool Herc",
+   "via": "wikipedia_page_image",
+   "orig_width": 892,
+   "orig_height": 597
+  }
  },
  {
   "day": 18,
@@ -504,7 +742,21 @@
    "pimpc"
   ],
   "cover_text": "Players Anthem is Willie Hutch",
-  "month": 5
+  "month": 5,
+  "subject": "UGK",
+  "subject_alt": "Willie Hutch",
+  "photo": {
+   "file": "File:UGK 01.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/UGK_01.jpg/1920px-UGK_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:UGK_01.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Wizzard",
+   "credit": "photo: Wizzard · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "UGK",
+   "via": "commons_search",
+   "orig_width": 3264,
+   "orig_height": 2448
+  }
  },
  {
   "day": 19,
@@ -532,7 +784,21 @@
    "jazzsamples"
   ],
   "cover_text": "The Donald Byrd record DJs keep",
-  "month": 5
+  "month": 5,
+  "subject": "Donald Byrd",
+  "subject_alt": "Larry Mizell",
+  "photo": {
+   "file": "File:Donald Byrd press photo 1975.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Donald_Byrd_press_photo_1975.jpg/1920px-Donald_Byrd_press_photo_1975.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Donald_Byrd_press_photo_1975.jpg",
+   "license": "Public domain",
+   "artist": "Distributed by Blue Note Records",
+   "credit": "photo: Distributed by Blue Note Records · Public domain · Wikimedia Commons",
+   "subject": "Donald Byrd",
+   "via": "commons_search",
+   "orig_width": 2048,
+   "orig_height": 2048
+  }
  },
  {
   "day": 20,
@@ -560,7 +826,21 @@
    "nightlife"
   ],
   "cover_text": "Ears are the only gear",
-  "month": 5
+  "month": 5,
+  "subject": "DJ Premier",
+  "subject_alt": "Mix Master Mike",
+  "photo": {
+   "file": "File:DJ Premier 2008.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/DJ_Premier_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:DJ_Premier_2008.jpg",
+   "license": "CC BY-SA 2.0",
+   "artist": "alanpixx",
+   "credit": "photo: alanpixx · CC BY-SA 2.0 · Wikimedia Commons",
+   "subject": "DJ Premier",
+   "via": "commons_search",
+   "orig_width": 1909,
+   "orig_height": 2332
+  }
  },
  {
   "day": 21,
@@ -588,7 +868,21 @@
    "djlife"
   ],
   "cover_text": "The Documentary at 22",
-  "month": 5
+  "month": 5,
+  "subject": "The Game (rapper)",
+  "subject_alt": "Dr. Dre",
+  "photo": {
+   "file": "File:The Game 2016.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/The_Game_2016.jpg/1920px-The_Game_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/The_Game_(rapper)",
+   "license": "CC BY 2.0",
+   "artist": "Eric Garcetti",
+   "credit": "photo: Eric Garcetti · CC BY 2.0 · Wikimedia Commons",
+   "subject": "The Game (rapper)",
+   "via": "wikipedia_page_image",
+   "orig_width": 2498,
+   "orig_height": 3807
+  }
  },
  {
   "day": 22,
@@ -616,7 +910,21 @@
    "hiphop"
   ],
   "cover_text": "Ready or Not is Enya",
-  "month": 5
+  "month": 5,
+  "subject": "Fugees",
+  "subject_alt": "Enya",
+  "photo": {
+   "file": "File:Fugees 2024 2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Fugees_2024_2.jpg/1920px-Fugees_2024_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Fugees_2024_2.jpg",
+   "license": "CC0",
+   "artist": "ManoSolo13241324",
+   "credit": "photo: ManoSolo13241324 · CC0 · Wikimedia Commons",
+   "subject": "Fugees",
+   "via": "commons_search",
+   "orig_width": 4080,
+   "orig_height": 3072
+  }
  },
  {
   "day": 23,
@@ -645,7 +953,21 @@
    "hiphop"
   ],
   "cover_text": "Peter Piper bells, Bob James",
-  "month": 5
+  "month": 5,
+  "subject": "Bob James (musician)",
+  "subject_alt": "Run-DMC",
+  "photo": {
+   "file": "File:Bob James Jazzmen jazz music.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Bob_James_Jazzmen_jazz_music.jpg/1920px-Bob_James_Jazzmen_jazz_music.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Bob_James_(musician)",
+   "license": "CC BY-SA 4.0",
+   "artist": "ElxanQəniyev",
+   "credit": "photo: ElxanQəniyev · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "Bob James (musician)",
+   "via": "wikipedia_page_image",
+   "orig_width": 4612,
+   "orig_height": 3070
+  }
  },
  {
   "day": 24,
@@ -673,7 +995,21 @@
    "djadvice"
   ],
   "cover_text": "The handover, done right",
-  "month": 5
+  "month": 5,
+  "subject": "A-Trak",
+  "subject_alt": "DJ Jazzy Jeff",
+  "photo": {
+   "file": "File:A-Trak - Homecoming Festival-8 (cropped).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/A-Trak_-_Homecoming_Festival-8_%28cropped%29.jpg/1920px-A-Trak_-_Homecoming_Festival-8_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/A-Trak",
+   "license": "CC BY-SA 4.0",
+   "artist": "Adjoka",
+   "credit": "photo: Adjoka · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "A-Trak",
+   "via": "wikipedia_page_image",
+   "orig_width": 2881,
+   "orig_height": 2428
+  }
  },
  {
   "day": 25,
@@ -701,7 +1037,21 @@
    "neosoul"
   ],
   "cover_text": "The Light is Bobby Caldwell",
-  "month": 5
+  "month": 5,
+  "subject": "Common (rapper)",
+  "subject_alt": "Bobby Caldwell",
+  "photo": {
+   "file": "File:Common-byPhilipRomano.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Common-byPhilipRomano.jpg/1920px-Common-byPhilipRomano.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Common_(rapper)",
+   "license": "CC BY-SA 4.0",
+   "artist": "PhilipRomanoPhoto",
+   "credit": "photo: PhilipRomanoPhoto · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "Common (rapper)",
+   "via": "wikipedia_page_image",
+   "orig_width": 4024,
+   "orig_height": 6048
+  }
  },
  {
   "day": 26,
@@ -729,7 +1079,21 @@
    "albumart"
   ],
   "cover_text": "The Marvin Gaye painting record",
-  "month": 5
+  "month": 5,
+  "subject": "Marvin Gaye",
+  "subject_alt": "Leon Ware",
+  "photo": {
+   "file": "File:Marvin Gaye (1973 publicity photo).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Marvin_Gaye_%281973_publicity_photo%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Marvin_Gaye",
+   "license": "Public domain",
+   "artist": "Photograph by Jim Britt, whose other (copyrighted) photos of",
+   "credit": "photo: Photograph by Jim Britt, whose other (copyrighted) photos of · Public domain · Wikimedia Commons",
+   "subject": "Marvin Gaye",
+   "via": "wikipedia_page_image",
+   "orig_width": 1776,
+   "orig_height": 2048
+  }
  },
  {
   "day": 27,
@@ -757,7 +1121,21 @@
    "djprep"
   ],
   "cover_text": "A dead USB can't end mine",
-  "month": 5
+  "month": 5,
+  "subject": "Pioneer DJ",
+  "subject_alt": "CDJ",
+  "photo": {
+   "file": "File:Yokohama i-markplace.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Yokohama_i-markplace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Pioneer_DJ",
+   "license": "Copyrighted free use",
+   "artist": "Pioneer DJ",
+   "credit": "photo: Pioneer DJ · Copyrighted free use · Wikimedia Commons",
+   "subject": "Pioneer DJ",
+   "via": "wikipedia_page_image",
+   "orig_width": 1667,
+   "orig_height": 2500
+  }
  },
  {
   "day": 28,
@@ -785,7 +1163,9 @@
    "boombap"
   ],
   "cover_text": "Uptown Saturday Night at 30",
-  "month": 5
+  "month": 5,
+  "subject": "Camp Lo",
+  "subject_alt": "Ski Beatz"
  },
  {
   "day": 29,
@@ -813,7 +1193,21 @@
    "indie"
   ],
   "cover_text": "Money Trees is Beach House backwards",
-  "month": 5
+  "month": 5,
+  "subject": "Kendrick Lamar",
+  "subject_alt": "Beach House",
+  "photo": {
+   "file": "File:KendrickSZASPurs230725-144 (cropped) desaturated.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/KendrickSZASPurs230725-144_%28cropped%29_desaturated.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Kendrick_Lamar",
+   "license": "CC BY 4.0",
+   "artist": "Raph_PH",
+   "credit": "photo: Raph_PH · CC BY 4.0 · Wikimedia Commons",
+   "subject": "Kendrick Lamar",
+   "via": "wikipedia_page_image",
+   "orig_width": 1116,
+   "orig_height": 1558
+  }
  },
  {
   "day": 30,
@@ -842,6 +1236,20 @@
    "hiphop"
   ],
   "cover_text": "Scorpio, top 10 to the Bronx",
-  "month": 5
+  "month": 5,
+  "subject": "Dennis Coffey",
+  "subject_alt": "LL Cool J",
+  "photo": {
+   "file": "File:Silver Star Medal Presentation to Dennis Coffey, January 1969 (29260102421).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Silver_Star_Medal_Presentation_to_Dennis_Coffey%2C_January_1969_%2829260102421%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Silver_Star_Medal_Presentation_to_Dennis_Coffey,_January_1969_(29260102421).jpg",
+   "license": "CC BY 2.0",
+   "artist": "USMC Archives from Quantico, USA",
+   "credit": "photo: USMC Archives from Quantico, USA · CC BY 2.0 · Wikimedia Commons",
+   "subject": "Dennis Coffey",
+   "via": "commons_search",
+   "orig_width": 1204,
+   "orig_height": 736
+  }
  }
 ]

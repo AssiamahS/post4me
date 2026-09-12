@@ -15,7 +15,8 @@ This is the "Claude + Instagram" method, with every paid tool swapped for someth
 |---|---|---|
 | competitor analytics | viralfindr | `scripts/competitors.py` — Instagram's own web endpoints via the Dia session |
 | 6-month roadmap | paste usernames into Claude | `scripts/roadmap.py` — `claude -p` writes `roadmap/STRATEGY.md` + 30 scripts/month |
-| editing | Canva AI | `scripts/render_reel.py` — edge-tts voice + PIL caption cards + ffmpeg |
+| subject photo | stock/Canva search | `scripts/subjects.py` + `scripts/subject_image.py` — `claude -p` names who each reel is about, Wikipedia/Commons supplies a CC photo (credit drawn on card) |
+| editing | Canva AI | `scripts/render_reel.py` — subject photo band + edge-tts voice + PIL caption cards + ffmpeg |
 | scheduling | later.com | `.github/workflows/daily-reel.yml` cron |
 | cross-post | — | `scripts/yt_shorts.py` — YouTube Shorts via Dia CDP, launchd 12:40pm |
 
@@ -42,7 +43,18 @@ python3 scripts/roadmap.py --strategy                    # roadmap/STRATEGY.md
 python3 scripts/roadmap.py --month 7                     # extend past month 6
 ```
 
-`competitors.py` needs Dia logged into Instagram; `roadmap.py` needs the `claude` CLI.
+```
+python3 scripts/subjects.py                              # tag subject/subject_alt + pin a photo, every month
+python3 scripts/subjects.py --month 7                    # after roadmap.py --month 7
+```
+
+`competitors.py` needs Dia logged into Instagram; `roadmap.py` and `subjects.py` need the `claude` CLI.
+Each entry carries `subject` (Wikipedia title of who the reel is about), `subject_alt`, and `photo`
+(the resolved Commons file + licence + credit). The render step downloads that photo and lays it
+across the top ~60% of the card, feathered into a blurred copy, captions underneath, credit line above
+the handle. No `photo` and no usable Commons image → the original gradient card, nothing breaks.
+Only Wikipedia page images and Commons title matches are accepted (CC/PD, ≥700px, no logos/SVGs/wide
+strips when a taller shot exists) — a wrong face is worse than no face.
 Edit `roadmap/month-NN.json` by hand any time — entries are plain JSON. Switch modes,
 voice, competitors or niche in `config.json` → `reels`.
 
