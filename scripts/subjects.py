@@ -37,9 +37,12 @@ Rules:
 - SAMPLE SOURCE: subject = the rapper/producer who flipped it, alt = the original artist.
 - THE BREAK: subject = the drummer or band that cut the break, alt = the most famous act that used it.
 - ON THIS DAY / CRATE NOTES: subject = the artist of the record, alt = a producer/rapper tied to it.
-- DJ CRAFT (technique tips, no named artist): subject = a well-photographed hip-hop DJ or piece of
-  gear that fits the tip (e.g. "Grandmaster Flash", "DJ Premier", "Jazzy Jeff", "Technics SL-1200",
-  "Serato"), alt = another. Use null only if nothing fits at all.
+- DJ CRAFT (technique tips, no named artist): subject = a famous, well-photographed hip-hop DJ
+  (a PERSON with a Wikipedia article, e.g. "Grandmaster Flash", "DJ Premier", "DJ Jazzy Jeff",
+  "Kid Capri", "DJ Clue", "Funkmaster Flex"), alt = another DJ. NEVER a brand, company, software or
+  piece of gear ("Serato", "Technics", "Pioneer DJ" are wrong: their articles only have logos).
+  Use null if no DJ fits.
+- Only people and groups. A subject must be someone whose face a hip-hop head would recognise.
 - Prefer subjects likely to have a real photo on Wikipedia (well-known, living or well-documented).
 - Do not invent names. If the reel's facts name a person, use that person.
 

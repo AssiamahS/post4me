@@ -29,16 +29,16 @@
   "subject": "Ice Cube",
   "subject_alt": "The Isley Brothers",
   "photo": {
-   "file": "File:Water Cube Ice Cube Beijing 2.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Water_Cube_Ice_Cube_Beijing_2.jpg/1920px-Water_Cube_Ice_Cube_Beijing_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Water_Cube_Ice_Cube_Beijing_2.jpg",
-   "license": "CC BY-SA 3.0 de",
-   "artist": "Arne Müseler",
-   "credit": "photo: Arne Müseler · CC BY-SA 3.0 de · Wikimedia Commons",
+   "file": "File:Ice-Cube 2014-01-09-Chicago-photoby-Adam-Bielawski.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Ice-Cube_2014-01-09-Chicago-photoby-Adam-Bielawski.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Ice_Cube",
+   "license": "CC BY-SA 3.0",
+   "artist": "Adam Bielawski",
+   "credit": "photo: Adam Bielawski · CC BY-SA 3.0 · Wikimedia Commons",
    "subject": "Ice Cube",
-   "via": "commons_search",
-   "orig_width": 6720,
-   "orig_height": 4480
+   "via": "wikipedia_article",
+   "orig_width": 600,
+   "orig_height": 900
   }
  },
  {
@@ -72,16 +72,16 @@
   "subject": "The Emotions",
   "subject_alt": "Big Daddy Kane",
   "photo": {
-   "file": "File:TheEmotionsgroup.png",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/TheEmotionsgroup.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://en.wikipedia.org/wiki/The_Emotions",
-   "license": "Public domain",
-   "artist": "Unknown authorUnknown author",
-   "credit": "photo: Unknown authorUnknown author · Public domain · Wikimedia Commons",
-   "subject": "The Emotions",
-   "via": "wikipedia_page_image",
-   "orig_width": 753,
-   "orig_height": 609
+   "file": "File:Big Daddy Kane at Hip Hop Kemp 2013 (cropped).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Big_Daddy_Kane_at_Hip_Hop_Kemp_2013_%28cropped%29.jpg/1920px-Big_Daddy_Kane_at_Hip_Hop_Kemp_2013_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Big_Daddy_Kane",
+   "license": "CC BY 2.0",
+   "artist": "RustyShack",
+   "credit": "photo: RustyShack · CC BY 2.0 · Wikimedia Commons",
+   "subject": "Big Daddy Kane",
+   "via": "wikipedia_article",
+   "orig_width": 2589,
+   "orig_height": 3143
   }
  },
  {
@@ -111,19 +111,19 @@
   ],
   "cover_text": "When the rewind is earned",
   "month": 5,
-  "subject": "Funkmaster Flex",
-  "subject_alt": "Technics SL-1200",
+  "subject": "Kid Capri",
+  "subject_alt": "Funkmaster Flex",
   "photo": {
-   "file": "File:Ford Expedition Funkmaster Flex Edition Las Vegas Fall 2025.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Ford_Expedition_Funkmaster_Flex_Edition_Las_Vegas_Fall_2025.jpg/1920px-Ford_Expedition_Funkmaster_Flex_Edition_Las_Vegas_Fall_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Ford_Expedition_Funkmaster_Flex_Edition_Las_Vegas_Fall_2025.jpg",
+   "file": "File:Kid Capri black shirt.png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Kid_Capri_black_shirt.png/1920px-Kid_Capri_black_shirt.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Kid_Capri",
    "license": "CC BY-SA 4.0",
-   "artist": "TaurusEmerald",
-   "credit": "photo: TaurusEmerald · CC BY-SA 4.0 · Wikimedia Commons",
-   "subject": "Funkmaster Flex",
-   "via": "commons_search",
-   "orig_width": 4030,
-   "orig_height": 2716
+   "artist": "Osmosisleverman",
+   "credit": "photo: Osmosisleverman · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "Kid Capri",
+   "via": "wikipedia_article",
+   "orig_width": 2732,
+   "orig_height": 4096
   }
  },
  {
@@ -163,7 +163,7 @@
    "artist": "Connie Lodge",
    "credit": "photo: Connie Lodge · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "Warren G",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 913,
    "orig_height": 1244
   }
@@ -205,7 +205,7 @@
    "artist": "Mercury Records",
    "credit": "photo: Mercury Records · Public domain · Wikimedia Commons",
    "subject": "Ohio Players",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 2795,
    "orig_height": 1843
   }
@@ -237,19 +237,19 @@
   ],
   "cover_text": "Trap and club, same tempo",
   "month": 5,
-  "subject": "Serato",
-  "subject_alt": "Pioneer DJ",
+  "subject": "DJ Jazzy Jeff",
+  "subject_alt": "DJ Premier",
   "photo": {
-   "file": "File:Bruno Serato mangia spaghetti con Motel Kids.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Bruno_Serato_mangia_spaghetti_con_Motel_Kids.jpg/1920px-Bruno_Serato_mangia_spaghetti_con_Motel_Kids.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Bruno_Serato_mangia_spaghetti_con_Motel_Kids.jpg",
+   "file": "File:Dj jazzy jeff-02.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Dj_jazzy_jeff-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/DJ_Jazzy_Jeff",
    "license": "CC BY-SA 4.0",
-   "artist": "Chiara FRRR",
-   "credit": "photo: Chiara FRRR · CC BY-SA 4.0 · Wikimedia Commons",
-   "subject": "Serato",
-   "via": "commons_search",
-   "orig_width": 5760,
-   "orig_height": 3840
+   "artist": "Mika Väisänen",
+   "credit": "photo: Mika Väisänen · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "DJ Jazzy Jeff",
+   "via": "wikipedia_article",
+   "orig_width": 655,
+   "orig_height": 698
   }
  },
  {
@@ -280,19 +280,7 @@
   "cover_text": "Dah Shinin' at 32",
   "month": 5,
   "subject": "Smif-N-Wessun",
-  "subject_alt": "Da Beatminerz",
-  "photo": {
-   "file": "File:Smifnwessun.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Smifnwessun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://en.wikipedia.org/wiki/Smif-N-Wessun",
-   "license": "CC BY-SA 3.0",
-   "artist": "PDTantisocial at English Wikipedia",
-   "credit": "photo: PDTantisocial at English Wikipedia · CC BY-SA 3.0 · Wikimedia Commons",
-   "subject": "Smif-N-Wessun",
-   "via": "wikipedia_page_image",
-   "orig_width": 800,
-   "orig_height": 526
-  }
+  "subject_alt": "Da Beatminerz"
  },
  {
   "day": 8,
@@ -324,16 +312,16 @@
   "subject": "Afrika Bambaataa",
   "subject_alt": "Kraftwerk",
   "photo": {
-   "file": "File:Africa bambaataa-08.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Africa_bambaataa-08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:Afrika Bambaataa and DJ Yutaka (2004).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Afrika_Bambaataa_and_DJ_Yutaka_%282004%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
    "page": "https://en.wikipedia.org/wiki/Afrika_Bambaataa",
-   "license": "CC BY-SA 4.0",
-   "artist": "Mika Väisänen",
-   "credit": "photo: Mika Väisänen · CC BY-SA 4.0 · Wikimedia Commons",
+   "license": "Public domain",
+   "artist": "Sean-Jin at English Wikipedia",
+   "credit": "photo: Sean-Jin at English Wikipedia · Public domain · Wikimedia Commons",
    "subject": "Afrika Bambaataa",
-   "via": "wikipedia_page_image",
-   "orig_width": 992,
-   "orig_height": 992
+   "via": "wikipedia_article",
+   "orig_width": 739,
+   "orig_height": 551
   }
  },
  {
@@ -374,7 +362,7 @@
    "artist": "Distributed by Premier Talent Agency",
    "credit": "photo: Distributed by Premier Talent Agency · Public domain · Wikimedia Commons",
    "subject": "Billy Squier",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 929,
    "orig_height": 1095
   }
@@ -416,7 +404,7 @@
    "artist": "Osmosisleverman",
    "credit": "photo: Osmosisleverman · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "Kid Capri",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 2732,
    "orig_height": 4096
   }
@@ -451,16 +439,16 @@
   "subject": "A Tribe Called Quest",
   "subject_alt": "Ronnie Foster",
   "photo": {
-   "file": "File:A Tribe Called Quest montage.png",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/A_Tribe_Called_Quest_montage.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:A Tribe Called Quest @ Pitchfork, Chicago, 7 15 2017 (38755020920).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/A_Tribe_Called_Quest_%40_Pitchfork%2C_Chicago%2C_7_15_2017_%2838755020920%29.jpg/1920px-A_Tribe_Called_Quest_%40_Pitchfork%2C_Chicago%2C_7_15_2017_%2838755020920%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/A_Tribe_Called_Quest",
-   "license": "CC BY-SA 4.0",
-   "artist": "Various",
-   "credit": "photo: Various · CC BY-SA 4.0 · Wikimedia Commons",
+   "license": "CC BY-SA 2.0",
+   "artist": "swimfinfan from Chicago",
+   "credit": "photo: swimfinfan from Chicago · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "A Tribe Called Quest",
-   "via": "wikipedia_page_image",
-   "orig_width": 722,
-   "orig_height": 1079
+   "via": "wikipedia_article",
+   "orig_width": 4116,
+   "orig_height": 2616
   }
  },
  {
@@ -493,16 +481,16 @@
   "subject": "Kool & the Gang",
   "subject_alt": "Will Smith",
   "photo": {
-   "file": "File:Kool & the Gang - Leverkusener Jazztage 2017-1889.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Kool_%26_the_Gang_-_Leverkusener_Jazztage_2017-1889.jpg/1920px-Kool_%26_the_Gang_-_Leverkusener_Jazztage_2017-1889.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Kool_%26_the_Gang_-_Leverkusener_Jazztage_2017-1889.jpg",
+   "file": "File:Kool & the Gang - Leverkusener Jazztage 2017-1963 (cropped).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Kool_%26_the_Gang_-_Leverkusener_Jazztage_2017-1963_%28cropped%29.jpg/1920px-Kool_%26_the_Gang_-_Leverkusener_Jazztage_2017-1963_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Kool_%26_the_Gang",
    "license": "CC BY-SA 4.0",
    "artist": "Foto: Andreas Lawen, Fotandi",
    "credit": "photo: Foto: Andreas Lawen, Fotandi · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "Kool & the Gang",
-   "via": "commons_search",
-   "orig_width": 4233,
-   "orig_height": 6349
+   "via": "wikipedia_article",
+   "orig_width": 3904,
+   "orig_height": 1568
   }
  },
  {
@@ -533,7 +521,7 @@
   "cover_text": "My last 3 records",
   "month": 5,
   "subject": "Grandmaster Flash",
-  "subject_alt": "Technics SL-1200",
+  "subject_alt": "Kid Capri",
   "photo": {
    "file": "File:Grandmaster Flash - James Lavelle's Meltdown Festival 2014 (cropped).jpg",
    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Grandmaster_Flash_-_James_Lavelle%27s_Meltdown_Festival_2014_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -542,7 +530,7 @@
    "artist": "Victor Frankowski / Southbank Centre",
    "credit": "photo: Victor Frankowski / Southbank Centre · CC BY 2.0 · Wikimedia Commons",
    "subject": "Grandmaster Flash",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 1186,
    "orig_height": 1586
   }
@@ -584,7 +572,7 @@
    "artist": "Michael Seeley from Melbourne, FL, United States",
    "credit": "photo: Michael Seeley from Melbourne, FL, United States · CC BY 2.0 · Wikimedia Commons",
    "subject": "The Roots",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 2921,
    "orig_height": 1701
   }
@@ -619,16 +607,16 @@
   "subject": "Latto",
   "subject_alt": "Tom Tom Club",
   "photo": {
-   "file": "File:Vista dal secondo latto del Ponte Azzone Visconti,Lecco.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Vista_dal_secondo_latto_del_Ponte_Azzone_Visconti%2CLecco.jpg/1920px-Vista_dal_secondo_latto_del_Ponte_Azzone_Visconti%2CLecco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Vista_dal_secondo_latto_del_Ponte_Azzone_Visconti,Lecco.jpg",
-   "license": "CC BY-SA 4.0",
-   "artist": "Igbowoman",
-   "credit": "photo: Igbowoman · CC BY-SA 4.0 · Wikimedia Commons",
+   "file": "File:Latto in November 2021.png",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Latto_in_November_2021.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Latto",
+   "license": "CC BY 3.0",
+   "artist": "Eliasinhere",
+   "credit": "photo: Eliasinhere · CC BY 3.0 · Wikimedia Commons",
    "subject": "Latto",
-   "via": "commons_search",
-   "orig_width": 3000,
-   "orig_height": 4000
+   "via": "wikipedia_article",
+   "orig_width": 660,
+   "orig_height": 851
   }
  },
  {
@@ -662,16 +650,16 @@
   "subject": "Syl Johnson",
   "subject_alt": "Public Enemy",
   "photo": {
-   "file": "File:SylJohnson1997.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/SylJohnson1997.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://en.wikipedia.org/wiki/Syl_Johnson",
+   "file": "File:Public Enemy-01-mika.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Public_Enemy-01-mika.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Public_Enemy",
    "license": "CC BY-SA 3.0",
-   "artist": "Masahiro Sumori",
-   "credit": "photo: Masahiro Sumori · CC BY-SA 3.0 · Wikimedia Commons",
-   "subject": "Syl Johnson",
-   "via": "wikipedia_page_image",
-   "orig_width": 1316,
-   "orig_height": 940
+   "artist": "MikaV",
+   "credit": "photo: MikaV · CC BY-SA 3.0 · Wikimedia Commons",
+   "subject": "Public Enemy",
+   "via": "wikipedia_article",
+   "orig_width": 1347,
+   "orig_height": 899
   }
  },
  {
@@ -704,16 +692,16 @@
   "subject": "DJ Kool Herc",
   "subject_alt": "DJ Khaled",
   "photo": {
-   "file": "File:Kool Herc.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Kool_Herc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:Dj Kool Herc-03.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Dj_Kool_Herc-03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
    "page": "https://en.wikipedia.org/wiki/DJ_Kool_Herc",
-   "license": "CC BY 3.0",
-   "artist": "Richard Alexander Caraballo",
-   "credit": "photo: Richard Alexander Caraballo · CC BY 3.0 · Wikimedia Commons",
+   "license": "CC BY-SA 4.0",
+   "artist": "Mika Väisänen",
+   "credit": "photo: Mika Väisänen · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "DJ Kool Herc",
-   "via": "wikipedia_page_image",
-   "orig_width": 892,
-   "orig_height": 597
+   "via": "wikipedia_article",
+   "orig_width": 804,
+   "orig_height": 1213
   }
  },
  {
@@ -744,19 +732,7 @@
   "cover_text": "Players Anthem is Willie Hutch",
   "month": 5,
   "subject": "UGK",
-  "subject_alt": "Willie Hutch",
-  "photo": {
-   "file": "File:UGK 01.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/UGK_01.jpg/1920px-UGK_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:UGK_01.jpg",
-   "license": "CC BY-SA 4.0",
-   "artist": "Wizzard",
-   "credit": "photo: Wizzard · CC BY-SA 4.0 · Wikimedia Commons",
-   "subject": "UGK",
-   "via": "commons_search",
-   "orig_width": 3264,
-   "orig_height": 2448
-  }
+  "subject_alt": "Willie Hutch"
  },
  {
   "day": 19,
@@ -788,16 +764,16 @@
   "subject": "Donald Byrd",
   "subject_alt": "Larry Mizell",
   "photo": {
-   "file": "File:Donald Byrd press photo 1975.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Donald_Byrd_press_photo_1975.jpg/1920px-Donald_Byrd_press_photo_1975.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Donald_Byrd_press_photo_1975.jpg",
-   "license": "Public domain",
-   "artist": "Distributed by Blue Note Records",
-   "credit": "photo: Distributed by Blue Note Records · Public domain · Wikimedia Commons",
+   "file": "File:Donald Byrd.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Donald_Byrd.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Donald_Byrd",
+   "license": "CC BY-SA 4.0",
+   "artist": "Mallory1180",
+   "credit": "photo: Mallory1180 · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "Donald Byrd",
-   "via": "commons_search",
-   "orig_width": 2048,
-   "orig_height": 2048
+   "via": "wikipedia_article",
+   "orig_width": 646,
+   "orig_height": 1024
   }
  },
  {
@@ -830,16 +806,16 @@
   "subject": "DJ Premier",
   "subject_alt": "Mix Master Mike",
   "photo": {
-   "file": "File:DJ Premier 2008.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/DJ_Premier_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:DJ_Premier_2008.jpg",
-   "license": "CC BY-SA 2.0",
-   "artist": "alanpixx",
-   "credit": "photo: alanpixx · CC BY-SA 2.0 · Wikimedia Commons",
+   "file": "File:DJ Preemo - Gods of Rap Tour 2019 - Berlin (5 von 6).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/DJ_Preemo_-_Gods_of_Rap_Tour_2019_-_Berlin_%285_von_6%29.jpg/1920px-DJ_Preemo_-_Gods_of_Rap_Tour_2019_-_Berlin_%285_von_6%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/DJ_Premier",
+   "license": "CC BY-SA 4.0",
+   "artist": "Sven Volkens, sven.volkens@wikipedia.de",
+   "credit": "photo: Sven Volkens, sven.volkens@wikipedia.de · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "DJ Premier",
-   "via": "commons_search",
-   "orig_width": 1909,
-   "orig_height": 2332
+   "via": "wikipedia_article",
+   "orig_width": 3240,
+   "orig_height": 2160
   }
  },
  {
@@ -872,16 +848,16 @@
   "subject": "The Game (rapper)",
   "subject_alt": "Dr. Dre",
   "photo": {
-   "file": "File:The Game 2016.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/The_Game_2016.jpg/1920px-The_Game_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://en.wikipedia.org/wiki/The_Game_(rapper)",
-   "license": "CC BY 2.0",
-   "artist": "Eric Garcetti",
-   "credit": "photo: Eric Garcetti · CC BY 2.0 · Wikimedia Commons",
+   "file": "File:The Game Supafest (5605987500).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/The_Game_Supafest_%285605987500%29.jpg/1920px-The_Game_Supafest_%285605987500%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/The_Game_%28rapper%29",
+   "license": "CC BY-SA 2.0",
+   "artist": "Eva Rinaldi",
+   "credit": "photo: Eva Rinaldi · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "The Game (rapper)",
-   "via": "wikipedia_page_image",
-   "orig_width": 2498,
-   "orig_height": 3807
+   "via": "wikipedia_article",
+   "orig_width": 2592,
+   "orig_height": 3888
   }
  },
  {
@@ -914,16 +890,16 @@
   "subject": "Fugees",
   "subject_alt": "Enya",
   "photo": {
-   "file": "File:Fugees 2024 2.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Fugees_2024_2.jpg/1920px-Fugees_2024_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Fugees_2024_2.jpg",
-   "license": "CC0",
-   "artist": "ManoSolo13241324",
-   "credit": "photo: ManoSolo13241324 · CC0 · Wikimedia Commons",
-   "subject": "Fugees",
-   "via": "commons_search",
-   "orig_width": 4080,
-   "orig_height": 3072
+   "file": "File:Enya - The Orlando Sentinel (1989) (cropped).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Enya_-_The_Orlando_Sentinel_%281989%29_%28cropped%29.jpg/1920px-Enya_-_The_Orlando_Sentinel_%281989%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Enya",
+   "license": "Public domain",
+   "artist": "Orlando Sentinel/ Associated Press",
+   "credit": "photo: Orlando Sentinel/ Associated Press · Public domain · Wikimedia Commons",
+   "subject": "Enya",
+   "via": "wikipedia_article",
+   "orig_width": 2466,
+   "orig_height": 2765
   }
  },
  {
@@ -959,12 +935,12 @@
   "photo": {
    "file": "File:Bob James Jazzmen jazz music.jpg",
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Bob_James_Jazzmen_jazz_music.jpg/1920px-Bob_James_Jazzmen_jazz_music.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://en.wikipedia.org/wiki/Bob_James_(musician)",
+   "page": "https://en.wikipedia.org/wiki/Bob_James_%28musician%29",
    "license": "CC BY-SA 4.0",
    "artist": "ElxanQəniyev",
    "credit": "photo: ElxanQəniyev · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "Bob James (musician)",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 4612,
    "orig_height": 3070
   }
@@ -1006,7 +982,7 @@
    "artist": "Adjoka",
    "credit": "photo: Adjoka · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "A-Trak",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 2881,
    "orig_height": 2428
   }
@@ -1043,12 +1019,12 @@
   "photo": {
    "file": "File:Common-byPhilipRomano.jpg",
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Common-byPhilipRomano.jpg/1920px-Common-byPhilipRomano.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://en.wikipedia.org/wiki/Common_(rapper)",
+   "page": "https://en.wikipedia.org/wiki/Common_%28rapper%29",
    "license": "CC BY-SA 4.0",
    "artist": "PhilipRomanoPhoto",
    "credit": "photo: PhilipRomanoPhoto · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "Common (rapper)",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 4024,
    "orig_height": 6048
   }
@@ -1090,7 +1066,7 @@
    "artist": "Photograph by Jim Britt, whose other (copyrighted) photos of",
    "credit": "photo: Photograph by Jim Britt, whose other (copyrighted) photos of · Public domain · Wikimedia Commons",
    "subject": "Marvin Gaye",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 1776,
    "orig_height": 2048
   }
@@ -1122,19 +1098,19 @@
   ],
   "cover_text": "A dead USB can't end mine",
   "month": 5,
-  "subject": "Pioneer DJ",
-  "subject_alt": "CDJ",
+  "subject": "DJ Clue",
+  "subject_alt": "DJ Jazzy Jeff",
   "photo": {
-   "file": "File:Yokohama i-markplace.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Yokohama_i-markplace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://en.wikipedia.org/wiki/Pioneer_DJ",
-   "license": "Copyrighted free use",
-   "artist": "Pioneer DJ",
-   "credit": "photo: Pioneer DJ · Copyrighted free use · Wikimedia Commons",
-   "subject": "Pioneer DJ",
-   "via": "wikipedia_page_image",
-   "orig_width": 1667,
-   "orig_height": 2500
+   "file": "File:Dj jazzy jeff-02.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Dj_jazzy_jeff-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/DJ_Jazzy_Jeff",
+   "license": "CC BY-SA 4.0",
+   "artist": "Mika Väisänen",
+   "credit": "photo: Mika Väisänen · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "DJ Jazzy Jeff",
+   "via": "wikipedia_article",
+   "orig_width": 655,
+   "orig_height": 698
   }
  },
  {
@@ -1197,16 +1173,16 @@
   "subject": "Kendrick Lamar",
   "subject_alt": "Beach House",
   "photo": {
-   "file": "File:KendrickSZASPurs230725-144 (cropped) desaturated.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/KendrickSZASPurs230725-144_%28cropped%29_desaturated.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:Kendrick Lamar Pitchfork 2012.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Kendrick_Lamar_Pitchfork_2012.jpg/1920px-Kendrick_Lamar_Pitchfork_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Kendrick_Lamar",
-   "license": "CC BY 4.0",
-   "artist": "Raph_PH",
-   "credit": "photo: Raph_PH · CC BY 4.0 · Wikimedia Commons",
+   "license": "CC BY-SA 2.0",
+   "artist": "gozamos",
+   "credit": "photo: gozamos · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "Kendrick Lamar",
-   "via": "wikipedia_page_image",
-   "orig_width": 1116,
-   "orig_height": 1558
+   "via": "wikipedia_article",
+   "orig_width": 3648,
+   "orig_height": 2736
   }
  },
  {
@@ -1240,16 +1216,16 @@
   "subject": "Dennis Coffey",
   "subject_alt": "LL Cool J",
   "photo": {
-   "file": "File:Silver Star Medal Presentation to Dennis Coffey, January 1969 (29260102421).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Silver_Star_Medal_Presentation_to_Dennis_Coffey%2C_January_1969_%2829260102421%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Silver_Star_Medal_Presentation_to_Dennis_Coffey,_January_1969_(29260102421).jpg",
+   "file": "File:LL Cool J performing in Wilmington, Delaware.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/LL_Cool_J_performing_in_Wilmington%2C_Delaware.jpg/1920px-LL_Cool_J_performing_in_Wilmington%2C_Delaware.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/LL_Cool_J",
    "license": "CC BY 2.0",
-   "artist": "USMC Archives from Quantico, USA",
-   "credit": "photo: USMC Archives from Quantico, USA · CC BY 2.0 · Wikimedia Commons",
-   "subject": "Dennis Coffey",
-   "via": "commons_search",
-   "orig_width": 1204,
-   "orig_height": 736
+   "artist": "Saquan Stimpson from Newark, DE, USA",
+   "credit": "photo: Saquan Stimpson from Newark, DE, USA · CC BY 2.0 · Wikimedia Commons",
+   "subject": "LL Cool J",
+   "via": "wikipedia_article",
+   "orig_width": 3450,
+   "orig_height": 2400
   }
  }
 ]

@@ -136,12 +136,17 @@ jobs:
           e = json.load(open("${{ steps.pick.outputs.path }}"))
           print(f"**{e['series']}** — {e['hook']}\n")
           print("![cover](RAWURL)\n")
+          ph = e.get("photo") or {}
+          if ph:
+              print(f"**Photo**: {ph.get('file')} — for **{ph.get('subject')}** · {ph.get('license')} · {ph.get('page')}\n")
+          else:
+              print(f"**Photo**: none (gradient card) · subject tag: {e.get('subject')!r} / {e.get('subject_alt')!r}\n")
           print("**Voiceover**\n\n> " + e["voiceover"].replace("\n", "\n> ") + "\n")
           print("**Caption**\n\n> " + e["caption"].replace("\n", "\n> ") + "\n")
           print("#" + " #".join(e["hashtags"]) + "\n")
           print("file: ${{ steps.pick.outputs.path }}")
           print("run: ${{ github.run_id }}")
-          print("\nReply **yes** to post it as a reel, **skip** to reject.")
+          print("\nReply **yes** to post it as a reel, **no** to skip. Nothing posts without a yes.")
           EOF
           sed -i "s|RAWURL|$RAW|" /tmp/body.md
           gh issue create --title "Reel draft ${{ steps.pick.outputs.date }} — approve?" --label reel-draft --body-file /tmp/body.md

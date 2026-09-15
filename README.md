@@ -28,8 +28,17 @@ uploads the mp4 as a 14-day artifact, commits the staged entry + cover to `queue
 
 - `post_mode: "auto"` → publishes as a REEL via Composio, writes the media id + permalink back
   into `queue/reels/<date>.json`, opens a `reel-log` issue with the cover so your phone gets pinged.
-- `post_mode: "approve"` → opens a `reel-draft` issue with cover + full script; comment `yes`
-  or `skip`. `post-approved.yml` downloads the artifact and publishes.
+- `post_mode: "approve"` (the default since 2026-09-14) → opens a `reel-draft` issue with cover,
+  photo/subject line + full script; comment `yes` or `no`. `post-approved.yml` downloads the
+  artifact and publishes. Nothing posts without a yes.
+- Phone leg: `scripts/approval_texter.py` (Mac launchd `com.sly.post4me-approve`, every 5 min)
+  iMessages each draft (cover + hook + photo line) to my own iCloud thread; replying `YES` / `NO`
+  there becomes the issue comment, and the permalink is texted back once Instagram confirms.
+- `scripts/insights.py` → per-reel views/reach/likes/shares/saves/avg watch time from the Graph
+  API into `state/insights.json` (run on the Mac, needs `composio login`).
+- Photos: `scripts/subject_image.py` only uses images from the subject's own Wikipedia article
+  (name in file name, no object shots, brands/gear get the gradient card). Commons search was
+  removed after it put a chef eating spaghetti behind a DJ CRAFT reel.
 
 `yt_shorts.py` (launchd `com.sly.post4me-shorts`, 12:40pm local) picks the newest posted reel
 without a `youtube` field, pulls the artifact with `gh run download`, uploads through the

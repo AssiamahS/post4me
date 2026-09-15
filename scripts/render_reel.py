@@ -121,6 +121,11 @@ def load_photo(e, out_dir, enabled=True):
     if not enabled:
         return None
     info = e.get("photo")
+    if info and info.get("via") != "wikipedia_article":
+        # pinned by the old Commons-search picker (spaghetti/Cadillac era) — throw it away
+        print(f"photo pin {info.get('file')!r} came via {info.get('via')!r}, re-resolving", file=sys.stderr)
+        info = None
+        e.pop("photo", None)
     if not info and e.get("subject"):
         info = subject_image.resolve(e["subject"], e.get("subject_alt"))
     if not info:

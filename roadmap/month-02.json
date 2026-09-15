@@ -28,16 +28,16 @@
   "subject": "Pete Rock",
   "subject_alt": "Tom Scott (musician)",
   "photo": {
-   "file": "File:Pete Rock @ The Brookyln Bowl in 2016.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Pete_Rock_%40_The_Brookyln_Bowl_in_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:Pete Rock at Launch Party.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Pete_Rock_at_Launch_Party.jpg/1920px-Pete_Rock_at_Launch_Party.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Pete_Rock",
    "license": "CC BY 2.0",
-   "artist": "Steven Pisano",
-   "credit": "photo: Steven Pisano · CC BY 2.0 · Wikimedia Commons",
+   "artist": "pinguino k from North Hollywood, USA",
+   "credit": "photo: pinguino k from North Hollywood, USA · CC BY 2.0 · Wikimedia Commons",
    "subject": "Pete Rock",
-   "via": "wikipedia_page_image",
-   "orig_width": 1000,
-   "orig_height": 664
+   "via": "wikipedia_article",
+   "orig_width": 3744,
+   "orig_height": 5616
   }
  },
  {
@@ -76,7 +76,7 @@
    "artist": "The Big Joe Henry Show",
    "credit": "photo: The Big Joe Henry Show · CC BY 3.0 · Wikimedia Commons",
    "subject": "Bernard Purdie",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 747,
    "orig_height": 996
   }
@@ -109,16 +109,16 @@
   "subject": "DJ Jazzy Jeff",
   "subject_alt": "Grandmaster Flash",
   "photo": {
-   "file": "File:Jazzyjeff 061111.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Jazzyjeff_061111.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:Dj jazzy jeff-02.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Dj_jazzy_jeff-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
    "page": "https://en.wikipedia.org/wiki/DJ_Jazzy_Jeff",
-   "license": "Public domain",
-   "artist": "Dopefish",
-   "credit": "photo: Dopefish · Public domain · Wikimedia Commons",
+   "license": "CC BY-SA 4.0",
+   "artist": "Mika Väisänen",
+   "credit": "photo: Mika Väisänen · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "DJ Jazzy Jeff",
-   "via": "wikipedia_page_image",
-   "orig_width": 1600,
-   "orig_height": 1200
+   "via": "wikipedia_article",
+   "orig_width": 655,
+   "orig_height": 698
   }
  },
  {
@@ -148,19 +148,7 @@
   "cover_text": "Juicy is a 1983 record",
   "month": 2,
   "subject": "The Notorious B.I.G.",
-  "subject_alt": "Mtume",
-  "photo": {
-   "file": "File:The Notorious B.I.G. - panoramio.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/The_Notorious_B.I.G._-_panoramio.jpg/1920px-The_Notorious_B.I.G._-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:The_Notorious_B.I.G._-_panoramio.jpg",
-   "license": "CC BY 3.0",
-   "artist": "Иван Манилов",
-   "credit": "photo: Иван Манилов · CC BY 3.0 · Wikimedia Commons",
-   "subject": "The Notorious B.I.G.",
-   "via": "commons_search",
-   "orig_width": 4752,
-   "orig_height": 3168
-  }
+  "subject_alt": "Mtume"
  },
  {
   "day": 5,
@@ -198,7 +186,7 @@
    "artist": "Annettejones07",
    "credit": "photo: Annettejones07 · CC BY-SA 3.0 · Wikimedia Commons",
    "subject": "The Meters",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 2100,
    "orig_height": 1500
   }
@@ -228,19 +216,19 @@
   ],
   "cover_text": "Five minutes, unknown gear",
   "month": 2,
-  "subject": "Technics SL-1200",
-  "subject_alt": "Pioneer DJ",
+  "subject": "DJ Jazzy Jeff",
+  "subject_alt": "Kid Capri",
   "photo": {
-   "file": "File:Technics SL-1200MK2-2.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Technics_SL-1200MK2-2.jpg/1920px-Technics_SL-1200MK2-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://en.wikipedia.org/wiki/Technics_SL-1200",
-   "license": "CC BY-SA 2.5",
-   "artist": "derivative work: 32bitmaschine (talk) Technics_SL-1200MK2.jp",
-   "credit": "photo: derivative work: 32bitmaschine (talk) Technics_SL-1200MK2.jp · CC BY-SA 2.5 · Wikimedia Commons",
-   "subject": "Technics SL-1200",
-   "via": "wikipedia_page_image",
-   "orig_width": 2114,
-   "orig_height": 1342
+   "file": "File:Dj jazzy jeff-02.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Dj_jazzy_jeff-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/DJ_Jazzy_Jeff",
+   "license": "CC BY-SA 4.0",
+   "artist": "Mika Väisänen",
+   "credit": "photo: Mika Väisänen · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "DJ Jazzy Jeff",
+   "via": "wikipedia_article",
+   "orig_width": 655,
+   "orig_height": 698
   }
  },
  {
@@ -273,12 +261,12 @@
   "photo": {
    "file": "File:Common-byPhilipRomano.jpg",
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Common-byPhilipRomano.jpg/1920px-Common-byPhilipRomano.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://en.wikipedia.org/wiki/Common_(rapper)",
+   "page": "https://en.wikipedia.org/wiki/Common_%28rapper%29",
    "license": "CC BY-SA 4.0",
    "artist": "PhilipRomanoPhoto",
    "credit": "photo: PhilipRomanoPhoto · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "Common (rapper)",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 4024,
    "orig_height": 6048
   }
@@ -312,16 +300,16 @@
   "subject": "Q-Tip (musician)",
   "subject_alt": "Lou Reed",
   "photo": {
-   "file": "File:Lou Reed Walk on the Wild Side The Montreal Star Sat May 5 1973.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Lou_Reed_Walk_on_the_Wild_Side_The_Montreal_Star_Sat_May_5_1973.jpg/1920px-Lou_Reed_Walk_on_the_Wild_Side_The_Montreal_Star_Sat_May_5_1973.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Lou_Reed_Walk_on_the_Wild_Side_The_Montreal_Star_Sat_May_5_1973.jpg",
-   "license": "Public domain",
-   "artist": "Montreal Concert Poster Archive",
-   "credit": "photo: Montreal Concert Poster Archive · Public domain · Wikimedia Commons",
-   "subject": "Lou Reed",
-   "via": "commons_search",
-   "orig_width": 4370,
-   "orig_height": 4027
+   "file": "File:Q tip-03.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Q_tip-03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Q-Tip_%28musician%29",
+   "license": "CC BY-SA 4.0",
+   "artist": "MikaV",
+   "credit": "photo: MikaV · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "Q-Tip (musician)",
+   "via": "wikipedia_article",
+   "orig_width": 935,
+   "orig_height": 935
   }
  },
  {
@@ -353,16 +341,16 @@
   "subject": "Skull Snaps",
   "subject_alt": "The Pharcyde",
   "photo": {
-   "file": "File:The Pharcyde at Rock the Bells 2008 -5 (3179590686).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/The_Pharcyde_at_Rock_the_Bells_2008_-5_%283179590686%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:The Pharcyde - Donauinselfest Vienna 2013 16.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/The_Pharcyde_-_Donauinselfest_Vienna_2013_16.jpg/1920px-The_Pharcyde_-_Donauinselfest_Vienna_2013_16.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/The_Pharcyde",
-   "license": "CC BY-SA 2.0",
-   "artist": "Charice L. from USA",
-   "credit": "photo: Charice L. from USA · CC BY-SA 2.0 · Wikimedia Commons",
+   "license": "CC BY-SA 3.0",
+   "artist": "Manfred Werner (Tsui)",
+   "credit": "photo: Manfred Werner (Tsui) · CC BY-SA 3.0 · Wikimedia Commons",
    "subject": "The Pharcyde",
-   "via": "wikipedia_page_image",
-   "orig_width": 1000,
-   "orig_height": 750
+   "via": "wikipedia_article",
+   "orig_width": 3000,
+   "orig_height": 2000
   }
  },
  {
@@ -393,16 +381,16 @@
   "subject": "DJ Premier",
   "subject_alt": "Rane Corporation",
   "photo": {
-   "file": "File:DJ Premier 2008.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/DJ_Premier_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:DJ_Premier_2008.jpg",
-   "license": "CC BY-SA 2.0",
-   "artist": "alanpixx",
-   "credit": "photo: alanpixx · CC BY-SA 2.0 · Wikimedia Commons",
+   "file": "File:DJ Preemo - Gods of Rap Tour 2019 - Berlin (5 von 6).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/DJ_Preemo_-_Gods_of_Rap_Tour_2019_-_Berlin_%285_von_6%29.jpg/1920px-DJ_Preemo_-_Gods_of_Rap_Tour_2019_-_Berlin_%285_von_6%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/DJ_Premier",
+   "license": "CC BY-SA 4.0",
+   "artist": "Sven Volkens, sven.volkens@wikipedia.de",
+   "credit": "photo: Sven Volkens, sven.volkens@wikipedia.de · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "DJ Premier",
-   "via": "commons_search",
-   "orig_width": 1909,
-   "orig_height": 2332
+   "via": "wikipedia_article",
+   "orig_width": 3240,
+   "orig_height": 2160
   }
  },
  {
@@ -434,16 +422,16 @@
   "subject": "Kanye West",
   "subject_alt": "Ray Charles",
   "photo": {
-   "file": "File:Kanye West at the 2009 Tribeca Film Festival (crop 2).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop_2%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:Kanye West North Charleston Rally, July 2020.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Kanye_West_North_Charleston_Rally%2C_July_2020.jpg/1920px-Kanye_West_North_Charleston_Rally%2C_July_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Kanye_West",
-   "license": "Public domain",
-   "artist": "David Shankbone",
-   "credit": "photo: David Shankbone · Public domain · Wikimedia Commons",
+   "license": "CC BY-SA 4.0",
+   "artist": "Nice4What",
+   "credit": "photo: Nice4What · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "Kanye West",
-   "via": "wikipedia_page_image",
-   "orig_width": 1727,
-   "orig_height": 2301
+   "via": "wikipedia_article",
+   "orig_width": 2794,
+   "orig_height": 2501
   }
  },
  {
@@ -475,16 +463,16 @@
   "subject": "Dorothy Ashby",
   "subject_alt": "Madlib",
   "photo": {
-   "file": "File:4C1A9262-2 (cropped).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/4C1A9262-2_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:Madlib 2013.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Madlib_2013.jpg/1920px-Madlib_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Madlib",
-   "license": "CC BY-SA 4.0",
-   "artist": "Ohshereddy",
-   "credit": "photo: Ohshereddy · CC BY-SA 4.0 · Wikimedia Commons",
+   "license": "CC BY-SA 2.0",
+   "artist": "Gergely Csatari",
+   "credit": "photo: Gergely Csatari · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "Madlib",
-   "via": "wikipedia_page_image",
-   "orig_width": 889,
-   "orig_height": 1215
+   "via": "wikipedia_article",
+   "orig_width": 2400,
+   "orig_height": 1600
   }
  },
  {
@@ -513,7 +501,7 @@
   "cover_text": "Don't stop the record",
   "month": 2,
   "subject": "Grandmaster Flash",
-  "subject_alt": "Technics SL-1200",
+  "subject_alt": "DJ Premier",
   "photo": {
    "file": "File:Grandmaster Flash - James Lavelle's Meltdown Festival 2014 (cropped).jpg",
    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Grandmaster_Flash_-_James_Lavelle%27s_Meltdown_Festival_2014_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -522,7 +510,7 @@
    "artist": "Victor Frankowski / Southbank Centre",
    "credit": "photo: Victor Frankowski / Southbank Centre · CC BY 2.0 · Wikimedia Commons",
    "subject": "Grandmaster Flash",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 1186,
    "orig_height": 1586
   }
@@ -557,12 +545,12 @@
   "photo": {
    "file": "File:Scarface (rapper) (cropped).jpg",
    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Scarface_%28rapper%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://en.wikipedia.org/wiki/Scarface_(rapper)",
+   "page": "https://en.wikipedia.org/wiki/Scarface_%28rapper%29",
    "license": "CC BY-SA 2.0",
    "artist": "Jeremy Perez Photos.",
    "credit": "photo: Jeremy Perez Photos. · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "Scarface (rapper)",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 1598,
    "orig_height": 2256
   }
@@ -596,16 +584,16 @@
   "subject": "Tupac Shakur",
   "subject_alt": "Joe Cocker",
   "photo": {
-   "file": "File:Tupac Shakur star (Hollywood Walk of Fame star).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Tupac_Shakur_star_%28Hollywood_Walk_of_Fame_star%29.jpg/1920px-Tupac_Shakur_star_%28Hollywood_Walk_of_Fame_star%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Tupac_Shakur_star_(Hollywood_Walk_of_Fame_star).jpg",
-   "license": "CC0",
-   "artist": "Alexis Doine",
-   "credit": "photo: Alexis Doine · CC0 · Wikimedia Commons",
-   "subject": "Tupac Shakur",
-   "via": "commons_search",
-   "orig_width": 4090,
-   "orig_height": 3605
+   "file": "File:Joe Cocker Sochi.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Joe_Cocker_Sochi.JPG/1920px-Joe_Cocker_Sochi.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Joe_Cocker",
+   "license": "CC BY-SA 3.0",
+   "artist": "Alexander Veprev",
+   "credit": "photo: Alexander Veprev · CC BY-SA 3.0 · Wikimedia Commons",
+   "subject": "Joe Cocker",
+   "via": "wikipedia_article",
+   "orig_width": 2736,
+   "orig_height": 3648
   }
  },
  {
@@ -635,19 +623,7 @@
   "cover_text": "One London organ groove",
   "month": 2,
   "subject": "The Mohawks",
-  "subject_alt": "Alan Hawkshaw",
-  "photo": {
-   "file": "File:Her Majesty's Royal Chapel of the Mohawks (I0026411).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Her_Majesty%27s_Royal_Chapel_of_the_Mohawks_%28I0026411%29.jpg/1920px-Her_Majesty%27s_Royal_Chapel_of_the_Mohawks_%28I0026411%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Her_Majesty%27s_Royal_Chapel_of_the_Mohawks_(I0026411).jpg",
-   "license": "OGL-ON",
-   "artist": "All images from the RG 2-71 Photographs of the Audio-Visual ",
-   "credit": "photo: All images from the RG 2-71 Photographs of the Audio-Visual  · OGL-ON · Wikimedia Commons",
-   "subject": "The Mohawks",
-   "via": "commons_search",
-   "orig_width": 3239,
-   "orig_height": 4211
-  }
+  "subject_alt": "Alan Hawkshaw"
  },
  {
   "day": 17,
@@ -674,20 +650,8 @@
   ],
   "cover_text": "Count to eight",
   "month": 2,
-  "subject": "Kid Capri",
-  "subject_alt": "Serato",
-  "photo": {
-   "file": "File:Kid Capri black shirt.png",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Kid_Capri_black_shirt.png/1920px-Kid_Capri_black_shirt.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://en.wikipedia.org/wiki/Kid_Capri",
-   "license": "CC BY-SA 4.0",
-   "artist": "Osmosisleverman",
-   "credit": "photo: Osmosisleverman · CC BY-SA 4.0 · Wikimedia Commons",
-   "subject": "Kid Capri",
-   "via": "wikipedia_page_image",
-   "orig_width": 2732,
-   "orig_height": 4096
-  }
+  "subject": "DJ Clue",
+  "subject_alt": "Funkmaster Flex"
  },
  {
   "day": 18,
@@ -718,16 +682,16 @@
   "subject": "Drake (musician)",
   "subject_alt": "Timmy Thomas",
   "photo": {
-   "file": "File:Timmy Thomas (cropped).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Timmy_Thomas_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://en.wikipedia.org/wiki/Timmy_Thomas",
-   "license": "CC BY 2.0",
-   "artist": "Steve Terrell",
-   "credit": "photo: Steve Terrell · CC BY 2.0 · Wikimedia Commons",
-   "subject": "Timmy Thomas",
-   "via": "wikipedia_page_image",
-   "orig_width": 738,
-   "orig_height": 894
+   "file": "File:Drake 2010.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Drake_2010.jpg/1920px-Drake_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Drake_%28musician%29",
+   "license": "CC BY-SA 2.0",
+   "artist": "musicisentropy",
+   "credit": "photo: musicisentropy · CC BY-SA 2.0 · Wikimedia Commons",
+   "subject": "Drake (musician)",
+   "via": "wikipedia_article",
+   "orig_width": 3056,
+   "orig_height": 4592
   }
  },
  {
@@ -766,7 +730,7 @@
    "artist": "Cavie78",
    "credit": "photo: Cavie78 · CC BY-SA 3.0 · Wikimedia Commons",
    "subject": "Lonnie Liston Smith",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 2280,
    "orig_height": 3264
   }
@@ -799,16 +763,16 @@
   "subject": "Funkmaster Flex",
   "subject_alt": "Questlove",
   "photo": {
-   "file": "File:Ford Expedition Funkmaster Flex Edition Las Vegas Fall 2025.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Ford_Expedition_Funkmaster_Flex_Edition_Las_Vegas_Fall_2025.jpg/1920px-Ford_Expedition_Funkmaster_Flex_Edition_Las_Vegas_Fall_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Ford_Expedition_Funkmaster_Flex_Edition_Las_Vegas_Fall_2025.jpg",
-   "license": "CC BY-SA 4.0",
-   "artist": "TaurusEmerald",
-   "credit": "photo: TaurusEmerald · CC BY-SA 4.0 · Wikimedia Commons",
-   "subject": "Funkmaster Flex",
-   "via": "commons_search",
-   "orig_width": 4030,
-   "orig_height": 2716
+   "file": "File:Questlove in Sau Paolo.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Questlove_in_Sau_Paolo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Questlove",
+   "license": "CC BY-SA 2.0",
+   "artist": "maissoma",
+   "credit": "photo: maissoma · CC BY-SA 2.0 · Wikimedia Commons",
+   "subject": "Questlove",
+   "via": "wikipedia_article",
+   "orig_width": 1436,
+   "orig_height": 2000
   }
  },
  {
@@ -839,16 +803,16 @@
   "subject": "Kendrick Lamar",
   "subject_alt": "Dr. Dre",
   "photo": {
-   "file": "File:KendrickSZASPurs230725-144 (cropped) desaturated.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/KendrickSZASPurs230725-144_%28cropped%29_desaturated.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:Kendrick Lamar Pitchfork 2012.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Kendrick_Lamar_Pitchfork_2012.jpg/1920px-Kendrick_Lamar_Pitchfork_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Kendrick_Lamar",
-   "license": "CC BY 4.0",
-   "artist": "Raph_PH",
-   "credit": "photo: Raph_PH · CC BY 4.0 · Wikimedia Commons",
+   "license": "CC BY-SA 2.0",
+   "artist": "gozamos",
+   "credit": "photo: gozamos · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "Kendrick Lamar",
-   "via": "wikipedia_page_image",
-   "orig_width": 1116,
-   "orig_height": 1558
+   "via": "wikipedia_article",
+   "orig_width": 3648,
+   "orig_height": 2736
   }
  },
  {
@@ -880,16 +844,16 @@
   "subject": "Geto Boys",
   "subject_alt": "Isaac Hayes",
   "photo": {
-   "file": "File:Isaac Hayes at Tulane Stadium 24 October 1970.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Isaac_Hayes_at_Tulane_Stadium_24_October_1970.jpg/1920px-Isaac_Hayes_at_Tulane_Stadium_24_October_1970.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Isaac_Hayes_at_Tulane_Stadium_24_October_1970.jpg",
+   "file": "File:Isaac Hayes at the 1973 PUSH Black Expo.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Isaac_Hayes_at_the_1973_PUSH_Black_Expo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Isaac_Hayes",
    "license": "Public domain",
-   "artist": "Uncredited photographer for the Jambalaya",
-   "credit": "photo: Uncredited photographer for the Jambalaya · Public domain · Wikimedia Commons",
+   "artist": "John H. White",
+   "credit": "photo: John H. White · Public domain · Wikimedia Commons",
    "subject": "Isaac Hayes",
-   "via": "commons_search",
-   "orig_width": 2473,
-   "orig_height": 2761
+   "via": "wikipedia_article",
+   "orig_width": 1861,
+   "orig_height": 2134
   }
  },
  {
@@ -928,7 +892,7 @@
    "artist": "Keith Allison from Hanover, MD, USA",
    "credit": "photo: Keith Allison from Hanover, MD, USA · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "Biz Markie",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 739,
    "orig_height": 895
   }
@@ -990,16 +954,16 @@
   "subject": "MF Doom",
   "subject_alt": "Daedelus (musician)",
   "photo": {
-   "file": "File:MF Doom - Hultsfred 2011 (cropped).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/MF_Doom_-_Hultsfred_2011_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:MF Doom - 23 July 2011 02.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/MF_Doom_-_23_July_2011_02.jpg/1920px-MF_Doom_-_23_July_2011_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/MF_Doom",
-   "license": "CC BY-SA 3.0",
-   "artist": "Possan",
-   "credit": "photo: Possan · CC BY-SA 3.0 · Wikimedia Commons",
+   "license": "CC BY 2.0",
+   "artist": "possan",
+   "credit": "photo: possan · CC BY 2.0 · Wikimedia Commons",
    "subject": "MF Doom",
-   "via": "wikipedia_page_image",
-   "orig_width": 1613,
-   "orig_height": 2141
+   "via": "wikipedia_article",
+   "orig_width": 1996,
+   "orig_height": 3000
   }
  },
  {
@@ -1031,16 +995,16 @@
   "subject": "David Axelrod (musician)",
   "subject_alt": "DJ Shadow",
   "photo": {
-   "file": "File:DJ Shadow and James Lavelle.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/DJ_Shadow_and_James_Lavelle.jpg/1920px-DJ_Shadow_and_James_Lavelle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:DJ_Shadow_and_James_Lavelle.jpg",
+   "file": "File:DJ Shadow (cropped).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/DJ_Shadow_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/DJ_Shadow",
    "license": "CC BY 2.0",
-   "artist": "bkush",
-   "credit": "photo: bkush · CC BY 2.0 · Wikimedia Commons",
+   "artist": "Scott Sandars",
+   "credit": "photo: Scott Sandars · CC BY 2.0 · Wikimedia Commons",
    "subject": "DJ Shadow",
-   "via": "commons_search",
-   "orig_width": 2983,
-   "orig_height": 2045
+   "via": "wikipedia_article",
+   "orig_width": 1217,
+   "orig_height": 1535
   }
  },
  {
@@ -1071,16 +1035,16 @@
   "subject": "Questlove",
   "subject_alt": "Mark Ronson",
   "photo": {
-   "file": "File:Back2Basics @ Hard Rock Cafe 080814 Photo by Jason Melcher IMG 3382 (14847453616) (cropped).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Back2Basics_%40_Hard_Rock_Cafe_080814_Photo_by_Jason_Melcher_IMG_3382_%2814847453616%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:Questlove in Sau Paolo.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Questlove_in_Sau_Paolo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
    "page": "https://en.wikipedia.org/wiki/Questlove",
-   "license": "CC BY 2.0",
-   "artist": "Jason Melcher",
-   "credit": "photo: Jason Melcher · CC BY 2.0 · Wikimedia Commons",
+   "license": "CC BY-SA 2.0",
+   "artist": "maissoma",
+   "credit": "photo: maissoma · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "Questlove",
-   "via": "wikipedia_page_image",
-   "orig_width": 743,
-   "orig_height": 687
+   "via": "wikipedia_article",
+   "orig_width": 1436,
+   "orig_height": 2000
   }
  },
  {
@@ -1111,16 +1075,16 @@
   "subject": "Ghostface Killah",
   "subject_alt": "Raekwon",
   "photo": {
-   "file": "File:Ghostface Killah (52380601292).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Ghostface_Killah_%2852380601292%29.jpg/1920px-Ghostface_Killah_%2852380601292%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Ghostface_Killah_(52380601292).jpg",
+   "file": "File:Ghostface - Highline Ballroom 2.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Ghostface_-_Highline_Ballroom_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Ghostface_Killah",
    "license": "CC BY-SA 2.0",
-   "artist": "All-Pro Reels from District of Columbia, USA",
-   "credit": "photo: All-Pro Reels from District of Columbia, USA · CC BY-SA 2.0 · Wikimedia Commons",
+   "artist": "Gaelen Hadlett",
+   "credit": "photo: Gaelen Hadlett · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "Ghostface Killah",
-   "via": "commons_search",
-   "orig_width": 8256,
-   "orig_height": 5504
+   "via": "wikipedia_article",
+   "orig_width": 1280,
+   "orig_height": 960
   }
  },
  {
@@ -1152,16 +1116,16 @@
   "subject": "DJ Premier",
   "subject_alt": "Vic Juris",
   "photo": {
-   "file": "File:DJ Premier 2008.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/DJ_Premier_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:DJ_Premier_2008.jpg",
-   "license": "CC BY-SA 2.0",
-   "artist": "alanpixx",
-   "credit": "photo: alanpixx · CC BY-SA 2.0 · Wikimedia Commons",
+   "file": "File:DJ Preemo - Gods of Rap Tour 2019 - Berlin (5 von 6).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/DJ_Preemo_-_Gods_of_Rap_Tour_2019_-_Berlin_%285_von_6%29.jpg/1920px-DJ_Preemo_-_Gods_of_Rap_Tour_2019_-_Berlin_%285_von_6%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/DJ_Premier",
+   "license": "CC BY-SA 4.0",
+   "artist": "Sven Volkens, sven.volkens@wikipedia.de",
+   "credit": "photo: Sven Volkens, sven.volkens@wikipedia.de · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "DJ Premier",
-   "via": "commons_search",
-   "orig_width": 1909,
-   "orig_height": 2332
+   "via": "wikipedia_article",
+   "orig_width": 3240,
+   "orig_height": 2160
   }
  },
  {
@@ -1193,16 +1157,16 @@
   "subject": "John Bonham",
   "subject_alt": "Beastie Boys",
   "photo": {
-   "file": "File:John Bonham statue in Mercian Square, Redditch (50481628048).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/John_Bonham_statue_in_Mercian_Square%2C_Redditch_%2850481628048%29.jpg/1920px-John_Bonham_statue_in_Mercian_Square%2C_Redditch_%2850481628048%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:John_Bonham_statue_in_Mercian_Square,_Redditch_(50481628048).jpg",
+   "file": "File:John Bonham-2.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/John_Bonham-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/John_Bonham",
    "license": "CC BY-SA 2.0",
-   "artist": "Elliott Brown from Birmingham, United Kingdom",
-   "credit": "photo: Elliott Brown from Birmingham, United Kingdom · CC BY-SA 2.0 · Wikimedia Commons",
+   "artist": "Dina Regine",
+   "credit": "photo: Dina Regine · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "John Bonham",
-   "via": "commons_search",
-   "orig_width": 4608,
-   "orig_height": 3456
+   "via": "wikipedia_article",
+   "orig_width": 1336,
+   "orig_height": 1002
   }
  }
 ]

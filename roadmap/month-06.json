@@ -35,7 +35,7 @@
    "artist": "Gage Skidmore",
    "credit": "photo: Gage Skidmore · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "RZA",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 2010,
    "orig_height": 2985
   }
@@ -77,7 +77,7 @@
    "artist": "David from Washington, DC",
    "credit": "photo: David from Washington, DC · CC BY 2.0 · Wikimedia Commons",
    "subject": "Chuck Brown",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 2083,
    "orig_height": 2257
   }
@@ -108,19 +108,19 @@
   ],
   "cover_text": "Loop the intro, buy time",
   "month": 6,
-  "subject": "CDJ",
-  "subject_alt": "Pioneer DJ",
+  "subject": "DJ Jazzy Jeff",
+  "subject_alt": "Kid Capri",
   "photo": {
-   "file": "File:Three CDJs and two SL-1210 at Bob Beaman Nightclub Munich.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Three_CDJs_and_two_SL-1210_at_Bob_Beaman_Nightclub_Munich.jpg/1920px-Three_CDJs_and_two_SL-1210_at_Bob_Beaman_Nightclub_Munich.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://en.wikipedia.org/wiki/CDJ",
-   "license": "CC BY 2.0",
-   "artist": "Arnold Jaeger Werner",
-   "credit": "photo: Arnold Jaeger Werner · CC BY 2.0 · Wikimedia Commons",
-   "subject": "CDJ",
-   "via": "wikipedia_page_image",
-   "orig_width": 2018,
-   "orig_height": 1131
+   "file": "File:Dj jazzy jeff-02.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Dj_jazzy_jeff-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/DJ_Jazzy_Jeff",
+   "license": "CC BY-SA 4.0",
+   "artist": "Mika Väisänen",
+   "credit": "photo: Mika Väisänen · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "DJ Jazzy Jeff",
+   "via": "wikipedia_article",
+   "orig_width": 655,
+   "orig_height": 698
   }
  },
  {
@@ -150,19 +150,7 @@
   "cover_text": "Pac's DeBarge love song",
   "month": 6,
   "subject": "Tupac Shakur",
-  "subject_alt": "DeBarge",
-  "photo": {
-   "file": "File:Tupac Shakur star (Hollywood Walk of Fame star).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Tupac_Shakur_star_%28Hollywood_Walk_of_Fame_star%29.jpg/1920px-Tupac_Shakur_star_%28Hollywood_Walk_of_Fame_star%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Tupac_Shakur_star_(Hollywood_Walk_of_Fame_star).jpg",
-   "license": "CC0",
-   "artist": "Alexis Doine",
-   "credit": "photo: Alexis Doine · CC0 · Wikimedia Commons",
-   "subject": "Tupac Shakur",
-   "via": "commons_search",
-   "orig_width": 4090,
-   "orig_height": 3605
-  }
+  "subject_alt": "DeBarge"
  },
  {
   "day": 5,
@@ -200,7 +188,7 @@
    "artist": "Procrastineur49",
    "credit": "photo: Procrastineur49 · CC BY 4.0 · Wikimedia Commons",
    "subject": "Cymande",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 3533,
    "orig_height": 2087
   }
@@ -241,7 +229,7 @@
    "artist": "Victor Frankowski / Southbank Centre",
    "credit": "photo: Victor Frankowski / Southbank Centre · CC BY 2.0 · Wikimedia Commons",
    "subject": "Grandmaster Flash",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 1186,
    "orig_height": 1586
   }
@@ -276,16 +264,16 @@
   "subject": "J Dilla",
   "subject_alt": "Madlib",
   "photo": {
-   "file": "File:4C1A9262-2 (cropped).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/4C1A9262-2_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:Madlib 2013.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Madlib_2013.jpg/1920px-Madlib_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Madlib",
-   "license": "CC BY-SA 4.0",
-   "artist": "Ohshereddy",
-   "credit": "photo: Ohshereddy · CC BY-SA 4.0 · Wikimedia Commons",
+   "license": "CC BY-SA 2.0",
+   "artist": "Gergely Csatari",
+   "credit": "photo: Gergely Csatari · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "Madlib",
-   "via": "wikipedia_page_image",
-   "orig_width": 889,
-   "orig_height": 1215
+   "via": "wikipedia_article",
+   "orig_width": 2400,
+   "orig_height": 1600
   }
  },
  {
@@ -317,16 +305,16 @@
   "subject": "Q-Tip (musician)",
   "subject_alt": "Roy Ayers",
   "photo": {
-   "file": "File:Roy Ayers 2019 Glastonbury Festival 02.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Roy_Ayers_2019_Glastonbury_Festival_02.jpg/1920px-Roy_Ayers_2019_Glastonbury_Festival_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Roy_Ayers_2019_Glastonbury_Festival_02.jpg",
+   "file": "File:Q tip-03.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Q_tip-03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Q-Tip_%28musician%29",
    "license": "CC BY-SA 4.0",
-   "artist": "Edwardx",
-   "credit": "photo: Edwardx · CC BY-SA 4.0 · Wikimedia Commons",
-   "subject": "Roy Ayers",
-   "via": "commons_search",
-   "orig_width": 3456,
-   "orig_height": 4608
+   "artist": "MikaV",
+   "credit": "photo: MikaV · CC BY-SA 4.0 · Wikimedia Commons",
+   "subject": "Q-Tip (musician)",
+   "via": "wikipedia_article",
+   "orig_width": 935,
+   "orig_height": 935
   }
  },
  {
@@ -356,19 +344,7 @@
   "cover_text": "A New Orleans break in everything",
   "month": 6,
   "subject": "Lee Dorsey",
-  "subject_alt": "Allen Toussaint",
-  "photo": {
-   "file": "File:AllenToussaintFreretStFestival2009DSBNOLA (cropped).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/AllenToussaintFreretStFestival2009DSBNOLA_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://en.wikipedia.org/wiki/Allen_Toussaint",
-   "license": "CC BY 2.0",
-   "artist": "Flickr photographer dsb nola / Derek Bridges",
-   "credit": "photo: Flickr photographer dsb nola / Derek Bridges · CC BY 2.0 · Wikimedia Commons",
-   "subject": "Allen Toussaint",
-   "via": "wikipedia_page_image",
-   "orig_width": 1453,
-   "orig_height": 2173
-  }
+  "subject_alt": "Allen Toussaint"
  },
  {
   "day": 10,
@@ -397,18 +373,18 @@
   "cover_text": "Mix 140 into 90",
   "month": 6,
   "subject": "DJ Premier",
-  "subject_alt": "Technics SL-1200",
+  "subject_alt": "Funkmaster Flex",
   "photo": {
-   "file": "File:DJ Premier 2008.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/DJ_Premier_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:DJ_Premier_2008.jpg",
-   "license": "CC BY-SA 2.0",
-   "artist": "alanpixx",
-   "credit": "photo: alanpixx · CC BY-SA 2.0 · Wikimedia Commons",
+   "file": "File:DJ Preemo - Gods of Rap Tour 2019 - Berlin (5 von 6).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/DJ_Preemo_-_Gods_of_Rap_Tour_2019_-_Berlin_%285_von_6%29.jpg/1920px-DJ_Preemo_-_Gods_of_Rap_Tour_2019_-_Berlin_%285_von_6%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/DJ_Premier",
+   "license": "CC BY-SA 4.0",
+   "artist": "Sven Volkens, sven.volkens@wikipedia.de",
+   "credit": "photo: Sven Volkens, sven.volkens@wikipedia.de · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "DJ Premier",
-   "via": "commons_search",
-   "orig_width": 1909,
-   "orig_height": 2332
+   "via": "wikipedia_article",
+   "orig_width": 3240,
+   "orig_height": 2160
   }
  },
  {
@@ -447,7 +423,7 @@
    "artist": "SAS Scandinavian Airlines",
    "credit": "photo: SAS Scandinavian Airlines · Public domain · Wikimedia Commons",
    "subject": "Stan Getz",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 1222,
    "orig_height": 1686
   }
@@ -488,7 +464,7 @@
    "artist": "Sachyn Mital",
    "credit": "photo: Sachyn Mital · CC BY-SA 3.0 · Wikimedia Commons",
    "subject": "Shuggie Otis",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 800,
    "orig_height": 533
   }
@@ -522,16 +498,16 @@
   "subject": "DJ Jazzy Jeff",
   "subject_alt": "Grandmaster Flash",
   "photo": {
-   "file": "File:Jazzyjeff 061111.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Jazzyjeff_061111.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:Dj jazzy jeff-02.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Dj_jazzy_jeff-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
    "page": "https://en.wikipedia.org/wiki/DJ_Jazzy_Jeff",
-   "license": "Public domain",
-   "artist": "Dopefish",
-   "credit": "photo: Dopefish · Public domain · Wikimedia Commons",
+   "license": "CC BY-SA 4.0",
+   "artist": "Mika Väisänen",
+   "credit": "photo: Mika Väisänen · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "DJ Jazzy Jeff",
-   "via": "wikipedia_page_image",
-   "orig_width": 1600,
-   "orig_height": 1200
+   "via": "wikipedia_article",
+   "orig_width": 655,
+   "orig_height": 698
   }
  },
  {
@@ -570,7 +546,7 @@
    "artist": "Vera de Kok",
    "credit": "photo: Vera de Kok · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "Debbie Harry",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 1168,
    "orig_height": 1559
   }
@@ -611,7 +587,7 @@
    "artist": "Jester Jay Goldman",
    "credit": "photo: Jester Jay Goldman · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "Digable Planets",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 1024,
    "orig_height": 768
   }
@@ -645,15 +621,15 @@
   "subject": "ESG (band)",
   "subject_alt": "Martin Hannett",
   "photo": {
-   "file": "File:ESG UFO.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/ESG_UFO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://en.wikipedia.org/wiki/ESG_(band)",
-   "license": "CC BY-SA 3.0",
-   "artist": "hinnk",
-   "credit": "photo: hinnk · CC BY-SA 3.0 · Wikimedia Commons",
+   "file": "File:ESG-band.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/ESG-band.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/ESG_%28band%29",
+   "license": "CC BY 2.0",
+   "artist": "neonwar",
+   "credit": "photo: neonwar · CC BY 2.0 · Wikimedia Commons",
    "subject": "ESG (band)",
-   "via": "wikipedia_page_image",
-   "orig_width": 1000,
+   "via": "wikipedia_article",
+   "orig_width": 900,
    "orig_height": 600
   }
  },
@@ -683,19 +659,19 @@
   ],
   "cover_text": "Check grids before doors",
   "month": 6,
-  "subject": "Serato",
-  "subject_alt": "Rekordbox",
+  "subject": "DJ Clue",
+  "subject_alt": "Grandmaster Flash",
   "photo": {
-   "file": "File:Bruno Serato mangia spaghetti con Motel Kids.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Bruno_Serato_mangia_spaghetti_con_Motel_Kids.jpg/1920px-Bruno_Serato_mangia_spaghetti_con_Motel_Kids.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Bruno_Serato_mangia_spaghetti_con_Motel_Kids.jpg",
-   "license": "CC BY-SA 4.0",
-   "artist": "Chiara FRRR",
-   "credit": "photo: Chiara FRRR · CC BY-SA 4.0 · Wikimedia Commons",
-   "subject": "Serato",
-   "via": "commons_search",
-   "orig_width": 5760,
-   "orig_height": 3840
+   "file": "File:Grandmaster Flash - James Lavelle's Meltdown Festival 2014 (cropped).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Grandmaster_Flash_-_James_Lavelle%27s_Meltdown_Festival_2014_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Grandmaster_Flash",
+   "license": "CC BY 2.0",
+   "artist": "Victor Frankowski / Southbank Centre",
+   "credit": "photo: Victor Frankowski / Southbank Centre · CC BY 2.0 · Wikimedia Commons",
+   "subject": "Grandmaster Flash",
+   "via": "wikipedia_article",
+   "orig_width": 1186,
+   "orig_height": 1586
   }
  },
  {
@@ -727,16 +703,16 @@
   "subject": "Kanye West",
   "subject_alt": "The Jackson 5",
   "photo": {
-   "file": "File:Kanye West at the 2009 Tribeca Film Festival (crop 2).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop_2%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:Kanye West North Charleston Rally, July 2020.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Kanye_West_North_Charleston_Rally%2C_July_2020.jpg/1920px-Kanye_West_North_Charleston_Rally%2C_July_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Kanye_West",
-   "license": "Public domain",
-   "artist": "David Shankbone",
-   "credit": "photo: David Shankbone · Public domain · Wikimedia Commons",
+   "license": "CC BY-SA 4.0",
+   "artist": "Nice4What",
+   "credit": "photo: Nice4What · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "Kanye West",
-   "via": "wikipedia_page_image",
-   "orig_width": 1727,
-   "orig_height": 2301
+   "via": "wikipedia_article",
+   "orig_width": 2794,
+   "orig_height": 2501
   }
  },
  {
@@ -768,16 +744,16 @@
   "subject": "Gil Scott-Heron",
   "subject_alt": "Brian Jackson (musician)",
   "photo": {
-   "file": "File:Gil Scott Heron (55208414).jpeg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Gil_Scott_Heron_%2855208414%29.jpeg/1920px-Gil_Scott_Heron_%2855208414%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Gil_Scott_Heron_(55208414).jpeg",
-   "license": "CC BY 3.0",
-   "artist": "Roger Woolman",
-   "credit": "photo: Roger Woolman · CC BY 3.0 · Wikimedia Commons",
+   "file": "File:Gil Scott-Heron.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Gil_Scott-Heron.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Gil_Scott-Heron",
+   "license": "CC BY 2.0",
+   "artist": "mikael altemark from STOCKHOLM, SWEDEN",
+   "credit": "photo: mikael altemark from STOCKHOLM, SWEDEN · CC BY 2.0 · Wikimedia Commons",
    "subject": "Gil Scott-Heron",
-   "via": "commons_search",
-   "orig_width": 2048,
-   "orig_height": 2048
+   "via": "wikipedia_article",
+   "orig_width": 560,
+   "orig_height": 672
   }
  },
  {
@@ -845,7 +821,7 @@
    "artist": "Judchuks",
    "credit": "photo: Judchuks · CC BY-SA 3.0 · Wikimedia Commons",
    "subject": "DJ Quik",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 819,
    "orig_height": 1024
   }
@@ -879,16 +855,16 @@
   "subject": "Missy Elliott",
   "subject_alt": "Ann Peebles",
   "photo": {
-   "file": "File:Missy Elliot on stage in Chicago during Out of This World The Missy Elliott Experience Tour.png",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Missy_Elliot_on_stage_in_Chicago_during_Out_of_This_World_The_Missy_Elliott_Experience_Tour.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Missy_Elliot_on_stage_in_Chicago_during_Out_of_This_World_The_Missy_Elliott_Experience_Tour.png",
-   "license": "CC0",
-   "artist": "WOWyerrr",
-   "credit": "photo: WOWyerrr · CC0 · Wikimedia Commons",
+   "file": "File:Missy Elliott 2006.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Missy_Elliott_2006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Missy_Elliott",
+   "license": "CC BY-SA 2.0",
+   "artist": "Romana Pierzga",
+   "credit": "photo: Romana Pierzga · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "Missy Elliott",
-   "via": "commons_search",
-   "orig_width": 1520,
-   "orig_height": 1478
+   "via": "wikipedia_article",
+   "orig_width": 1134,
+   "orig_height": 1352
   }
  },
  {
@@ -920,16 +896,16 @@
   "subject": "Roger Troutman",
   "subject_alt": "Dr. Dre",
   "photo": {
-   "file": "File:Snoop Dogg and Dr. Dre 4.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Snoop_Dogg_and_Dr._Dre_4.jpg/1920px-Snoop_Dogg_and_Dr._Dre_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Snoop_Dogg_and_Dr._Dre_4.jpg",
-   "license": "CC BY 2.0",
-   "artist": "David Hwang",
-   "credit": "photo: David Hwang · CC BY 2.0 · Wikimedia Commons",
+   "file": "File:Dr. Dre at Coachella 2012 cropped.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Dr._Dre_at_Coachella_2012_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Dr._Dre",
+   "license": "CC BY-SA 2.0",
+   "artist": "Jason Persse",
+   "credit": "photo: Jason Persse · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "Dr. Dre",
-   "via": "commons_search",
-   "orig_width": 3456,
-   "orig_height": 2592
+   "via": "wikipedia_article",
+   "orig_width": 562,
+   "orig_height": 683
   }
  },
  {
@@ -968,7 +944,7 @@
    "artist": "Osmosisleverman",
    "credit": "photo: Osmosisleverman · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "Kid Capri",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 2732,
    "orig_height": 4096
   }
@@ -1002,16 +978,16 @@
   "subject": "21 Savage",
   "subject_alt": "J. Cole",
   "photo": {
-   "file": "File:21 Savage 2018.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/21_Savage_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:21 Savage 2018 2.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/21_Savage_2018_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
    "page": "https://en.wikipedia.org/wiki/21_Savage",
    "license": "CC BY 2.0",
-   "artist": "Ralph Arvesen from Round Mountain, Texas",
-   "credit": "photo: Ralph Arvesen from Round Mountain, Texas · CC BY 2.0 · Wikimedia Commons",
+   "artist": "Ralph Arvesen",
+   "credit": "photo: Ralph Arvesen · CC BY 2.0 · Wikimedia Commons",
    "subject": "21 Savage",
-   "via": "wikipedia_page_image",
-   "orig_width": 1639,
-   "orig_height": 1986
+   "via": "wikipedia_article",
+   "orig_width": 1661,
+   "orig_height": 1980
   }
  },
  {
@@ -1050,7 +1026,7 @@
    "artist": "Distributed by Epic Records, Daedalus Management, and Willia",
    "credit": "photo: Distributed by Epic Records, Daedalus Management, and Willia · Public domain · Wikimedia Commons",
    "subject": "Sly and the Family Stone",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 3261,
    "orig_height": 2329
   }
@@ -1084,16 +1060,16 @@
   "subject": "DJ Kool Herc",
   "subject_alt": "Grandmaster Flash",
   "photo": {
-   "file": "File:Kool Herc.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Kool_Herc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "file": "File:Dj Kool Herc-03.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Dj_Kool_Herc-03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
    "page": "https://en.wikipedia.org/wiki/DJ_Kool_Herc",
-   "license": "CC BY 3.0",
-   "artist": "Richard Alexander Caraballo",
-   "credit": "photo: Richard Alexander Caraballo · CC BY 3.0 · Wikimedia Commons",
+   "license": "CC BY-SA 4.0",
+   "artist": "Mika Väisänen",
+   "credit": "photo: Mika Väisänen · CC BY-SA 4.0 · Wikimedia Commons",
    "subject": "DJ Kool Herc",
-   "via": "wikipedia_page_image",
-   "orig_width": 892,
-   "orig_height": 597
+   "via": "wikipedia_article",
+   "orig_width": 804,
+   "orig_height": 1213
   }
  },
  {
@@ -1123,19 +1099,7 @@
   "cover_text": "Coast II Coast turns 32",
   "month": 6,
   "subject": "Tha Alkaholiks",
-  "subject_alt": "King T",
-  "photo": {
-   "file": "File:Promotional photograph of American hip-hop duo TNL (KING T and LUSS).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Promotional_photograph_of_American_hip-hop_duo_TNL_%28KING_T_and_LUSS%29.jpg/1920px-Promotional_photograph_of_American_hip-hop_duo_TNL_%28KING_T_and_LUSS%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Promotional_photograph_of_American_hip-hop_duo_TNL_(KING_T_and_LUSS).jpg",
-   "license": "CC BY-SA 4.0",
-   "artist": "Tarek Lussier and Justin Lussier (KING T & LUSS / TNL)",
-   "credit": "photo: Tarek Lussier and Justin Lussier (KING T & LUSS / TNL) · CC BY-SA 4.0 · Wikimedia Commons",
-   "subject": "King T",
-   "via": "commons_search",
-   "orig_width": 4528,
-   "orig_height": 3286
-  }
+  "subject_alt": "King T"
  },
  {
   "day": 29,
@@ -1166,16 +1130,16 @@
   "subject": "De La Soul",
   "subject_alt": "Steely Dan",
   "photo": {
-   "file": "File:De La Soul by foto di matti.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/De_La_Soul_by_foto_di_matti.jpg/1920px-De_La_Soul_by_foto_di_matti.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "file": "File:De La Soul at Marsatac 2008.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/De_La_Soul_at_Marsatac_2008.jpg/1920px-De_La_Soul_at_Marsatac_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/De_La_Soul",
-   "license": "CC BY-SA 3.0",
-   "artist": "Matti Hillig",
-   "credit": "photo: Matti Hillig · CC BY-SA 3.0 · Wikimedia Commons",
+   "license": "CC BY-SA 2.0",
+   "artist": "Benoît Derrier from Auxerre, France",
+   "credit": "photo: Benoît Derrier from Auxerre, France · CC BY-SA 2.0 · Wikimedia Commons",
    "subject": "De La Soul",
-   "via": "wikipedia_page_image",
-   "orig_width": 2668,
-   "orig_height": 1508
+   "via": "wikipedia_article",
+   "orig_width": 4080,
+   "orig_height": 2613
   }
  },
  {
@@ -1210,12 +1174,12 @@
   "photo": {
    "file": "File:Mountain 1970 (cropped).png",
    "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Mountain_1970_%28cropped%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://en.wikipedia.org/wiki/Mountain_(band)",
+   "page": "https://en.wikipedia.org/wiki/Mountain_%28band%29",
    "license": "Public domain",
    "artist": "Unknown authorUnknown author",
    "credit": "photo: Unknown authorUnknown author · Public domain · Wikimedia Commons",
    "subject": "Mountain (band)",
-   "via": "wikipedia_page_image",
+   "via": "wikipedia_article",
    "orig_width": 1034,
    "orig_height": 582
   }
