@@ -195,7 +195,8 @@ def read_replies(st, dry):
         return
     floor = min(st[k]["prompt_rowid"] for k in pending)
     for rowid, text in thread_messages(floor):
-        if not text or NOISE.match(text) or text.startswith("REEL DRAFT") or text.startswith("post4me"):
+        if (not text or NOISE.match(text) or text.startswith("REEL DRAFT") or text.startswith("post4me")
+                or text.startswith("[IG]") or re.match(r"^\s*(ig|scipio|sc)[:\s]", text, re.I)):   # other bridges share this thread
             continue
         if YES.match(text):
             verdict, feedback = "yes", ""
