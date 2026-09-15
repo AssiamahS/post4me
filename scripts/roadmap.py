@@ -26,9 +26,10 @@ ENTRY_SPEC = """Each entry is an object with EXACTLY these keys:
 - "series": one of the series names from the strategy (short, uppercase-able)
 - "title": internal working title, <= 8 words
 - "hook": the first spoken line AND the cover text — <= 9 words, stops the scroll, no clickbait lies
-- "voiceover": the full spoken script, 85-115 words, starts with the hook verbatim, plain conversational
-  English, short sentences, one concrete story/fact/lesson, ends with a soft CTA that fits the series.
-  No emojis, no hashtags, no stage directions, no "in this video". Numbers as digits.
+- "voiceover": the full spoken script, 45-75 words, starts with the hook verbatim, every sentence under
+  12 words, one concrete story/fact/lesson, no narrator filler ("the lesson is", "that's why", "save this"),
+  at most one short CTA that fits the series. No emojis, no hashtags, no stage directions, no "in this video".
+  Numbers as digits. Sounds like a DJ talking in the booth, not a documentary voice.
 - "caption": Instagram caption 40-90 words that adds context or a question; may use 1-2 emojis
 - "hashtags": array of 12-18 hashtags without the # sign, mixed niche + broad
 - "cover_text": 3-6 words for the cover card (can equal the hook if short)
@@ -134,6 +135,9 @@ COMPETITOR RESEARCH (for hook style and what performs)
 
 ALREADY USED TOPICS (do not repeat or paraphrase any of these)
 {prior_txt}
+
+STANDING FEEDBACK FROM SLY (every entry must obey all of it)
+{read("roadmap/FEEDBACK.md") or "- (none yet)"}
 
 TASK
 Write {DAYS} reel entries for month {n}. Day 1 is a Monday; follow the weekly cadence from the strategy so

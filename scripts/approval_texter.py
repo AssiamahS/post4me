@@ -17,6 +17,10 @@ nothing posts until an OWNER comment says yes. This script is the phone leg:
   python3 scripts/approval_texter.py --status   # pending prompts + their state
 
 Reply forms: "yes" / "no" alone = the oldest pending draft; "yes 2026-09-15" = that date.
+Anything after a "no" — or any reply that is not a yes/no at all — is FEEDBACK: the draft is
+rejected, scripts/revise_reel.py rewrites it from the feedback (claude -p), the workflow
+re-renders it and a new draft lands on the phone. Feedback is also kept in roadmap/FEEDBACK.md
+so every future script obeys it.
 Needs Full Disk Access for the python running it (chat.db) and Automation → Messages.
 """
 import argparse
@@ -34,8 +38,10 @@ ME = "sly.assiamah@icloud.com"          # my own iMessage thread = a text on my 
 CHAT_DB = os.path.expanduser("~/Library/Messages/chat.db")
 STATE_DIR = os.path.expanduser("~/.post4me")
 STATE = os.path.join(STATE_DIR, "approvals.json")
-YES = re.compile(r"^\s*(yes|y|post|ship|approve|approved|go)\b", re.I)
-NO = re.compile(r"^\s*(no|n|skip|reject|nah|kill)\b", re.I)
+YES = re.compile(r"^\s*(yes|y|post|ship|approve|approved|go)\s*(20\d\d-\d\d-\d\d)?\s*[.!]?\s*$", re.I)
+NO = re.compile(r"^\s*(no|n|skip|reject|nah|kill)\b[\s.,:!-]*(20\d\d-\d\d-\d\d)?[\s.,:!-]*(?P<fb>.*)$", re.I | re.S)
+NOISE = re.compile(r"^\s*(ok|okay|k|thanks|thx|lol|👍|👌|🔥)\s*[.!]?\s*$", re.I)
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATE = re.compile(r"(20\d\d-\d\d-\d\d)")
 
 
@@ -189,31 +195,79 @@ def read_replies(st, dry):
         return
     floor = min(st[k]["prompt_rowid"] for k in pending)
     for rowid, text in thread_messages(floor):
-        verdict = "yes" if YES.match(text) else "no" if NO.match(text) else None
-        if not verdict:
+        if not text or NOISE.match(text) or text.startswith("REEL DRAFT") or text.startswith("post4me"):
             continue
+        if YES.match(text):
+            verdict, feedback = "yes", ""
+        elif NO.match(text):
+            verdict, feedback = "no", NO.match(text).group("fb").strip()
+        else:
+            verdict, feedback = "no", text.strip()   # a plain sentence = "not this, do it like X"
         m = DATE.search(text)
         targets = [k for k in pending if st[k]["date"] == m.group(1)] if m else pending[:1]
         for k in targets:
             if rowid <= st[k]["prompt_rowid"] or st[k]["decision"]:
                 continue
-            log(f"reply {verdict!r} (msg {rowid}) → issue #{k} {st[k]['date']}")
+            log(f"reply {verdict!r} (msg {rowid}) → issue #{k} {st[k]['date']}" + (f" feedback: {feedback[:80]}" if feedback else ""))
             if dry:
                 continue
-            sh("gh", "issue", "comment", k, "-R", REPO, "--body", verdict)
+            sh("gh", "issue", "comment", k, "-R", REPO, "--body", verdict + (f"\n\nfeedback: {feedback}" if feedback else ""))
             st[k]["decision"] = verdict
             st[k]["decided_rowid"] = rowid
+            st[k]["feedback"] = feedback or None
+            st[k]["revise"] = "pending" if feedback else None
             save_state(st)
-            imessage(text=f"{'Posting' if verdict == 'yes' else 'Skipping'} {st[k]['date']}. "
-                          f"{'I will text the link when Instagram confirms.' if verdict == 'yes' else ''}".strip())
+            if verdict == "yes":
+                imessage(text=f"Posting {st[k]['date']}. I will text the link when Instagram confirms.")
+            elif feedback:
+                imessage(text=f"Got it. Rewriting {st[k]['date']} with: \"{feedback[:200]}\". New draft here in ~5 min.")
+            else:
+                imessage(text=f"Skipping {st[k]['date']}.")
         pending = [k for k in pending if st[k]["decision"] is None]
         if not pending:
             break
 
 
+def revise_pending(st, dry):
+    """After the workflow closed the rejected issue, rewrite the entry from the feedback and
+    re-dispatch the render; the new reel-draft issue then arrives like any other prompt."""
+    for k, v in st.items():
+        if v.get("revise") != "pending":
+            continue
+        try:
+            state = json.loads(sh("gh", "issue", "view", k, "-R", REPO, "--json", "state"))["state"]
+        except subprocess.CalledProcessError:
+            continue
+        if state != "CLOSED":
+            continue  # post-approved.yml has not archived it yet; try again next pass
+        log(f"revising {v['date']} from feedback: {v['feedback'][:80]}")
+        if dry:
+            continue
+        try:
+            subprocess.run(["git", "pull", "-q", "--rebase", "origin", "main"], cwd=ROOT, check=True,
+                           capture_output=True, text=True)
+            out = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "revise_reel.py"),
+                                  f"queue/reels/{v['date']}.json", v["feedback"]],
+                                 cwd=ROOT, capture_output=True, text=True, timeout=900)
+            if out.returncode != 0:
+                raise RuntimeError(out.stderr[-400:])
+            info = json.loads(out.stdout.strip().splitlines()[-1])
+        except Exception as ex:
+            log(f"  revise failed: {ex}")
+            v["revise"] = "failed"
+            save_state(st)
+            imessage(text=f"Rewrite of {v['date']} failed ({str(ex)[:120]}). Fix it from the Mac.")
+            continue
+        v["revise"] = "done"
+        v["outcome"] = v.get("outcome") or "revised"
+        save_state(st)
+        imessage(text=f"Rewrote {v['date']}: {info.get('what_changed') or info.get('hook')} "
+                      f"({info.get('words')} words). Rendering now, new draft follows.")
+
+
 def report_outcomes(st, dry):
     for k, v in st.items():
-        if v.get("decision") and not v.get("outcome"):
+        if v.get("decision") and not v.get("outcome") and not v.get("feedback"):
             outcome, link = issue_outcome(k)
             if not outcome:
                 continue
@@ -242,6 +296,7 @@ def main():
         sys.exit(f"gh failed: {ex.stderr[-300:]}")
     prompt_new(issues, st, a.dry_run)
     read_replies(st, a.dry_run)
+    revise_pending(st, a.dry_run)
     report_outcomes(st, a.dry_run)
 
 
