@@ -17,6 +17,12 @@ nothing posts until an OWNER comment says yes. This script is the phone leg:
   python3 scripts/approval_texter.py --status   # pending prompts + their state
 
 Reply forms: "yes" / "no" alone = the oldest pending draft; "yes 2026-09-15" = that date.
+There is no deadline: a draft you never answer just stays pending (and keeps showing up in
+--status) — the next day's draft is a separate prompt. Only your own typed replies count; the
+texter's own sends and attachment-only messages are ignored (a cover.jpg it sent itself was once
+read as a NO).
+Drafts rendered on the Mac (sample_daily.py) carry a "local" block: YES publishes from here via
+publish_reel.py, no GitHub issue involved; the preview mp4 was already in the thread.
 Anything after a "no" — or any reply that is not a yes/no at all — is FEEDBACK: the draft is
 rejected, scripts/revise_reel.py rewrites it from the feedback (claude -p), the workflow
 re-renders it and a new draft lands on the phone. Feedback is also kept in roadmap/FEEDBACK.md
@@ -109,9 +115,11 @@ def thread_messages(after_rowid):
         """SELECT m.ROWID, m.text, m.attributedBody FROM message m
            JOIN chat_message_join j ON j.message_id = m.ROWID
            JOIN chat c ON c.ROWID = j.chat_id
-           WHERE c.chat_identifier = ? AND m.ROWID > ? ORDER BY m.ROWID""", (ME, after_rowid)).fetchall()
+           WHERE c.chat_identifier = ? AND m.ROWID > ? AND m.is_from_me = 0 ORDER BY m.ROWID""",
+        (ME, after_rowid)).fetchall()
     db.close()
-    return [(r[0], (r[1] or _decode_body(r[2])).strip()) for r in rows]
+    # attachment-only messages decode to U+FFFC (object replacement) — not a reply
+    return [(r[0], t) for r in rows for t in [(r[1] or _decode_body(r[2])).replace("\ufffc", "").strip()] if t]
 
 
 def last_rowid():
@@ -212,6 +220,13 @@ def read_replies(st, dry):
             log(f"reply {verdict!r} (msg {rowid}) → issue #{k} {st[k]['date']}" + (f" feedback: {feedback[:80]}" if feedback else ""))
             if dry:
                 continue
+            if st[k].get("local"):
+                st[k]["decision"] = verdict
+                st[k]["decided_rowid"] = rowid
+                st[k]["feedback"] = feedback or None
+                save_state(st)
+                decide_local(k, st[k], verdict, feedback)
+                continue
             sh("gh", "issue", "comment", k, "-R", REPO, "--body", verdict + (f"\n\nfeedback: {feedback}" if feedback else ""))
             st[k]["decision"] = verdict
             st[k]["decided_rowid"] = rowid
@@ -229,11 +244,59 @@ def read_replies(st, dry):
             break
 
 
+def decide_local(key, v, verdict, feedback):
+    """A draft rendered on this Mac (scripts/sample_daily.py): publish through Composio right here,
+    or mark it skipped and keep the feedback."""
+    entry, mp4 = v["local"]["entry"], v["local"]["mp4"]
+    if verdict != "yes":
+        e = json.load(open(entry))
+        e["skipped"] = True
+        if feedback:
+            e["feedback"] = feedback
+            with open(os.path.join(ROOT, "roadmap", "FEEDBACK.md"), "a") as fh:
+                fh.write(f"\n- {time.strftime('%Y-%m-%d')} — (sample reel {v['date']}) {feedback}\n")
+        json.dump(e, open(entry, "w"), indent=1, ensure_ascii=False)
+        v["outcome"] = "skipped"
+        save_state_key(key, v)
+        imessage(text=f"Skipping {v['date']}." + (f" Noted: \"{feedback[:160]}\"" if feedback else ""))
+        return
+    imessage(text=f"Posting {v['date']}. I will text the link when Instagram confirms.")
+    env = {**os.environ, "PATH": os.path.expanduser("~/.local/bin") + ":" + os.environ.get("PATH", ""), "CI": "false"}
+    out = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "publish_reel.py"), mp4, entry],
+                         cwd=ROOT, capture_output=True, text=True, timeout=1200, env=env)
+    if out.returncode != 0:
+        log(f"  publish failed: {out.stderr[-400:]}")
+        v["outcome"] = "failed"
+        save_state_key(key, v)
+        imessage(text=f"Instagram did not confirm {v['date']}: {out.stderr.strip()[-200:]}")
+        return
+    res = json.loads(out.stdout.strip().splitlines()[-1])
+    e = json.load(open(entry))
+    e["posted"] = {"media_id": res["media_id"], "permalink": res.get("permalink"), "local": mp4}
+    json.dump(e, open(entry, "w"), indent=1, ensure_ascii=False)
+    # mirror into queue/reels so insights.py / yt_shorts.py see it like any other reel
+    q = os.path.join(ROOT, "queue", "reels", f"{v['date']}.json")
+    json.dump({**e, "date": v["date"], "hook": e.get("hook", "").replace("\n", " ")}, open(q, "w"), indent=1, ensure_ascii=False)
+    subprocess.run(["git", "add", entry, q], cwd=ROOT, capture_output=True)
+    subprocess.run(["git", "commit", "-q", "-m", f"reel: {v['date']} live (sample reel)"], cwd=ROOT, capture_output=True)
+    subprocess.run(["git", "push", "-q", "--no-verify"], cwd=ROOT, capture_output=True)
+    v["outcome"] = "posted"
+    v["permalink"] = res.get("permalink")
+    save_state_key(key, v)
+    imessage(text=f"Reel {v['date']} posted.\n{res.get('permalink') or res['media_id']}")
+
+
+def save_state_key(key, v):
+    st = load_state()
+    st[key] = v
+    save_state(st)
+
+
 def revise_pending(st, dry):
     """After the workflow closed the rejected issue, rewrite the entry from the feedback and
     re-dispatch the render; the new reel-draft issue then arrives like any other prompt."""
     for k, v in st.items():
-        if v.get("revise") != "pending":
+        if v.get("revise") != "pending" or v.get("local"):
             continue
         try:
             state = json.loads(sh("gh", "issue", "view", k, "-R", REPO, "--json", "state"))["state"]
@@ -268,6 +331,8 @@ def revise_pending(st, dry):
 
 def report_outcomes(st, dry):
     for k, v in st.items():
+        if v.get("local"):
+            continue
         if v.get("decision") and not v.get("outcome") and not v.get("feedback"):
             outcome, link = issue_outcome(k)
             if not outcome:

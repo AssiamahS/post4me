@@ -1,0 +1,82 @@
+{
+ "series": "SAMPLE SOURCE",
+ "title": "Kendrick's samples",
+ "hook": "KENDRICK'S\n(SAMPLES)",
+ "hook_voice": "The records under Kendrick.",
+ "pairs": [
+  {
+   "orig": {
+    "artist": "Beach House",
+    "song": "Silver Soul",
+    "year": 2010,
+    "prod": "Beach House & Chris Coady",
+    "start": 8.0
+   },
+   "flip": {
+    "artist": "Kendrick Lamar",
+    "song": "Money Trees",
+    "year": 2012,
+    "prod": "DJ Dahi",
+    "start": 0.0
+   },
+   "technique": "*REVERSE*",
+   "locate": false
+  },
+  {
+   "orig": {
+    "artist": "The Isley Brothers",
+    "song": "That Lady",
+    "year": 1973,
+    "prod": "The Isley Brothers"
+   },
+   "flip": {
+    "artist": "Kendrick Lamar",
+    "song": "i",
+    "year": 2014,
+    "prod": "Rahki"
+   },
+   "technique": "*LOOP*"
+  },
+  {
+   "orig": {
+    "artist": "Janet Jackson",
+    "song": "Any Time, Any Place",
+    "year": 1993,
+    "prod": "Jimmy Jam & Terry Lewis"
+   },
+   "flip": {
+    "artist": "Kendrick Lamar",
+    "song": "Poetic Justice",
+    "year": 2012,
+    "prod": "Scoop DeVille"
+   },
+   "technique": "*CHOP*\n[+ SPEED]"
+  },
+  {
+   "orig": {
+    "artist": "Boom Clap Bachelors",
+    "song": "Tiden Flyver",
+    "year": 2010,
+    "prod": "Robin Hannibal"
+   },
+   "flip": {
+    "artist": "Kendrick Lamar",
+    "song": "Bitch, Don't Kill My Vibe",
+    "year": 2012,
+    "prod": "Sounwave"
+   },
+   "technique": "*LOOP*"
+  }
+ ],
+ "caption": "Beach House into Money Trees, The Isley Brothers into i, Janet Jackson into Poetic Justice, Boom Clap Bachelors into Don't Kill My Vibe. Kendrick, source first.",
+ "hashtags": [
+  "kendricklamar",
+  "tde",
+  "sample",
+  "hiphophistory",
+  "goodkidmaadcity",
+  "producer",
+  "crate digging"
+ ],
+ "slug": "kendrick-samples"
+}

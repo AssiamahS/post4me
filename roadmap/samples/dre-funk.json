@@ -1,0 +1,79 @@
+{
+ "series": "SAMPLE SOURCE",
+ "title": "Dr. Dre's funk",
+ "hook": "DR. DRE'S FUNK\n(SAMPLES)",
+ "hook_voice": "The funk records Dre built the West Coast on.",
+ "pairs": [
+  {
+   "orig": {
+    "artist": "Leon Haywood",
+    "song": "I Want'a Do Something Freaky to You",
+    "year": 1975,
+    "prod": "Leon Haywood"
+   },
+   "flip": {
+    "artist": "Dr. Dre",
+    "song": "Nuthin' but a G Thang",
+    "year": 1992,
+    "prod": "Dr. Dre"
+   },
+   "technique": "*LOOP*"
+  },
+  {
+   "orig": {
+    "artist": "Joe Cocker",
+    "song": "Woman to Woman",
+    "year": 1972,
+    "prod": "Denny Cordell & Nigel Thomas"
+   },
+   "flip": {
+    "artist": "2Pac",
+    "song": "California Love",
+    "year": 1995,
+    "prod": "Dr. Dre"
+   },
+   "technique": "*CHOP*"
+  },
+  {
+   "orig": {
+    "artist": "Parliament",
+    "song": "Mothership Connection (Star Child)",
+    "year": 1975,
+    "prod": "George Clinton"
+   },
+   "flip": {
+    "artist": "Dr. Dre",
+    "song": "Let Me Ride",
+    "year": 1992,
+    "prod": "Dr. Dre"
+   },
+   "technique": "*LOOP*"
+  },
+  {
+   "orig": {
+    "artist": "David McCallum",
+    "song": "The Edge",
+    "year": 1967,
+    "prod": "David Axelrod"
+   },
+   "flip": {
+    "artist": "Dr. Dre",
+    "song": "The Next Episode",
+    "year": 1999,
+    "prod": "Dr. Dre & Mel-Man"
+   },
+   "technique": "*LOOP*"
+  }
+ ],
+ "caption": "Leon Haywood into G Thang, Joe Cocker into California Love, Parliament into Let Me Ride, David McCallum into The Next Episode. G-funk, source first.",
+ "hashtags": [
+  "drdre",
+  "gfunk",
+  "deathrow",
+  "sample",
+  "hiphophistory",
+  "westcoast",
+  "pfunk"
+ ],
+ "slug": "dre-funk"
+}

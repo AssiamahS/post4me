@@ -1,0 +1,79 @@
+{
+ "series": "SAMPLE SOURCE",
+ "title": "Biggie's 80s R&B",
+ "hook": "BIGGIE'S 80s R&B\n(SAMPLES)",
+ "hook_voice": "Bad Boy built Biggie's biggest records on eighties R&B.",
+ "pairs": [
+  {
+   "orig": {
+    "artist": "Mtume",
+    "song": "Juicy Fruit",
+    "year": 1983,
+    "prod": "James Mtume"
+   },
+   "flip": {
+    "artist": "The Notorious B.I.G.",
+    "song": "Juicy",
+    "year": 1994,
+    "prod": "Poke & Puff Daddy"
+   },
+   "technique": "*LOOP*"
+  },
+  {
+   "orig": {
+    "artist": "Diana Ross",
+    "song": "I'm Coming Out",
+    "year": 1980,
+    "prod": "Nile Rodgers & Bernard Edwards"
+   },
+   "flip": {
+    "artist": "The Notorious B.I.G.",
+    "song": "Mo Money Mo Problems",
+    "year": 1997,
+    "prod": "Stevie J & Puff Daddy"
+   },
+   "technique": "*LOOP*"
+  },
+  {
+   "orig": {
+    "artist": "Herb Alpert",
+    "song": "Rise",
+    "year": 1979,
+    "prod": "Herb Alpert & Randy Badazz"
+   },
+   "flip": {
+    "artist": "The Notorious B.I.G.",
+    "song": "Hypnotize",
+    "year": 1997,
+    "prod": "D-Dot & Ron Lawrence"
+   },
+   "technique": "*LOOP*"
+  },
+  {
+   "orig": {
+    "artist": "Isaac Hayes",
+    "song": "Walk On By",
+    "year": 1969,
+    "prod": "Isaac Hayes"
+   },
+   "flip": {
+    "artist": "The Notorious B.I.G.",
+    "song": "Warning",
+    "year": 1994,
+    "prod": "Easy Mo Bee"
+   },
+   "technique": "*LOOP*"
+  }
+ ],
+ "caption": "Mtume into Juicy, Diana Ross into Mo Money Mo Problems, Herb Alpert into Hypnotize, Isaac Hayes into Warning. The records under Biggie.",
+ "hashtags": [
+  "biggie",
+  "notoriousbig",
+  "badboy",
+  "sample",
+  "hiphophistory",
+  "90shiphop",
+  "rnb"
+ ],
+ "slug": "biggie-80s-rnb"
+}

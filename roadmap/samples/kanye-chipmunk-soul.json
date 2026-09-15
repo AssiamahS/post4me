@@ -1,0 +1,79 @@
+{
+ "series": "SAMPLE SOURCE",
+ "title": "Kanye's chipmunk soul",
+ "hook": "KANYE'S CHIPMUNK\n(SOUL SAMPLES)",
+ "hook_voice": "How Kanye sped up soul records and made a sound.",
+ "pairs": [
+  {
+   "orig": {
+    "artist": "Chaka Khan",
+    "song": "Through the Fire",
+    "year": 1984,
+    "prod": "David Foster"
+   },
+   "flip": {
+    "artist": "Kanye West",
+    "song": "Through the Wire",
+    "year": 2003,
+    "prod": "Kanye West"
+   },
+   "technique": "*PITCHED UP*\n[+ SPEED]"
+  },
+  {
+   "orig": {
+    "artist": "Curtis Mayfield",
+    "song": "Move On Up",
+    "year": 1970,
+    "prod": "Curtis Mayfield"
+   },
+   "flip": {
+    "artist": "Kanye West",
+    "song": "Touch the Sky",
+    "year": 2005,
+    "prod": "Just Blaze"
+   },
+   "technique": "*SPED UP*"
+  },
+  {
+   "orig": {
+    "artist": "Otis Redding",
+    "song": "Try a Little Tenderness",
+    "year": 1966,
+    "prod": "Isaac Hayes & Jim Stewart"
+   },
+   "flip": {
+    "artist": "Jay-Z & Kanye West",
+    "song": "Otis",
+    "year": 2011,
+    "prod": "Kanye West"
+   },
+   "technique": "*CHOP*"
+  },
+  {
+   "orig": {
+    "artist": "Daft Punk",
+    "song": "Harder, Better, Faster, Stronger",
+    "year": 2001,
+    "prod": "Daft Punk"
+   },
+   "flip": {
+    "artist": "Kanye West",
+    "song": "Stronger",
+    "year": 2007,
+    "prod": "Kanye West"
+   },
+   "technique": "*LOOP*"
+  }
+ ],
+ "caption": "Chaka Khan into Through the Wire, Curtis Mayfield into Touch the Sky, Otis Redding into Otis, Daft Punk into Stronger. The chipmunk soul era, record first, flip second.",
+ "hashtags": [
+  "kanye",
+  "chipmunksoul",
+  "sample",
+  "hiphophistory",
+  "collegedropout",
+  "soul",
+  "producer"
+ ],
+ "slug": "kanye-chipmunk-soul"
+}

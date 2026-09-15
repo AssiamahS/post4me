@@ -1,0 +1,79 @@
+{
+ "series": "SAMPLE SOURCE",
+ "title": "Illmatic samples",
+ "hook": "ILLMATIC\n(THE SAMPLES)",
+ "hook_voice": "Every record under Illmatic.",
+ "pairs": [
+  {
+   "orig": {
+    "artist": "Ahmad Jamal",
+    "song": "I Love Music",
+    "year": 1970,
+    "prod": "Ahmad Jamal"
+   },
+   "flip": {
+    "artist": "Nas",
+    "song": "The World Is Yours",
+    "year": 1994,
+    "prod": "Pete Rock"
+   },
+   "technique": "*LOOP*"
+  },
+  {
+   "orig": {
+    "artist": "Michael Jackson",
+    "song": "Human Nature",
+    "year": 1982,
+    "prod": "Quincy Jones"
+   },
+   "flip": {
+    "artist": "Nas",
+    "song": "It Ain't Hard to Tell",
+    "year": 1994,
+    "prod": "Large Professor"
+   },
+   "technique": "*CHOP*"
+  },
+  {
+   "orig": {
+    "artist": "Donald Byrd",
+    "song": "Flight Time",
+    "year": 1973,
+    "prod": "Larry Mizell"
+   },
+   "flip": {
+    "artist": "Nas",
+    "song": "N.Y. State of Mind",
+    "year": 1994,
+    "prod": "DJ Premier"
+   },
+   "technique": "*LOOP*"
+  },
+  {
+   "orig": {
+    "artist": "Reuben Wilson",
+    "song": "We're in Love",
+    "year": 1971,
+    "prod": "Reuben Wilson"
+   },
+   "flip": {
+    "artist": "Nas",
+    "song": "Memory Lane (Sittin' in da Park)",
+    "year": 1994,
+    "prod": "DJ Premier"
+   },
+   "technique": "*LOOP*"
+  }
+ ],
+ "caption": "Ahmad Jamal into The World Is Yours, Michael Jackson into It Ain't Hard to Tell, Donald Byrd into N.Y. State of Mind, Reuben Wilson into Memory Lane. Illmatic, record by record.",
+ "hashtags": [
+  "nas",
+  "illmatic",
+  "sample",
+  "hiphophistory",
+  "90shiphop",
+  "djpremier",
+  "peterock"
+ ],
+ "slug": "nas-illmatic"
+}

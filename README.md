@@ -73,6 +73,36 @@ voice, competitors or niche in `config.json` → `reels`.
 ~/.yt-dlp-venv/bin/python scripts/render_reel.py build/stub.json build/stub
 ```
 
+## the sample lane (since 2026-09-16) — the RealjN format
+
+The static-card reels got 75–179 views each. The one C.R.E.A.M. render that reached 700 was the
+same file posted from the phone app 7 hours before the API copy (127). Two lessons: the format
+needs the *music*, and the phone app out-distributes the Graph API. So:
+
+`scripts/sample_reel.py` renders a `roadmap/samples/<slug>.json` the way @RealjN does it: a hook
+card, then for each pair the sampled record's own music video (center-cropped 9:16, music playing,
+`ARTIST (YEAR) / "SONG" / PROD. X` burned in, a `*LOOP* / *CHOP* / *PITCHED UP*` label halfway)
+cut straight into the rap record at the bar where the loop first drops. 4 pairs ≈ 47s.
+
+- Media comes from YouTube through yt-dlp — only the artist's channel, `- Topic` auto-channels,
+  VEVO or "official" uploads are accepted; the pick is pinned into the entry (`yt`) and named in
+  the preview text so a wrong record can be vetoed before it posts.
+- Where the sample sits is measured, not guessed: a 12-pitch-class chroma fingerprint of the flip
+  (taken 42s in) is slid across the original across ±3 semitones and ±10% tempo; the found passage
+  is then slid across the flip to catch the first bar it plays. Reversed samples: pin `start` on
+  both sides and set `"locate": false`. The match score is in the preview (`LOW MATCH` under 0.45).
+- Runs on the Mac (`com.sly.post4me-samples`, 11:30): YouTube blocks GitHub runners. `sample_daily.py`
+  renders the next unposted entry, iMessages **cover + the mp4 itself + the pair notes**, and your
+  YES publishes from the Mac via `publish_reel.py` (no GitHub issue). NO with words = feedback saved
+  to `roadmap/FEEDBACK.md`. A draft never expires; an unanswered one just stays pending.
+- Cache: `~/.post4me/media` (audio + the few seconds of video each clip needs).
+
+```
+~/.yt-dlp-venv/bin/python scripts/sample_reel.py roadmap/samples/wu-tang-soul.json build/samples/wu-tang-soul
+python3 scripts/sample_daily.py --render-only --slug nas-illmatic     # files only, no text
+python3 scripts/sample_daily.py                                        # what launchd runs
+```
+
 ## the story pipeline
 
 - `quotes/quotes.json` — the content bank; `state/used.json` tracks what's been drafted.
