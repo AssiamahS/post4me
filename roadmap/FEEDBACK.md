@@ -9,3 +9,5 @@ strike it through if it stops applying.
   Cut the words. Say the one thing, then stop. No "the lesson for producers is", no "that's why",
   no "save this and go hear". Facts, names, years, what changed. Talk like a DJ in the booth, not
   a documentary narrator.
+
+- 2026-09-17 — (liked sample reel 2026-09-17) it looks amazing (v4)
