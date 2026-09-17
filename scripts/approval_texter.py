@@ -293,12 +293,7 @@ def read_replies(st, dry):
             st[k]["feedback"] = feedback or None
             st[k]["revise"] = "pending" if feedback else None
             save_state(st)
-            if verdict == "yes":
-                imessage(text=f"Posting {st[k]['date']}. I will text the link when Instagram confirms.")
-            elif feedback:
-                imessage(text=f"Got it. Rewriting {st[k]['date']} with: \"{feedback[:200]}\". New draft here in ~5 min.")
-            else:
-                imessage(text=f"Skipping {st[k]['date']}.")
+            pass  # no confirmation texts — the user wants the thread to be videos and yes/no only
         pending = [k for k in pending if st[k]["decision"] is None]
         if not pending:
             break
@@ -319,9 +314,7 @@ def decide_local(key, v, verdict, feedback):
         json.dump(e, open(entry, "w"), indent=1, ensure_ascii=False)
         v["outcome"] = "skipped"
         save_state_key(key, v)
-        imessage(text=f"Skipping {v['date']}." + (f" Noted: \"{feedback[:160]}\"" if feedback else ""))
         return
-    imessage(text=f"Posting {v['date']}. I will text the link when Instagram confirms.")
     env = {**os.environ, "PATH": os.path.expanduser("~/.local/bin") + ":" + os.environ.get("PATH", ""), "CI": "false"}
     out = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "publish_reel.py"), mp4, entry],
                          cwd=ROOT, capture_output=True, text=True, timeout=1200, env=env)
@@ -344,7 +337,7 @@ def decide_local(key, v, verdict, feedback):
     v["outcome"] = "posted"
     v["permalink"] = res.get("permalink")
     save_state_key(key, v)
-    imessage(text=f"Reel {v['date']} posted.\n{res.get('permalink') or res['media_id']}")
+    log(f"  posted {res.get('permalink') or res['media_id']}")   # no link text: the user asked for silence
 
 
 def save_state_key(key, v):
@@ -401,7 +394,6 @@ def report_outcomes(st, dry):
             log(f"issue #{k} {v['date']}: {outcome} {link or ''}")
             if dry:
                 continue
-            imessage(text=f"Reel {v['date']} {outcome}." + (f"\n{link}" if link else ""))
             v["outcome"] = outcome
             v["permalink"] = link
             save_state(st)

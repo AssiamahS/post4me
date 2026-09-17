@@ -76,8 +76,7 @@ def main():
     text = f"{e['title']} · {a.date} · {meta['duration']:.0f}s — reply YES or NO on the video"
     print("\n".join(meta["notes"]))
     before = at.last_rowid()
-    at.imessage(file=meta["reel"])
-    at.imessage(text=text)
+    at.imessage(file=meta["reel"])   # the video is the whole prompt; reply YES/NO on it
     time.sleep(3)   # Messages writes the rows a beat after the AppleScript returns
     st = at.load_state()
     st[key] = {"date": a.date, "hook": e["title"], "prompt_rowid": before, "sent": time.time(),
