@@ -257,6 +257,11 @@ def read_replies(st, dry):
         threaded = [k for k in pending if thread and (st[k].get("prompt_guid") == thread or thread in st[k].get("prompt_guids", []))]
         if threaded:
             targets = threaded   # a Reply on the draft's own message names it, no date needed
+        elif thread:
+            # a Reply on some other bubble (an already-posted reel, a plain video) is NOT a verdict
+            # on whatever happens to be pending
+            log(f"reply {text[:20]!r} threaded to a non-pending bubble — ignored")
+            continue
         elif not m and len(pending) > 1:
             # two drafts waiting and no date: never guess which one (a bare "yes" once posted the wrong reel)
             log(f"ambiguous reply {text[:40]!r} with {len(pending)} pending")

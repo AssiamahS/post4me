@@ -72,11 +72,10 @@ def main():
     e["drafted"] = a.date
     e["date"] = a.date
     json.dump(e, open(path, "w"), indent=1, ensure_ascii=False)
-    text = (f"SAMPLE REEL {a.date} · {e['title']} ({meta['duration']}s)\n"
-            + "\n".join(meta["notes"])
-            + "\nLong-press this message → Reply: YES to post, NO to skip, or YES/NO + your notes.")
+    # the phone gets the video and one line — the match notes live in render.json / the log
+    text = f"{e['title']} · {a.date} · {meta['duration']:.0f}s — reply YES or NO on the video"
+    print("\n".join(meta["notes"]))
     before = at.last_rowid()
-    at.imessage(file=meta["cover"])
     at.imessage(file=meta["reel"])
     at.imessage(text=text)
     time.sleep(3)   # Messages writes the rows a beat after the AppleScript returns
