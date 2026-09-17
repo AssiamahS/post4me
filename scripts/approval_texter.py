@@ -153,6 +153,15 @@ def sent_guid(after_rowid, prefix):
     return None
 
 
+def sent_guids(after_rowid):
+    """Every bubble I sent since after_rowid (cover, video, text) — a Reply on ANY of them names
+    the draft. The 09-17 YES was a reply on the video bubble and got bounced as ambiguous."""
+    db = sqlite3.connect(f"file:{CHAT_DB}?mode=ro", uri=True)
+    rows = db.execute("SELECT guid FROM message WHERE ROWID > ? AND is_from_me = 1 ORDER BY ROWID", (after_rowid,)).fetchall()
+    db.close()
+    return [r[0] for r in rows]
+
+
 def last_rowid():
     db = sqlite3.connect(f"file:{CHAT_DB}?mode=ro", uri=True)
     r = db.execute("SELECT COALESCE(MAX(ROWID), 0) FROM message").fetchone()[0]
@@ -224,7 +233,8 @@ def prompt_new(issues, st, dry):
         imessage(file=cover)
         imessage(text=text)
         st[key] = {"date": info["date"], "hook": info["hook"], "prompt_rowid": before, "sent": time.time(),
-                   "prompt_guid": sent_guid(before, "REEL DRAFT"), "decision": None, "outcome": None}
+                   "prompt_guid": sent_guid(before, "REEL DRAFT"), "prompt_guids": sent_guids(before),
+                   "decision": None, "outcome": None}
         save_state(st)
 
 
@@ -244,7 +254,7 @@ def read_replies(st, dry):
         else:
             verdict, feedback = "no", text.strip()   # a plain sentence = "not this, do it like X"
         m = DATE.search(text)
-        threaded = [k for k in pending if thread and st[k].get("prompt_guid") == thread]
+        threaded = [k for k in pending if thread and (st[k].get("prompt_guid") == thread or thread in st[k].get("prompt_guids", []))]
         if threaded:
             targets = threaded   # a Reply on the draft's own message names it, no date needed
         elif not m and len(pending) > 1:

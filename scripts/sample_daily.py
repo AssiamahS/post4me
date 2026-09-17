@@ -79,9 +79,11 @@ def main():
     at.imessage(file=meta["cover"])
     at.imessage(file=meta["reel"])
     at.imessage(text=text)
+    time.sleep(3)   # Messages writes the rows a beat after the AppleScript returns
     st = at.load_state()
     st[key] = {"date": a.date, "hook": e["title"], "prompt_rowid": before, "sent": time.time(),
-               "prompt_guid": at.sent_guid(before, "SAMPLE REEL"), "decision": None, "outcome": None,
+               "prompt_guid": at.sent_guid(before, "SAMPLE REEL"), "prompt_guids": at.sent_guids(before),
+               "decision": None, "outcome": None,
                "local": {"entry": path, "mp4": meta["reel"], "slug": e["slug"]}}
     at.save_state(st)
     print(f"texted {key}: {e['title']}")
