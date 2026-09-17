@@ -238,6 +238,51 @@ def prompt_new(issues, st, dry):
         save_state(st)
 
 
+REVIEW_QUEUE = os.path.expanduser("~/.claude/review-queue")
+
+
+def read_page_verdicts(st, dry):
+    """Second channel: the phone review page (lgtm, http://100.97.199.99:8794 on the tailnet).
+    iMessage drops self-sent videos on the phone at random; the page never does. A draft that was
+    also submitted there carries `lgtm_id`; its verdict file is the decision."""
+    for k, v in st.items():
+        lid = v.get("lgtm_id")
+        if not lid or v.get("decision"):
+            continue
+        p = os.path.join(REVIEW_QUEUE, f"{lid}.json")
+        try:
+            it = json.load(open(p))
+        except (OSError, ValueError):
+            continue
+        if not it.get("verdict"):
+            continue
+        verdict, feedback = it["verdict"], (it.get("critique") or "").strip()
+        log(f"page verdict {verdict!r} → {k} {v['date']}" + (f" feedback: {feedback[:80]}" if feedback else ""))
+        if dry:
+            continue
+        v["decision"], v["feedback"] = verdict, feedback or None
+        save_state(st)
+        if v.get("local"):
+            decide_local(k, v, verdict, feedback)
+        else:
+            sh("gh", "issue", "comment", k, "-R", REPO, "--body", verdict + (f"\n\nfeedback: {feedback}" if feedback else ""))
+            v["revise"] = "pending" if (feedback and verdict == "no") else None
+            save_state(st)
+
+
+def submit_page(mp4, question):
+    """Copy the reel into the review queue the way the lgtm MCP does; returns the item id."""
+    import shutil, uuid
+    os.makedirs(REVIEW_QUEUE, exist_ok=True)
+    item_id = uuid.uuid4().hex[:8]
+    name = f"{item_id}{os.path.splitext(mp4)[1].lower() or '.mp4'}"
+    shutil.copyfile(mp4, os.path.join(REVIEW_QUEUE, name))
+    json.dump({"id": item_id, "image": name, "question": question, "submitted_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+               "verdict": None, "critique": "", "decided_at": None},
+              open(os.path.join(REVIEW_QUEUE, f"{item_id}.json"), "w"), indent=2)
+    return item_id
+
+
 def read_replies(st, dry):
     pending = sorted((k for k, v in st.items() if v.get("decision") is None), key=lambda k: st[k]["date"])
     if not pending:
@@ -415,6 +460,7 @@ def main():
         sys.exit(f"gh failed: {ex.stderr[-300:]}")
     prompt_new(issues, st, a.dry_run)
     read_replies(st, a.dry_run)
+    read_page_verdicts(st, a.dry_run)
     revise_pending(st, a.dry_run)
     report_outcomes(st, a.dry_run)
 

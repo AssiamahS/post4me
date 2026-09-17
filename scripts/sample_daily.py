@@ -79,7 +79,8 @@ def main():
     at.imessage(file=meta["reel"])   # the video is the whole prompt; reply YES/NO on it
     time.sleep(3)   # Messages writes the rows a beat after the AppleScript returns
     st = at.load_state()
-    st[key] = {"date": a.date, "hook": e["title"], "prompt_rowid": before, "sent": time.time(),
+    lgtm_id = at.submit_page(meta["reel"], f"{e['title']} · {a.date} — post it?")
+    st[key] = {"date": a.date, "hook": e["title"], "prompt_rowid": before, "sent": time.time(), "lgtm_id": lgtm_id,
                "prompt_guid": at.sent_guid(before, "SAMPLE REEL"), "prompt_guids": at.sent_guids(before),
                "decision": None, "outcome": None,
                "local": {"entry": path, "mp4": meta["reel"], "slug": e["slug"]}}
