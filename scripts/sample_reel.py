@@ -531,7 +531,7 @@ async def tts(text, voice, rate, out_mp3):
 def hook_segment(card, voice_mp3, out):
     dur = float(sh("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", voice_mp3)) + 0.45
     dur = max(2.2, dur)
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-loop", "1", "-t", f"{dur:.3f}", "-i", card, "-i", voice_mp3,
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-framerate", str(FPS), "-loop", "1", "-t", f"{dur:.3f}", "-i", card, "-i", voice_mp3,
                     "-filter_complex",
                     f"[0:v]scale={W * 1.08:.0f}:{H * 1.08:.0f},zoompan=z='1+0.06*on/{dur * FPS:.0f}':d=1:x='iw/2-(iw/zoom/2)'"
                     f":y='ih/2-(ih/zoom/2)':s={W}x{H}:fps={FPS},format=yuv420p[v];"
@@ -555,8 +555,58 @@ def concat(parts, out):
     return out
 
 
+def probe_duration(path):
+    return float(sh("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path))
+
+
+def video_duration(path):
+    return float(sh("ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=duration",
+                    "-of", "csv=p=0", path).strip().splitlines()[0])
+
+
+def assemble(blocks, out, transition=0.35, fade=2.5):
+    """blocks = [[seg, seg...], ...]: hard cuts INSIDE a block (original → flip is the reveal),
+    a short dissolve BETWEEN blocks (hook → pair, pair → pair), and the whole thing ends on a
+    fade of picture and sound together. Pure ffmpeg: concat + xfade + acrossfade + fade/afade."""
+    inputs, fc, n = [], [], 0
+    block_labels, block_durs = [], []
+    for b in blocks:
+        idx = []
+        for seg in b:
+            inputs += ["-i", seg]
+            idx.append(n)
+            n += 1
+        durs = [video_duration(seg) for seg in b]
+        b_i = len(block_labels)
+        D = sum(durs)
+        # xfade insists every input share one timebase, and its offsets assume the audio is exactly
+        # as long as the picture: normalise each block to AVTB @ FPS and trim both streams to D
+        if len(idx) == 1:
+            fc.append(f"[{idx[0]}:v]setpts=PTS-STARTPTS,settb=AVTB,fps={FPS},trim=duration={D:.3f}[bv{b_i}];"
+                      f"[{idx[0]}:a]asetpts=PTS-STARTPTS,apad,atrim=duration={D:.3f}[ba{b_i}]")
+        else:
+            fc.append("".join(f"[{i}:v][{i}:a]" for i in idx) + f"concat=n={len(idx)}:v=1:a=1[cv{b_i}][ca{b_i}];"
+                      f"[cv{b_i}]settb=AVTB,fps={FPS},trim=duration={D:.3f}[bv{b_i}];[ca{b_i}]apad,atrim=duration={D:.3f}[ba{b_i}]")
+        block_labels.append(len(block_labels))
+        block_durs.append(sum(durs))
+    cur_v, cur_a, elapsed = "bv0", "ba0", block_durs[0]
+    for i in range(1, len(block_labels)):
+        off = elapsed - transition
+        fc.append(f"[{cur_v}][bv{i}]xfade=transition=fade:duration={transition}:offset={off:.3f}[xv{i}]")
+        fc.append(f"[{cur_a}][ba{i}]acrossfade=d={transition}:c1=tri:c2=tri[xa{i}]")
+        cur_v, cur_a = f"xv{i}", f"xa{i}"
+        elapsed = off + block_durs[i]
+    total = elapsed
+    fc.append(f"[{cur_v}]fade=t=out:st={total - fade:.3f}:d={fade:.3f},format=yuv420p[vout]")
+    fc.append(f"[{cur_a}]afade=t=out:st={total - fade:.3f}:d={fade:.3f}[aout]")
+    subprocess.run(["ffmpeg", "-y", "-v", "error", *inputs, "-filter_complex", ";".join(fc),
+                    "-map", "[vout]", "-map", "[aout]", *VCODEC, *ACODEC, "-movflags", "+faststart", out], check=True)
+    return out
+
+
 def strip(video, dur, out, n=6):
     frames = []
+    dur = min(dur, video_duration(video)) - 0.2
     for i in range(n):
         t = dur * (i + 0.5) / n
         frames.append(frame_at(video, t, out + f".{i}.jpg"))
@@ -716,29 +766,38 @@ def main():
                     rc.get("rate", "+6%"), voice))
     seg, d = hook_segment(card, voice, os.path.join(a.out, "seg00.mp4"))
     parts.append(seg)
+    blocks = [[seg]]
     timeline.append({"t": 0, "dur": round(d, 2), "what": "hook"})
     t += d
 
+    sm = rc.get("samples", {})
+    outro = float(sm.get("outro_s", 4.0))        # the last flip runs on so the fade has room
     k = 1
-    for pair in e["pairs"]:
+    for pi, pair in enumerate(e["pairs"]):
+        block = []
         for side in ("orig", "flip"):
-            s = pair[side]
+            s = dict(pair[side])
+            if side == "flip" and pi == len(e["pairs"]) - 1:
+                s["dur"] = s["dur"] + outro
             src, base = fetch_video_section(s["yt"], s["start"], s["dur"])
             ov = [(credit_overlay(s, os.path.join(a.out, f"cred{k:02d}.png")), None), (hand, None)]
             if side == "orig" and pair.get("technique"):
                 ov.append((technique_overlay(pair["technique"], os.path.join(a.out, f"tech{k:02d}.png")), round(s["dur"] * 0.5, 2)))
             if rc.get("samples", {}).get("captions", True):
                 words = transcribe(src, s["start"] - base, s["dur"], a.out, f"seg{k:02d}")
-                s["lyrics"] = " ".join(w[2] for w in words)
+                pair[side]["lyrics"] = " ".join(w[2] for w in words)
                 ov += lyric_overlays(words, a.out, f"seg{k:02d}")
             seg = clip_segment(src, s["start"] - base, s["dur"], ov, os.path.join(a.out, f"seg{k:02d}.mp4"),
                                push=(s.get("yt_channel") or "").lower().endswith("topic"))
             parts.append(seg)
+            block.append(seg)
             timeline.append({"t": round(t, 2), "dur": s["dur"], "what": f"{side}: {s['artist']} – {s['song']} @{s['start']}s"})
             t += s["dur"]
             k += 1
+        blocks.append(block)
 
-    reel = concat(parts, os.path.join(a.out, "reel.mp4"))
+    reel = assemble(blocks, os.path.join(a.out, "reel.mp4"), transition=float(sm.get("transition_s", 0.35)),
+                    fade=float(sm.get("fade_s", 2.5)))
     total = float(sh("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", reel))
     strip(reel, total, os.path.join(a.out, "strip.jpg"))
     # disk is tight on this Mac: keep only the deliverables, drop segments/overlays/wavs and
