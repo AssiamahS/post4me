@@ -255,14 +255,16 @@ def verify(co, cf, o_start, f_hint, win=6.0):
     results.sort(key=lambda r: -r[0])
     best = results[0]
     second = next((r[0] for r in results if abs(r[2] - best[2]) >= 0.04 or abs(r[1] - best[1]) >= 2), 0.0)
-    # flip position: the earliest strong peak near the documented hint (or anywhere if no hint)
-    pk = best[3]
-    cands = sorted(x[0] * FRAME_S for x in pk)
-    if f_hint is not None:
-        near = [c for c in cands if c >= f_hint - 2.0]
-        flip_at = min(near) if near else cands[0]
-    else:
-        flip_at = cands[0]
+    # flip position: the FIRST place the loop clearly plays. Music videos often add an intro
+    # skit, so the documented album time is only a floor; re-scan the full curve at the winning
+    # tempo/pitch and take the earliest peak within 80% of the strongest.
+    sc = corr_all(cf, np.roll(stretch(q0, best[2]), best[1], axis=1))
+    pk = peaks(sc, k=16, sep_frames=30)
+    top = max(x[1] for x in pk)
+    cands = sorted(x[0] * FRAME_S for x in pk if x[1] >= 0.8 * top)
+    floor = (f_hint - 2.0) if f_hint is not None else 0.0
+    near = [c for c in cands if c >= floor]
+    flip_at = near[0] if near else cands[0]
     return best[0], best[1], best[2], round(flip_at, 2), second
 
 
@@ -416,6 +418,63 @@ def handle_overlay(handle, path):
     return path
 
 
+# ---------- lyric captions ----------
+
+WHISPER = os.path.expanduser("~/.local/bin/mlx_whisper")
+
+
+def transcribe(clip, offset, dur, out_dir, tag):
+    """Words sung/rapped inside the clip window → [(start, end, word)] relative to the clip.
+    Local mlx_whisper (small). Segments that look like no-speech or garbage are dropped."""
+    if not os.path.exists(WHISPER):
+        return []
+    wav = os.path.join(out_dir, f"{tag}.wav")
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-ss", f"{offset:.3f}", "-t", f"{dur:.3f}", "-i", clip,
+                    "-vn", "-ac", "1", "-ar", "16000", wav], check=True)
+    r = subprocess.run([WHISPER, wav, "--model", "mlx-community/whisper-small-mlx", "--language", "en",
+                        "--output-format", "json", "--output-dir", out_dir, "--output-name", tag,
+                        "--word-timestamps", "True"], capture_output=True, text=True, timeout=300)
+    js = os.path.join(out_dir, f"{tag}.json")
+    if r.returncode != 0 or not os.path.exists(js):
+        log(f"  whisper failed on {tag}: {r.stderr[-200:]}")
+        return []
+    words = []
+    for seg in json.load(open(js)).get("segments", []):
+        if seg.get("no_speech_prob", 0) > 0.6 or seg.get("avg_logprob", 0) < -1.1:
+            continue
+        for w in seg.get("words", []):
+            t = w["word"].strip()
+            if t and 0 <= w["start"] < dur:
+                words.append((float(w["start"]), float(min(dur, w["end"])), t))
+    return words
+
+
+def lyric_overlays(words, out_dir, tag, per=4):
+    """[(png, enable_expr)] — a caption card per 3-4 word beat, shown for exactly its window."""
+    out, i = [], 0
+    while i < len(words):
+        chunk = words[i:i + per]
+        i += per
+        a, b = chunk[0][0], max(chunk[-1][1], chunk[0][0] + 0.6)
+        img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        d = ImageDraw.Draw(img)
+        text = " ".join(w[2] for w in chunk).upper()
+        f = fit_font(d, text, W - 160, 64, 44)
+        lines = [text]
+        if d.textlength(text, font=f) > W - 160:
+            half = len(chunk) // 2
+            lines = [" ".join(w[2] for w in chunk[:half]).upper(), " ".join(w[2] for w in chunk[half:]).upper()]
+        y = 1330 - (len(lines) - 1) * 40
+        for ln in lines:
+            w = d.textlength(ln, font=f)
+            outlined(d, ((W - w) / 2, y), ln, f, YELLOW, stroke=8)
+            y += f.size + 12
+        p = os.path.join(out_dir, f"{tag}_lyr{len(out):02d}.png")
+        img.save(p)
+        out.append((p, f"between(t,{a:.2f},{b:.2f})"))
+    return out
+
+
 # ---------- segments ----------
 
 VCODEC = ["-c:v", "libx264", "-preset", "medium", "-crf", "20", "-r", str(FPS), "-pix_fmt", "yuv420p"]
@@ -435,7 +494,12 @@ def clip_segment(src, offset, dur, overlays, out, push=False):
         fc = f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS}[v0]"
     cur = "v0"
     for i, (_, enable) in enumerate(overlays, start=1):
-        en = f":enable='gte(t,{enable})'" if enable else ""
+        if enable is None:
+            en = ""
+        elif isinstance(enable, str):
+            en = f":enable='{enable}'"
+        else:
+            en = f":enable='gte(t,{enable})'"
         fc += f";[{cur}][{i}:v]overlay=0:0:format=auto{en}[v{i}]"
         cur = f"v{i}"
     fc += (f";[0:a]aresample=44100,afade=t=in:d=0.12,afade=t=out:st={dur - 0.18:.3f}:d=0.18,"
@@ -643,6 +707,10 @@ def main():
             ov = [(credit_overlay(s, os.path.join(a.out, f"cred{k:02d}.png")), None), (hand, None)]
             if side == "orig" and pair.get("technique"):
                 ov.append((technique_overlay(pair["technique"], os.path.join(a.out, f"tech{k:02d}.png")), round(s["dur"] * 0.5, 2)))
+            if rc.get("samples", {}).get("captions", True):
+                words = transcribe(src, s["start"] - base, s["dur"], a.out, f"seg{k:02d}")
+                s["lyrics"] = " ".join(w[2] for w in words)
+                ov += lyric_overlays(words, a.out, f"seg{k:02d}")
             seg = clip_segment(src, s["start"] - base, s["dur"], ov, os.path.join(a.out, f"seg{k:02d}.mp4"),
                                push=(s.get("yt_channel") or "").lower().endswith("topic"))
             parts.append(seg)
@@ -653,6 +721,24 @@ def main():
     reel = concat(parts, os.path.join(a.out, "reel.mp4"))
     total = float(sh("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", reel))
     strip(reel, total, os.path.join(a.out, "strip.jpg"))
+    # disk is tight on this Mac: keep only the deliverables, drop segments/overlays/wavs and
+    # any cached video section older than a day (audio stays, it is small and re-used by verify)
+    for f in os.listdir(a.out):
+        if f.startswith(("seg", "cred", "tech", "handle", "hook_frame")) or f.endswith((".wav", ".json.txt")):
+            if f not in ("seg00.mp4",) and not f.endswith("render.json"):
+                try:
+                    os.remove(os.path.join(a.out, f))
+                except OSError:
+                    pass
+    try:
+        os.remove(os.path.join(a.out, "seg00.mp4"))
+    except OSError:
+        pass
+    now = __import__("time").time()
+    for f in os.listdir(CACHE) if os.path.isdir(CACHE) else []:
+        q = os.path.join(CACHE, f)
+        if f.endswith(".mp4") and now - os.path.getmtime(q) > 86400:
+            os.remove(q)
     meta = {"reel": reel, "cover": card, "strip": os.path.join(a.out, "strip.jpg"), "duration": round(total, 2),
             "pairs": len(e["pairs"]), "timeline": timeline, "notes": notes}
     json.dump(meta, open(os.path.join(a.out, "render.json"), "w"), indent=1, ensure_ascii=False)

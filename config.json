@@ -23,7 +23,8 @@
       "min_confidence": 0.5,
       "auto": 0.85,
       "clip_min_s": 4.0,
-      "clip_max_s": 9.0
+      "clip_max_s": 9.0,
+      "captions": true
     }
   }
 }
