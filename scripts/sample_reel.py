@@ -64,6 +64,18 @@ def sh(*cmd, **kw):
     return subprocess.run(cmd, check=True, capture_output=True, text=True, **kw).stdout
 
 
+def ytdl(*args):
+    """yt-dlp with one retry — YouTube throws transient 403/fragment errors on section fetches."""
+    for attempt in (1, 2):
+        try:
+            return sh(*YTDLP, *args)
+        except subprocess.CalledProcessError as ex:
+            if attempt == 2:
+                raise SystemExit(f"yt-dlp failed twice: {ex.stderr[-400:]}")
+            log(f"  yt-dlp retry: {ex.stderr.strip().splitlines()[-1][:120] if ex.stderr.strip() else 'no stderr'}")
+            __import__("time").sleep(4)
+
+
 # ---------- youtube ----------
 
 YTDLP = ["yt-dlp", "--ignore-config", "--no-warnings", "--remote-components", "ejs:github",
@@ -109,7 +121,7 @@ def fetch_audio(yt):
     dst = os.path.join(CACHE, f"{yt}.m4a")
     if not os.path.exists(dst):
         os.makedirs(CACHE, exist_ok=True)
-        sh(*YTDLP, "-f", "ba[ext=m4a]/ba", "-o", dst, f"https://www.youtube.com/watch?v={yt}")
+        ytdl("-f", "ba[ext=m4a]/ba", "-o", dst, f"https://www.youtube.com/watch?v={yt}")
     return dst
 
 
@@ -118,9 +130,9 @@ def fetch_video_section(yt, start, dur):
     dst = os.path.join(CACHE, f"{yt}_{a:.1f}_{b:.1f}.mp4")
     if not os.path.exists(dst):
         os.makedirs(CACHE, exist_ok=True)
-        sh(*YTDLP, "-f", "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b",
-           "--download-sections", f"*{a:.2f}-{b:.2f}", "--force-keyframes-at-cuts",
-           "--merge-output-format", "mp4", "-o", dst, f"https://www.youtube.com/watch?v={yt}")
+        ytdl("-f", "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b",
+             "--download-sections", f"*{a:.2f}-{b:.2f}", "--force-keyframes-at-cuts",
+             "--merge-output-format", "mp4", "-o", dst, f"https://www.youtube.com/watch?v={yt}")
     return dst, a
 
 

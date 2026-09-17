@@ -9,12 +9,12 @@
     "artist": "Mtume",
     "song": "Juicy Fruit",
     "year": 1983,
-    "prod": "James Mtume",
+    "prod": "Larkin Arnold",
     "yt": "EYE5QEBOMA8",
     "yt_title": "Mtume - Juicy Fruit",
     "yt_channel": "MtumeVEVO",
-    "start": 13.37,
-    "dur": 5.5
+    "start": 123.66,
+    "dur": 6.0
    },
    "flip": {
     "artist": "The Notorious B.I.G.",
@@ -24,18 +24,41 @@
     "yt": "_JZom_gVfuw",
     "yt_title": "The Notorious B.I.G. - Juicy (Official Video) [4K]",
     "yt_channel": "The Notorious B.I.G.",
-    "start": 75.98,
-    "dur": 5.5
+    "start": 76.33,
+    "dur": 6.0
    },
-   "technique": "*LOOP*",
+   "technique": "*LOOPED*",
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/134/The-Notorious-B.I.G.-Total-Juicy-Mtume-Juicy-Fruit-(Fruity-Instrumental-Mix)/",
+    "orig_at": 123,
+    "flip_at": 0,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Direct Sample of Multiple Elements",
+    "orig_artist": "Mtume",
+    "orig_year": 1983,
+    "flip_producers": [
+     "Poke",
+     "Puff Daddy"
+    ],
+    "orig_producers": [
+     "Larkin Arnold"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/Juicy_%28The_Notorious_B.I.G._song%29",
+     "quote": "\"Juicy\" contains a sample of Mtume's 1983 song, \"Juicy Fruit\", though it is directly sampled from the song's \"Fruity Instrumental\" mix, and has an alternative chorus sung by Bad Boy Records cohorts, the girl group Total and label founder Co"
+    }
+   },
+   "confidence": 0.93,
    "match": {
-    "orig_start": 13.37,
-    "flip_start": 75.98,
-    "score": 0.532,
+    "how": "verified",
+    "score": 0.472,
+    "second": 0.414,
     "semitones": 0,
     "tempo": 1.0,
-    "orig_len": 236.0,
-    "flip_len": 252.6
+    "reversed_gain": -0.129,
+    "phrase_s": 6.0
    }
   },
   {
@@ -43,12 +66,12 @@
     "artist": "Diana Ross",
     "song": "I'm Coming Out",
     "year": 1980,
-    "prod": "Nile Rodgers & Bernard Edwards",
+    "prod": "Bernard Edwards & Nile Rodgers",
     "yt": "-xMvP6PsD9A",
     "yt_title": "I'm Coming Out (Original CHIC Mix)",
     "yt_channel": "Diana Ross",
-    "start": 0.0,
-    "dur": 5.5
+    "start": 222.27,
+    "dur": 9.0
    },
    "flip": {
     "artist": "The Notorious B.I.G.",
@@ -58,18 +81,42 @@
     "yt": "gUhRKVIjJtw",
     "yt_title": "The Notorious B.I.G. - Mo Money Mo Problems (Official Music Video) [4K]",
     "yt_channel": "The Notorious B.I.G.",
-    "start": 37.62,
-    "dur": 5.5
+    "start": 86.92,
+    "dur": 9.0
    },
-   "technique": "*LOOP*",
+   "technique": "*LOOPED*",
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/18/The-Notorious-B.I.G.-Puff-Daddy-Mase-Kelly-Price-Mo-Money-Mo-Problems-Diana-Ross-I%27m-Coming-Out/",
+    "orig_at": 222,
+    "flip_at": 40,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Direct Sample of Multiple Elements",
+    "orig_artist": "Diana Ross",
+    "orig_year": 1980,
+    "flip_producers": [
+     "Stevie J",
+     "Puff Daddy"
+    ],
+    "orig_producers": [
+     "Bernard Edwards",
+     "Nile Rodgers"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/Mo_Money_Mo_Problems",
+     "quote": "\"Mo Money Mo Problems\" contains a sample and an interpolation of \"I'm Coming Out\" by Diana Ross, hence Bernard Edwards and Nile Rodgers are credited as songwriters; the sampled portions are heard in the production, while the hook is interpo"
+    }
+   },
+   "confidence": 0.84,
    "match": {
-    "orig_start": 0.0,
-    "flip_start": 37.62,
-    "score": 0.405,
-    "semitones": 1,
-    "tempo": 0.95,
-    "orig_len": 360.0,
-    "flip_len": 347.7
+    "how": "verified",
+    "score": 0.317,
+    "second": 0.299,
+    "semitones": 0,
+    "tempo": 1.11,
+    "reversed_gain": -0.012,
+    "phrase_s": 9.0
    }
   },
   {
@@ -77,33 +124,59 @@
     "artist": "Herb Alpert",
     "song": "Rise",
     "year": 1979,
-    "prod": "Herb Alpert & Randy Badazz",
+    "prod": "Herb Alpert & Randy Badazz & Andy Armer",
     "yt": "q7O3eYJptTc",
     "yt_title": "Herb Alpert - Rise",
     "yt_channel": "Herb Alpert",
-    "start": 115.91,
-    "dur": 5.5
+    "start": 203.12,
+    "dur": 9.0
    },
    "flip": {
     "artist": "The Notorious B.I.G.",
     "song": "Hypnotize",
     "year": 1997,
-    "prod": "D-Dot & Ron Lawrence",
+    "prod": "Deric \"D-Dot\" Angelettie & Ron \"Amen-Ra\" Lawrence & Puff Daddy",
     "yt": "glEiPXAYE-U",
     "yt_title": "The Notorious B.I.G. - Hypnotize (Official Music Video) [4K]",
     "yt_channel": "The Notorious B.I.G.",
-    "start": 19.88,
-    "dur": 5.5
+    "start": 51.21,
+    "dur": 9.0
    },
-   "technique": "*LOOP*",
+   "technique": "*LOOPED*",
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/374/The-Notorious-B.I.G.-Hypnotize-Herb-Alpert-Rise/",
+    "orig_at": 203,
+    "flip_at": 0,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Direct Sample of Multiple Elements",
+    "orig_artist": "Herb Alpert",
+    "orig_year": 1979,
+    "flip_producers": [
+     "Deric \"D-Dot\" Angelettie",
+     "Ron \"Amen-Ra\" Lawrence",
+     "Puff Daddy"
+    ],
+    "orig_producers": [
+     "Herb Alpert",
+     "Randy Badazz",
+     "Andy Armer"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/Hypnotize_%28The_Notorious_B.I.G._song%29",
+     "quote": "Sean Combs produced \"Hypnotize\" and sampled Herb Alpert's 1979 hit \"Rise\" which was written by Andy Armer and Herb's nephew, Randy \"Badazz\" Alpert."
+    }
+   },
+   "confidence": 0.87,
    "match": {
-    "orig_start": 115.91,
-    "flip_start": 19.88,
-    "score": 0.448,
-    "semitones": -2,
-    "tempo": 1.1,
-    "orig_len": 298.1,
-    "flip_len": 338.9
+    "how": "verified",
+    "score": 0.366,
+    "second": 0.352,
+    "semitones": 0,
+    "tempo": 1.12,
+    "reversed_gain": -0.0,
+    "phrase_s": 9.0
    }
   },
   {
@@ -111,12 +184,12 @@
     "artist": "Isaac Hayes",
     "song": "Walk On By",
     "year": 1969,
-    "prod": "Isaac Hayes",
+    "prod": "Al Bell & Marvell Thomas & Allen Jones",
     "yt": "t0M58TvgrXw",
     "yt_title": "Isaac Hayes - Walk on By [OFFICIAL VIDEO] (Dead Presidents OST)",
     "yt_channel": "The Funk Lovin' Criminal",
-    "start": 32.69,
-    "dur": 5.5
+    "start": 55.47,
+    "dur": 4.0
    },
    "flip": {
     "artist": "The Notorious B.I.G.",
@@ -126,18 +199,38 @@
     "yt": "TbSm6HsX_ek",
     "yt_title": "The Notorious B.I.G. - Warning (Official Music Video)",
     "yt_channel": "The Notorious B.I.G.",
-    "start": 167.83,
-    "dur": 5.5
+    "start": 169.35,
+    "dur": 4.0
    },
-   "technique": "*LOOP*",
+   "technique": "*LOOPED*",
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/65/The-Notorious-B.I.G.-Warning-Isaac-Hayes-Walk-on-By/",
+    "orig_at": 56,
+    "flip_at": 6,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Direct Sample of Multiple Elements",
+    "orig_artist": "Isaac Hayes",
+    "orig_year": 1969,
+    "flip_producers": [
+     "Easy Mo Bee"
+    ],
+    "orig_producers": [
+     "Al Bell",
+     "Marvell Thomas",
+     "Allen Jones"
+    ]
+   },
+   "confidence": 0.71,
    "match": {
-    "orig_start": 32.69,
-    "flip_start": 167.83,
-    "score": 0.609,
-    "semitones": 3,
-    "tempo": 1.05,
-    "orig_len": 275.2,
-    "flip_len": 211.2
+    "how": "verified",
+    "score": 0.432,
+    "second": 0.425,
+    "semitones": 4,
+    "tempo": 1.12,
+    "reversed_gain": 0.015,
+    "phrase_s": 4.0
    }
   }
  ],
