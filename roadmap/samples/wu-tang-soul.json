@@ -27,16 +27,39 @@
     "dur": 5.5,
     "start": 134.49
    },
-   "technique": "*LOOP*",
+   "technique": "*LOOPED*",
    "match": {
-    "orig_start": 0.0,
-    "flip_start": 134.49,
-    "score": 0.423,
-    "semitones": -1,
-    "tempo": 1.05,
-    "orig_len": 157.5,
-    "flip_len": 242.3
-   }
+    "how": "intro moment",
+    "score": 0.427,
+    "second": 0.427,
+    "semitones": 1,
+    "tempo": 1.06,
+    "reversed_gain": -0.062,
+    "phrase_s": 4.5
+   },
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/1158/Wu-Tang-Clan-C.R.E.A.M.-The-Charmels-As-Long-as-I%27ve-Got-You/",
+    "orig_at": 0,
+    "flip_at": 22,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Direct Sample of Multiple Elements",
+    "orig_artist": "The Charmels",
+    "orig_year": 1967,
+    "flip_producers": [
+     "RZA"
+    ],
+    "orig_producers": [
+     "Isaac Hayes",
+     "David Porter"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/C.R.E.A.M.",
+     "quote": "The song was produced by the group's de facto leader RZA, and contains a sample of the Charmels' 1967 song \"As Long As I've Got You\" throughout."
+    }
+   },
+   "confidence": 0.91
   },
   {
    "orig": {
@@ -61,16 +84,34 @@
     "dur": 5.5,
     "start": 216.6
    },
-   "technique": "*CHOP*",
+   "technique": "*LOOPED*",
    "match": {
-    "orig_start": 66.87,
-    "flip_start": 216.6,
+    "how": "audio moment",
     "score": 0.588,
+    "second": 0.574,
     "semitones": 0,
     "tempo": 1.0,
-    "orig_len": 285.6,
-    "flip_len": 298.7
-   }
+    "reversed_gain": -0.14,
+    "phrase_s": 6.0
+   },
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/1144/Wu-Tang-Clan-Can-It-Be-All-So-Simple-Gladys-Knight-%26-the-Pips-The-Way-We-Were-Try-to-Remember/",
+    "orig_at": 69,
+    "flip_at": 44,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Direct Sample of Multiple Elements",
+    "orig_artist": "Gladys Knight & the Pips",
+    "orig_year": 1974,
+    "flip_producers": [
+     "RZA"
+    ],
+    "orig_producers": [
+     "Ralph Moss"
+    ]
+   },
+   "confidence": 0.9
   },
   {
    "orig": {
@@ -95,23 +136,39 @@
     "dur": 5.5,
     "start": 88.79
    },
-   "technique": "*LOOP*",
+   "technique": "*LOOPED*",
    "match": {
-    "orig_start": 41.61,
-    "flip_start": 88.79,
-    "score": 0.468,
+    "how": "documented moment",
+    "score": 0.43,
+    "second": 0.411,
     "semitones": 0,
-    "tempo": 1.05,
-    "orig_len": 179.4,
-    "flip_len": 230.6
-   }
+    "tempo": 0.98,
+    "reversed_gain": -0.26,
+    "phrase_s": 6.0
+   },
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/1164/Wu-Tang-Clan-Tearz-Wendy-Rene-After-Laughter-(Comes-Tears)/",
+    "orig_at": 15,
+    "flip_at": 226,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Direct Sample of Multiple Elements",
+    "orig_artist": "Wendy Rene",
+    "orig_year": 1964,
+    "flip_producers": [
+     "RZA"
+    ],
+    "orig_producers": null
+   },
+   "confidence": 0.81
   },
   {
    "orig": {
     "artist": "Earl Klugh",
     "song": "A Time for Love",
-    "year": 1977,
-    "prod": "Dave Grusin & Larry Rosen",
+    "year": 1980,
+    "prod": "Earl Klugh & Roland Wilson",
     "yt": "rGmczZUqoFc",
     "yt_title": "A Time For Love",
     "yt_channel": "Earl Klugh - Topic",
@@ -129,16 +186,35 @@
     "dur": 5.5,
     "start": 10.5
    },
-   "technique": "*LOOP*",
+   "technique": "*THE RIFF*",
    "match": {
-    "orig_start": 87.68,
-    "flip_start": 10.5,
-    "score": 0.456,
-    "semitones": -2,
-    "tempo": 1.1,
-    "orig_len": 170.7,
-    "flip_len": 252.4
-   }
+    "how": "documented moment",
+    "score": 0.428,
+    "second": 0.416,
+    "semitones": 3,
+    "tempo": 1.11,
+    "reversed_gain": 0.016,
+    "phrase_s": 6.0
+   },
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/18822/Raekwon-Ghostface-Killah-Cappadonna-Method-Man-Ice-Cream-Earl-Klugh-A-Time-for-Love/",
+    "orig_at": 35,
+    "flip_at": 0,
+    "throughout": true,
+    "element": "Hook / Riff",
+    "type": "Direct Sample of Hook / Riff",
+    "orig_artist": "Earl Klugh",
+    "orig_year": 1980,
+    "flip_producers": [
+     "RZA"
+    ],
+    "orig_producers": [
+     "Earl Klugh",
+     "Roland Wilson"
+    ]
+   },
+   "confidence": 0.81
   }
  ],
  "caption": "Every time RZA flipped a soul record. The Charmels into C.R.E.A.M., Gladys Knight into Can It Be All So Simple, Wendy Rene into Tearz, Earl Klugh into Ice Cream. Sample on the left, Wu on the right.",
