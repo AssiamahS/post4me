@@ -35,7 +35,11 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import sample_sources  # noqa: E402
+
 CACHE = os.path.expanduser("~/.post4me/media")
+MIN_CLIP, MAX_CLIP = 4.0, 9.0   # a clip is as long as the phrase, inside these
 W, H = 1080, 1920
 FPS = 30
 SR = 22050
@@ -203,6 +207,121 @@ def locate(orig_audio, flip_audio, win=6.0, step=1.5):
     f_start = min(x[0] for x in pk) * FRAME_S
     return {"orig_start": round(o_start, 2), "flip_start": round(f_start, 2), "score": round(v, 3),
             "semitones": shift, "tempo": k, "orig_len": round(len(yo) / SR, 1), "flip_len": round(len(yf) / SR, 1)}
+
+
+# ---------- musical timing ----------
+
+def onsets(y):
+    """Spectral-flux onset strength per 512-sample hop (~23ms) → (envelope, hop_seconds)."""
+    n_fft, hop = 1024, 512
+    win = np.hanning(n_fft)
+    n = max(1, (len(y) - n_fft) // hop + 1)
+    prev = None
+    env = np.zeros(n, dtype=np.float32)
+    for i in range(n):
+        mag = np.abs(np.fft.rfft(y[i * hop:i * hop + n_fft] * win))
+        if prev is not None:
+            env[i] = np.maximum(mag - prev, 0).sum()
+        prev = mag
+    if env.max() > 0:
+        env /= env.max()
+    return env, hop / SR
+
+
+def snap(y, t, before=0.6, after=1.2):
+    """Move t to the strongest onset in [t-before, t+after] so the cut lands on a hit."""
+    env, hs = onsets(y[max(0, int((t - before) * SR)):int((t + after) * SR)])
+    if len(env) < 3:
+        return t
+    return round(max(0.0, t - before) + int(np.argmax(env)) * hs, 2)
+
+
+def verify(co, cf, o_start, f_hint, win=6.0):
+    """Score a documented relationship: the original's window at o_start against the flip, with
+    the finest tempo/pitch grid. Returns (score, shift, tempo, flip_at, second_best) — second_best
+    is the best score at a clearly different (tempo, shift), the margin is the evidence."""
+    q0 = co[int(o_start / FRAME_S):int((o_start + win) / FRAME_S)]
+    if len(q0) < 10:
+        return 0.0, 0, 1.0, f_hint, 0.0
+    results = []
+    for k in np.arange(0.90, 1.125, 0.01):
+        qs = stretch(q0, float(k))
+        if len(qs) >= len(cf):
+            continue
+        for shift in range(-4, 5):
+            sc = corr_all(cf, np.roll(qs, shift, axis=1))
+            pk = peaks(sc)
+            results.append((float(np.mean([x[1] for x in pk])), shift, round(float(k), 2), pk))
+    results.sort(key=lambda r: -r[0])
+    best = results[0]
+    second = next((r[0] for r in results if abs(r[2] - best[2]) >= 0.04 or abs(r[1] - best[1]) >= 2), 0.0)
+    # flip position: the earliest strong peak near the documented hint (or anywhere if no hint)
+    pk = best[3]
+    cands = sorted(x[0] * FRAME_S for x in pk)
+    if f_hint is not None:
+        near = [c for c in cands if c >= f_hint - 2.0]
+        flip_at = min(near) if near else cands[0]
+    else:
+        flip_at = cands[0]
+    return best[0], best[1], best[2], round(flip_at, 2), second
+
+
+def phrase_length(co, cf, o_start, f_start, first_score):
+    """Extend from the sample's start in 1.5s steps while the original keeps matching the flip at
+    the same offset; the phrase ends where it stops. Clamped to MIN_CLIP..MAX_CLIP."""
+    step = 1.5
+    length = step
+    region = cf[int(f_start / FRAME_S):int((f_start + MAX_CLIP + 2) / FRAME_S)]
+    while length + step <= MAX_CLIP:
+        a = int((o_start + length) / FRAME_S)
+        chunk = co[a:a + int(step / FRAME_S)]
+        if len(chunk) < 5 or len(chunk) >= len(region):
+            break
+        sc = corr_all(region, chunk)
+        if sc.max() < 0.7 * max(first_score, 0.3):
+            break
+        length += step
+    return float(min(MAX_CLIP, max(MIN_CLIP, length)))
+
+
+def technique_label(doc, score, shift, tempo, second, reversed_gain):
+    """Only say what the evidence supports. Documented element type first, then measured
+    speed/pitch when the best (tempo, pitch) combination beats the runner-up by a margin."""
+    lines = []
+    typ = ((doc or {}).get("type") or "").lower()
+    el = ((doc or {}).get("element") or "").lower()
+    if "interpolation" in typ or "replay" in typ:
+        lines.append("*REPLAYED*")
+    elif "vocal" in el:
+        lines.append("*VOCAL SAMPLE*")
+    elif "drum" in el:
+        lines.append("*DRUM BREAK*")
+    elif "hook" in el or "riff" in el:
+        lines.append("*THE RIFF*")
+    elif "bass" in el:
+        lines.append("*BASSLINE*")
+    if reversed_gain >= 0.05:
+        lines.append("*REVERSED*")
+    evidence = score >= 0.45 and (score - second) >= 0.03
+    if evidence:
+        if abs(tempo - 1.0) >= 0.03:
+            lines.append(f"[{'+' if tempo > 1 else ''}{round((tempo - 1) * 100)}% SPEED]")
+        expected = round(12 * math.log2(tempo))
+        extra = shift - expected
+        if abs(extra) >= 1:
+            lines.append(f"[PITCHED {'UP' if extra > 0 else 'DOWN'} {abs(extra)} SEMITONE{'S' if abs(extra) > 1 else ''}]")
+    if not lines:
+        lines.append("*LOOPED*" if (doc or {}).get("throughout") else "*SAMPLED*")
+    return "\n".join(lines[:3])
+
+
+def reversed_gain(co, cf, o_start, win=6.0):
+    q = co[int(o_start / FRAME_S):int((o_start + win) / FRAME_S)]
+    if len(q) < 10 or len(q) >= len(cf):
+        return 0.0
+    fwd = float(np.mean([x[1] for x in peaks(corr_all(cf, q))]))
+    rev = float(np.mean([x[1] for x in peaks(corr_all(cf, q[::-1]))]))
+    return rev - fwd
 
 
 # ---------- drawing ----------
@@ -375,32 +494,99 @@ def strip(video, dur, out, n=6):
 
 # ---------- main ----------
 
-def prepare_pair(pair, i):
-    """Pin yt ids, find the sample, decide the two clip starts. Mutates pair, returns a note."""
+def prepare_pair(pair, i, cfg):
+    """Discovery → verification → timing for one pair. Mutates pair, returns (notes, confidence)."""
     notes = []
-    for side in ("orig", "flip"):
-        s = pair[side]
-        if not s.get("yt"):
-            r = resolve_yt(s["artist"], s["song"])
+    o, f = pair["orig"], pair["flip"]
+    for side, sd in (("orig", o), ("flip", f)):
+        if not sd.get("yt"):
+            r = resolve_yt(sd["artist"], sd["song"])
             if not r:
-                raise SystemExit(f"pair {i}: no official upload found for {s['artist']} – {s['song']}")
-            s["yt"], s["yt_title"], s["yt_channel"] = r
+                raise SystemExit(f"pair {i}: no official upload found for {sd['artist']} – {sd['song']}")
+            sd["yt"], sd["yt_title"], sd["yt_channel"] = r
             notes.append(f"  {side}: picked {r[1]!r} ({r[2]})")
-    if pair.get("locate", True) and (pair["orig"].get("start") is None or pair["flip"].get("start") is None):
-        loc = locate(fetch_audio(pair["orig"]["yt"]), fetch_audio(pair["flip"]["yt"]))
-        pair["match"] = loc
-        if pair["orig"].get("start") is None:
-            pair["orig"]["start"] = loc["orig_start"]
-        if pair["flip"].get("start") is None:
-            pair["flip"]["start"] = loc["flip_start"]
-        notes.append(f"  match score {loc['score']:.2f} (shift {loc['semitones']:+d} st, tempo x{loc['tempo']}) "
-                     f"→ original @{loc['orig_start']}s, flip @{loc['flip_start']}s")
-        if loc["score"] < 0.40:
-            notes.append("  LOW MATCH — listen before you say yes")
-    for side in ("orig", "flip"):
-        pair[side].setdefault("start", 0.0)
-        pair[side].setdefault("dur", CLIP)
-    return notes
+
+    # 1. documented relationship (WhoSampled via Dia, Wikipedia as cross-check)
+    doc = pair.get("documented")
+    if doc is None:
+        doc = sample_sources.lookup(f["artist"], f["song"], o["artist"], o["song"])
+        pair["documented"] = doc or {"source": None}
+    doc = doc if doc and doc.get("source") else None
+    if doc:
+        where = ""
+        if doc.get("orig_at") is not None:
+            where = f" (original {doc['orig_at'] // 60}:{doc['orig_at'] % 60:02d} → flip {doc.get('flip_at', 0) // 60}:{doc.get('flip_at', 0) % 60:02d})"
+        notes.append(f"  documented: {doc['source']}{' + wikipedia' if doc.get('wikipedia') else ''}{where}"
+                     + (f" · {doc['type']}" if doc.get("type") else ""))
+        if doc.get("flip_producers") and not f.get("prod_locked"):
+            f["prod"] = " & ".join(doc["flip_producers"][:3])
+        if doc.get("orig_producers") and not o.get("prod_locked"):
+            o["prod"] = " & ".join(doc["orig_producers"][:3])
+        if doc.get("orig_year"):
+            o["year"] = doc["orig_year"]
+    else:
+        notes.append("  NOT DOCUMENTED anywhere I can read — audio match only")
+
+    # 2. audio verification + localisation
+    yo, yf = decode(fetch_audio(o["yt"])), decode(fetch_audio(f["yt"]))
+    co, cf = chroma(yo), chroma(yf)
+    if pair.get("locate", True):
+        if doc and doc.get("orig_at") is not None:
+            o_start = float(doc["orig_at"])
+            score, shift, tempo, f_at, second = verify(co, cf, o_start, doc.get("flip_at"))
+            # WhoSampled times are whole seconds: let the audio nudge the start within the bar
+            best_local = (score, o_start)
+            for dt in (-1.0, -0.5, 0.5, 1.0, 1.5, 2.0):
+                sc, *_ = verify(co, cf, o_start + dt, doc.get("flip_at"))
+                if sc > best_local[0] + 0.01:
+                    best_local = (sc, o_start + dt)
+            if best_local[1] != o_start:
+                o_start = best_local[1]
+                score, shift, tempo, f_at, second = verify(co, cf, o_start, doc.get("flip_at"))
+            how = "verified"
+        else:
+            loc = locate(fetch_audio(o["yt"]), fetch_audio(f["yt"]))
+            o_start = loc["orig_start"]
+            score, shift, tempo, f_at, second = verify(co, cf, o_start, None)
+            how = "audio-only"
+        rg = reversed_gain(co, cf, o_start)
+        if o.get("start") is None:
+            o["start"] = snap(yo, o_start)
+        if f.get("start") is None:
+            f["start"] = snap(yf, f_at)
+        length = phrase_length(co, cf, o["start"], f["start"], score)
+        o.setdefault("dur", length)
+        f.setdefault("dur", length)
+        pair["match"] = {"how": how, "score": round(score, 3), "second": round(second, 3), "semitones": shift,
+                         "tempo": tempo, "reversed_gain": round(rg, 3), "phrase_s": length}
+        if not pair.get("technique_locked"):
+            pair["technique"] = technique_label(doc, score, shift, tempo, second, rg)
+        notes.append(f"  {how}: match {score:.2f} (runner-up {second:.2f}, tempo x{tempo}, {shift:+d} st) → "
+                     f"original @{o['start']}s, flip @{f['start']}s, {length:.1f}s phrase · label {pair['technique'].replace(chr(10), ' ')}")
+    for sd in (o, f):
+        sd.setdefault("start", 0.0)
+        sd.setdefault("dur", CLIP)
+        if "match" not in pair:
+            pair["match"] = {"how": "pinned", "score": 0.0}
+
+    # 3. confidence: documented + verified + phrase + source quality
+    m = pair["match"]
+    conf = 0.0
+    if doc:
+        conf += 0.45 if doc.get("source") == "whosampled" else 0.30
+        if doc.get("wikipedia"):
+            conf += 0.10
+    conf += min(0.35, m.get("score", 0.0) * 0.6)
+    if all((sd.get("yt_channel") or "").lower().endswith("topic") or norm(sd["artist"]) in norm(sd.get("yt_channel") or "")
+           or "vevo" in (sd.get("yt_channel") or "").lower() for sd in (o, f)):
+        conf += 0.10
+    if not pair.get("locate", True):
+        conf += 0.15  # hand-pinned starts
+    pair["confidence"] = round(min(1.0, conf), 2)
+    th = cfg.get("samples", {})
+    verdict = ("auto" if conf >= th.get("auto", 0.85) else "preview" if conf >= th.get("min_confidence", 0.5) else "drop")
+    notes.append(f"  confidence {pair['confidence']:.2f} → {verdict}")
+    return notes, pair["confidence"], verdict
 
 
 def main():
@@ -415,11 +601,19 @@ def main():
     os.makedirs(a.out, exist_ok=True)
     notes = []
 
+    keep = []
     for i, pair in enumerate(e["pairs"], start=1):
         log(f"pair {i}: {pair['orig']['artist']} → {pair['flip']['artist']}")
-        n = prepare_pair(pair, i)
+        n, conf, verdict = prepare_pair(pair, i, rc)
         notes += [f"{i}. {pair['orig']['song']} → {pair['flip']['song']}"] + n
         json.dump(e, open(a.entry, "w"), indent=1, ensure_ascii=False)  # pin as we go
+        if verdict == "drop":
+            notes.append("  DROPPED from this cut (below min_confidence)")
+        else:
+            keep.append(pair)
+    if len(keep) < 2:
+        sys.exit("fewer than two pairs cleared the confidence gate — nothing worth posting")
+    e["pairs"] = keep
 
     hand = handle_overlay(handle, os.path.join(a.out, "handle.png"))
     parts, timeline, t = [], [], 0.0

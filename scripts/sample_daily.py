@@ -74,14 +74,14 @@ def main():
     json.dump(e, open(path, "w"), indent=1, ensure_ascii=False)
     text = (f"SAMPLE REEL {a.date} · {e['title']} ({meta['duration']}s)\n"
             + "\n".join(meta["notes"])
-            + "\nReply YES to post or NO to skip (anything else = feedback, it gets saved).")
+            + "\nLong-press this message → Reply: YES to post, NO to skip, or YES/NO + your notes.")
     before = at.last_rowid()
     at.imessage(file=meta["cover"])
     at.imessage(file=meta["reel"])
     at.imessage(text=text)
     st = at.load_state()
     st[key] = {"date": a.date, "hook": e["title"], "prompt_rowid": before, "sent": time.time(),
-               "decision": None, "outcome": None,
+               "prompt_guid": at.sent_guid(before, "SAMPLE REEL"), "decision": None, "outcome": None,
                "local": {"entry": path, "mp4": meta["reel"], "slug": e["slug"]}}
     at.save_state(st)
     print(f"texted {key}: {e['title']}")

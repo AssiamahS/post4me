@@ -87,14 +87,27 @@ cut straight into the rap record at the bar where the loop first drops. 4 pairs 
 - Media comes from YouTube through yt-dlp — only the artist's channel, `- Topic` auto-channels,
   VEVO or "official" uploads are accepted; the pick is pinned into the entry (`yt`) and named in
   the preview text so a wrong record can be vetoed before it posts.
-- Where the sample sits is measured, not guessed: a 12-pitch-class chroma fingerprint of the flip
-  (taken 42s in) is slid across the original across ±3 semitones and ±10% tempo; the found passage
-  is then slid across the flip to catch the first bar it plays. Reversed samples: pin `start` on
-  both sides and set `"locate": false`. The match score is in the preview (`LOW MATCH` under 0.45).
+- Discovery before analysis (`scripts/sample_sources.py`): WhoSampled, read through the logged-in
+  Dia browser (CDP :9223, the site walls plain HTTP), says what was sampled, which element, and
+  where it appears in both records ("Sample appears at 3:23"); Wikipedia's song article is the
+  cross-check. That is a candidate, never the truth: `verify()` scores the original's window at the
+  documented spot against the whole flip on a fine tempo/pitch grid, nudges the start within the bar,
+  snaps both cuts to an onset, and `phrase_length()` runs the clip as long as the original keeps
+  matching (4–9s) instead of a flat 5.5s. With no documentation the old loop-periodicity `locate()`
+  runs and the pair is flagged `audio-only`. Reversed samples: pin `start` + `"locate": false`.
+- Labels only with evidence: element type from WhoSampled (*REPLAYED*, *VOCAL SAMPLE*, *DRUM BREAK*,
+  *THE RIFF*); `[+5% SPEED]` / `[PITCHED DOWN 2 SEMITONES]` only when the best tempo/pitch beats the
+  runner-up by ≥0.03; `*REVERSED*` when the reversed original matches better. Otherwise *LOOPED* /
+  *SAMPLED*. Producers and years come from the documented page when it has them.
+- Confidence per pair (documented + verified + phrase + official upload) gates the cut:
+  `config.json → reels.samples` (`min_confidence` 0.5 drops the pair, `auto` 0.85). Every number is
+  in the preview text.
 - Runs on the Mac (`com.sly.post4me-samples`, 11:30): YouTube blocks GitHub runners. `sample_daily.py`
   renders the next unposted entry, iMessages **cover + the mp4 itself + the pair notes**, and your
-  YES publishes from the Mac via `publish_reel.py` (no GitHub issue). NO with words = feedback saved
-  to `roadmap/FEEDBACK.md`. A draft never expires; an unanswered one just stays pending.
+  YES publishes from the Mac via `publish_reel.py` (no GitHub issue). Long-press the draft's own
+  message → Reply, or say `YES 2026-09-17`; a bare YES with two drafts waiting is bounced back, never
+  guessed. `YES <date> tighten the cuts` = post AND keep the note; NO + words = skip and keep the
+  note (`roadmap/FEEDBACK.md`). A draft never expires; an unanswered one just stays pending.
 - Cache: `~/.post4me/media` (audio + the few seconds of video each clip needs).
 
 ```

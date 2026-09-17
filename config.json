@@ -18,6 +18,12 @@
     "voice": "en-US-AndrewNeural",
     "rate": "+6%",
     "audio_name": "Sly Rewind",
-    "youtube_shorts": true
+    "youtube_shorts": true,
+    "samples": {
+      "min_confidence": 0.5,
+      "auto": 0.85,
+      "clip_min_s": 4.0,
+      "clip_max_s": 9.0
+    }
   }
 }

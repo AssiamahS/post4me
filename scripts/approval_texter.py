@@ -131,14 +131,23 @@ def thread_messages(after_rowid):
     """[(rowid, text)] in my own thread newer than after_rowid."""
     db = sqlite3.connect(f"file:{CHAT_DB}?mode=ro", uri=True)
     rows = db.execute(
-        """SELECT m.ROWID, m.text, m.attributedBody FROM message m
+        """SELECT m.ROWID, m.text, m.attributedBody, m.thread_originator_guid FROM message m
            JOIN chat_message_join j ON j.message_id = m.ROWID
            JOIN chat c ON c.ROWID = j.chat_id
            WHERE c.chat_identifier = ? AND m.ROWID > ? AND m.is_from_me = 0 ORDER BY m.ROWID""",
         (ME, after_rowid)).fetchall()
     db.close()
     # attachment-only messages decode to U+FFFC (object replacement) — not a reply
-    return [(r[0], t) for r in rows for t in [(r[1] or _decode_body(r[2])).replace("\ufffc", "").strip()] if t]
+    return [(r[0], t, r[3] or "") for r in rows for t in [(r[1] or _decode_body(r[2])).replace("\ufffc", "").strip()] if t]
+
+
+def sent_guid(after_rowid, prefix):
+    """guid of the prompt text I just sent (so a long-press → Reply on it can be matched)."""
+    db = sqlite3.connect(f"file:{CHAT_DB}?mode=ro", uri=True)
+    r = db.execute("""SELECT guid FROM message WHERE ROWID > ? AND is_from_me = 1 AND text LIKE ?
+                      ORDER BY ROWID DESC LIMIT 1""", (after_rowid, prefix + "%")).fetchone()
+    db.close()
+    return r[0] if r else None
 
 
 def last_rowid():
@@ -212,7 +221,7 @@ def prompt_new(issues, st, dry):
         imessage(file=cover)
         imessage(text=text)
         st[key] = {"date": info["date"], "hook": info["hook"], "prompt_rowid": before, "sent": time.time(),
-                   "decision": None, "outcome": None}
+                   "prompt_guid": sent_guid(before, "REEL DRAFT"), "decision": None, "outcome": None}
         save_state(st)
 
 
@@ -221,7 +230,7 @@ def read_replies(st, dry):
     if not pending:
         return
     floor = min(st[k]["prompt_rowid"] for k in pending)
-    for rowid, text in thread_messages(floor):
+    for rowid, text, thread in thread_messages(floor):
         if (not text or NOISE.match(text) or text.startswith("REEL DRAFT") or text.startswith("post4me")
                 or text.startswith("[IG]") or re.match(r"^\s*(ig|scipio|sc)[:\s]", text, re.I)):   # other bridges share this thread
             continue
@@ -232,7 +241,10 @@ def read_replies(st, dry):
         else:
             verdict, feedback = "no", text.strip()   # a plain sentence = "not this, do it like X"
         m = DATE.search(text)
-        if not m and len(pending) > 1:
+        threaded = [k for k in pending if thread and st[k].get("prompt_guid") == thread]
+        if threaded:
+            targets = threaded   # a Reply on the draft's own message names it, no date needed
+        elif not m and len(pending) > 1:
             # two drafts waiting and no date: never guess which one (a bare "yes" once posted the wrong reel)
             log(f"ambiguous reply {text[:40]!r} with {len(pending)} pending")
             if not dry:
@@ -242,7 +254,8 @@ def read_replies(st, dry):
                     st[k]["prompt_rowid"] = rowid   # don't re-read this reply next pass
                 save_state(st)
             break
-        targets = [k for k in pending if st[k]["date"] == m.group(1)]
+        else:
+            targets = [k for k in pending if st[k]["date"] == m.group(1)] if m else pending[:1]
         for k in targets:
             if rowid <= st[k]["prompt_rowid"] or st[k]["decision"]:
                 continue
