@@ -77,12 +77,31 @@ def applescript(script):
     subprocess.run(["osascript", "-e", script], check=True, capture_output=True, text=True, timeout=60)
 
 
+STAGING = os.path.expanduser("~/Library/Messages/.send-staging")
+
+
+def stage(file):
+    """Messages.app is sandboxed (macOS 15+): a `send POSIX file` from anywhere outside
+    ~/Library/Messages, ~/Pictures or ~/Media is accepted by AppleScript and then silently
+    dropped (chat.db: error 25, transfer_state 6). Copy into its own folder first."""
+    import shutil
+    os.makedirs(STAGING, exist_ok=True)
+    now = time.time()
+    for old in os.listdir(STAGING):  # anything older than an hour has long been uploaded
+        q = os.path.join(STAGING, old)
+        if now - os.path.getmtime(q) > 3600:
+            os.remove(q)
+    dest = os.path.join(STAGING, f"{int(now)}-{os.path.basename(file)}")
+    shutil.copyfile(file, dest)
+    return dest
+
+
 def imessage(text=None, file=None):
     """Send text and/or a file to my own thread."""
     head = 'tell application "Messages"\nset svc to 1st account whose service type = iMessage\n'
     tail = "\nend tell"
     if file:
-        applescript(head + f'send POSIX file "{file}" to buddy "{ME}" of svc' + tail)
+        applescript(head + f'send POSIX file "{stage(os.path.abspath(file))}" to buddy "{ME}" of svc' + tail)
     if text:
         safe = text.replace("\\", "\\\\").replace('"', '\\"')
         applescript(head + f'send "{safe}" to buddy "{ME}" of svc' + tail)
