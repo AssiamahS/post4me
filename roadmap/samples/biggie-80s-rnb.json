@@ -9,60 +9,136 @@
     "artist": "Mtume",
     "song": "Juicy Fruit",
     "year": 1983,
-    "prod": "James Mtume"
+    "prod": "James Mtume",
+    "yt": "EYE5QEBOMA8",
+    "yt_title": "Mtume - Juicy Fruit",
+    "yt_channel": "MtumeVEVO",
+    "start": 13.37,
+    "dur": 5.5
    },
    "flip": {
     "artist": "The Notorious B.I.G.",
     "song": "Juicy",
     "year": 1994,
-    "prod": "Poke & Puff Daddy"
+    "prod": "Poke & Puff Daddy",
+    "yt": "_JZom_gVfuw",
+    "yt_title": "The Notorious B.I.G. - Juicy (Official Video) [4K]",
+    "yt_channel": "The Notorious B.I.G.",
+    "start": 75.98,
+    "dur": 5.5
    },
-   "technique": "*LOOP*"
+   "technique": "*LOOP*",
+   "match": {
+    "orig_start": 13.37,
+    "flip_start": 75.98,
+    "score": 0.532,
+    "semitones": 0,
+    "tempo": 1.0,
+    "orig_len": 236.0,
+    "flip_len": 252.6
+   }
   },
   {
    "orig": {
     "artist": "Diana Ross",
     "song": "I'm Coming Out",
     "year": 1980,
-    "prod": "Nile Rodgers & Bernard Edwards"
+    "prod": "Nile Rodgers & Bernard Edwards",
+    "yt": "-xMvP6PsD9A",
+    "yt_title": "I'm Coming Out (Original CHIC Mix)",
+    "yt_channel": "Diana Ross",
+    "start": 0.0,
+    "dur": 5.5
    },
    "flip": {
     "artist": "The Notorious B.I.G.",
     "song": "Mo Money Mo Problems",
     "year": 1997,
-    "prod": "Stevie J & Puff Daddy"
+    "prod": "Stevie J & Puff Daddy",
+    "yt": "gUhRKVIjJtw",
+    "yt_title": "The Notorious B.I.G. - Mo Money Mo Problems (Official Music Video) [4K]",
+    "yt_channel": "The Notorious B.I.G.",
+    "start": 37.62,
+    "dur": 5.5
    },
-   "technique": "*LOOP*"
+   "technique": "*LOOP*",
+   "match": {
+    "orig_start": 0.0,
+    "flip_start": 37.62,
+    "score": 0.405,
+    "semitones": 1,
+    "tempo": 0.95,
+    "orig_len": 360.0,
+    "flip_len": 347.7
+   }
   },
   {
    "orig": {
     "artist": "Herb Alpert",
     "song": "Rise",
     "year": 1979,
-    "prod": "Herb Alpert & Randy Badazz"
+    "prod": "Herb Alpert & Randy Badazz",
+    "yt": "q7O3eYJptTc",
+    "yt_title": "Herb Alpert - Rise",
+    "yt_channel": "Herb Alpert",
+    "start": 115.91,
+    "dur": 5.5
    },
    "flip": {
     "artist": "The Notorious B.I.G.",
     "song": "Hypnotize",
     "year": 1997,
-    "prod": "D-Dot & Ron Lawrence"
+    "prod": "D-Dot & Ron Lawrence",
+    "yt": "glEiPXAYE-U",
+    "yt_title": "The Notorious B.I.G. - Hypnotize (Official Music Video) [4K]",
+    "yt_channel": "The Notorious B.I.G.",
+    "start": 19.88,
+    "dur": 5.5
    },
-   "technique": "*LOOP*"
+   "technique": "*LOOP*",
+   "match": {
+    "orig_start": 115.91,
+    "flip_start": 19.88,
+    "score": 0.448,
+    "semitones": -2,
+    "tempo": 1.1,
+    "orig_len": 298.1,
+    "flip_len": 338.9
+   }
   },
   {
    "orig": {
     "artist": "Isaac Hayes",
     "song": "Walk On By",
     "year": 1969,
-    "prod": "Isaac Hayes"
+    "prod": "Isaac Hayes",
+    "yt": "t0M58TvgrXw",
+    "yt_title": "Isaac Hayes - Walk on By [OFFICIAL VIDEO] (Dead Presidents OST)",
+    "yt_channel": "The Funk Lovin' Criminal",
+    "start": 32.69,
+    "dur": 5.5
    },
    "flip": {
     "artist": "The Notorious B.I.G.",
     "song": "Warning",
     "year": 1994,
-    "prod": "Easy Mo Bee"
+    "prod": "Easy Mo Bee",
+    "yt": "TbSm6HsX_ek",
+    "yt_title": "The Notorious B.I.G. - Warning (Official Music Video)",
+    "yt_channel": "The Notorious B.I.G.",
+    "start": 167.83,
+    "dur": 5.5
    },
-   "technique": "*LOOP*"
+   "technique": "*LOOP*",
+   "match": {
+    "orig_start": 32.69,
+    "flip_start": 167.83,
+    "score": 0.609,
+    "semitones": 3,
+    "tempo": 1.05,
+    "orig_len": 275.2,
+    "flip_len": 211.2
+   }
   }
  ],
  "caption": "Mtume into Juicy, Diana Ross into Mo Money Mo Problems, Herb Alpert into Hypnotize, Isaac Hayes into Warning. The records under Biggie.",
@@ -75,5 +151,7 @@
   "90shiphop",
   "rnb"
  ],
- "slug": "biggie-80s-rnb"
+ "slug": "biggie-80s-rnb",
+ "drafted": "2026-09-17",
+ "date": "2026-09-17"
 }
