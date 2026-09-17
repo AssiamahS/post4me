@@ -39,7 +39,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sample_sources  # noqa: E402
 
 CACHE = os.path.expanduser("~/.post4me/media")
-MIN_CLIP, MAX_CLIP = 4.0, 9.0   # a clip is as long as the phrase, inside these
+MIN_CLIP, MAX_CLIP = 4.5, 6.5   # a clip is as long as the phrase, inside these (v2 at 9s dragged)
 W, H = 1080, 1920
 FPS = 30
 SR = 22050
@@ -609,24 +609,27 @@ def prepare_pair(pair, i, cfg):
     yo, yf = decode(fetch_audio(o["yt"])), decode(fetch_audio(f["yt"]))
     co, cf = chroma(yo), chroma(yf)
     if pair.get("locate", True):
+        # Candidate moments for the original, each verified against the flip. The documented time
+        # refers to the album cut and the YouTube upload may be a 12" mix or video edit (Biggie v2:
+        # WhoSampled's 3:42 in a 6:00 "Original CHIC Mix" landed nowhere), so it competes with the
+        # audio matcher's best and the intro instead of being trusted blindly. Highest score wins;
+        # within 0.05 the EARLIEST wins, because the intro is what people recognise.
+        cands = {"intro": 0.0}
         if doc and doc.get("orig_at") is not None:
-            o_start = float(doc["orig_at"])
-            score, shift, tempo, f_at, second = verify(co, cf, o_start, doc.get("flip_at"))
-            # WhoSampled times are whole seconds: let the audio nudge the start within the bar
-            best_local = (score, o_start)
-            for dt in (-1.0, -0.5, 0.5, 1.0, 1.5, 2.0):
-                sc, *_ = verify(co, cf, o_start + dt, doc.get("flip_at"))
-                if sc > best_local[0] + 0.01:
-                    best_local = (sc, o_start + dt)
-            if best_local[1] != o_start:
-                o_start = best_local[1]
-                score, shift, tempo, f_at, second = verify(co, cf, o_start, doc.get("flip_at"))
-            how = "verified"
-        else:
-            loc = locate(fetch_audio(o["yt"]), fetch_audio(f["yt"]))
-            o_start = loc["orig_start"]
-            score, shift, tempo, f_at, second = verify(co, cf, o_start, None)
-            how = "audio-only"
+            cands["documented"] = float(doc["orig_at"])
+        loc = locate(fetch_audio(o["yt"]), fetch_audio(f["yt"]))
+        cands["audio"] = loc["orig_start"]
+        scored = []
+        for name, t0 in cands.items():
+            for dt in ((0.0,) if name == "intro" else (0.0, -1.0, 1.0, 2.0)):
+                t = max(0.0, t0 + dt)
+                sc, sh, k, fa, sec = verify(co, cf, t, doc.get("flip_at") if name == "documented" else None)
+                scored.append((sc, t, sh, k, fa, sec, name))
+        top = max(x[0] for x in scored)
+        pick = min((x for x in scored if x[0] >= top - 0.05), key=lambda x: x[1])
+        score, o_start, shift, tempo, f_at, second, how = pick
+        how = f"{how} moment"
+        notes.append("  candidates: " + ", ".join(f"{n}@{t:.0f}s={sc:.2f}" for sc, t, *_, n in sorted(scored, key=lambda x: -x[0])[:4]))
         rg = reversed_gain(co, cf, o_start)
         if o.get("start") is None:
             o["start"] = snap(yo, o_start)
@@ -701,9 +704,12 @@ def main():
     frame, bright = None, -1
     for j, dt in enumerate((0.2, 1.2, 2.4, 3.6, 4.8)):
         cand = frame_at(src, first["start"] - base + dt, os.path.join(a.out, f"hook_frame{j}.jpg"))
-        lum = np.asarray(Image.open(cand).convert("L"), dtype=np.float32).mean()
-        if lum > bright:
-            frame, bright = cand, lum
+        g = np.asarray(Image.open(cand).convert("L").resize((480, 270)), dtype=np.float32)
+        lum = g.mean()
+        sharp = np.abs(np.diff(g, axis=1)).mean() + np.abs(np.diff(g, axis=0)).mean()  # crossfades are soft
+        q = lum * min(sharp, 12.0)
+        if q > bright:
+            frame, bright = cand, q
     card = hook_card(frame, e["hook"], handle, os.path.join(a.out, "cover.jpg"))
     voice = os.path.join(a.out, "hook.mp3")
     asyncio.run(tts(e.get("hook_voice") or e["hook"].replace("\n", " "), rc.get("voice", "en-US-AndrewNeural"),

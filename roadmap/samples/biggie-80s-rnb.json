@@ -13,8 +13,8 @@
     "yt": "EYE5QEBOMA8",
     "yt_title": "Mtume - Juicy Fruit",
     "yt_channel": "MtumeVEVO",
-    "start": 123.66,
-    "dur": 6.0
+    "start": 13.37,
+    "dur": 5.5
    },
    "flip": {
     "artist": "The Notorious B.I.G.",
@@ -24,10 +24,10 @@
     "yt": "_JZom_gVfuw",
     "yt_title": "The Notorious B.I.G. - Juicy (Official Video) [4K]",
     "yt_channel": "The Notorious B.I.G.",
-    "start": 76.33,
-    "dur": 6.0
+    "start": 75.98,
+    "dur": 5.5
    },
-   "technique": "*LOOPED*",
+   "technique": "*LOOP*",
    "documented": {
     "source": "whosampled",
     "url": "https://www.whosampled.com/sample/134/The-Notorious-B.I.G.-Total-Juicy-Mtume-Juicy-Fruit-(Fruity-Instrumental-Mix)/",
@@ -50,16 +50,15 @@
      "quote": "\"Juicy\" contains a sample of Mtume's 1983 song, \"Juicy Fruit\", though it is directly sampled from the song's \"Fruity Instrumental\" mix, and has an alternative chorus sung by Bad Boy Records cohorts, the girl group Total and label founder Co"
     }
    },
-   "confidence": 0.93,
+   "confidence": 1.0,
    "match": {
-    "how": "verified",
-    "score": 0.472,
-    "second": 0.414,
+    "how": "pinned from v1 (user-approved)",
+    "score": 0.532,
     "semitones": 0,
-    "tempo": 1.0,
-    "reversed_gain": -0.129,
-    "phrase_s": 6.0
-   }
+    "tempo": 1.0
+   },
+   "locate": false,
+   "technique_locked": true
   },
   {
    "orig": {
@@ -70,8 +69,8 @@
     "yt": "-xMvP6PsD9A",
     "yt_title": "I'm Coming Out (Original CHIC Mix)",
     "yt_channel": "Diana Ross",
-    "start": 222.27,
-    "dur": 9.0
+    "start": 0.0,
+    "dur": 5.5
    },
    "flip": {
     "artist": "The Notorious B.I.G.",
@@ -81,10 +80,10 @@
     "yt": "gUhRKVIjJtw",
     "yt_title": "The Notorious B.I.G. - Mo Money Mo Problems (Official Music Video) [4K]",
     "yt_channel": "The Notorious B.I.G.",
-    "start": 86.92,
-    "dur": 9.0
+    "start": 37.62,
+    "dur": 5.5
    },
-   "technique": "*LOOPED*",
+   "technique": "*LOOP*",
    "documented": {
     "source": "whosampled",
     "url": "https://www.whosampled.com/sample/18/The-Notorious-B.I.G.-Puff-Daddy-Mase-Kelly-Price-Mo-Money-Mo-Problems-Diana-Ross-I%27m-Coming-Out/",
@@ -108,133 +107,18 @@
      "quote": "\"Mo Money Mo Problems\" contains a sample and an interpolation of \"I'm Coming Out\" by Diana Ross, hence Bernard Edwards and Nile Rodgers are credited as songwriters; the sampled portions are heard in the production, while the hook is interpo"
     }
    },
-   "confidence": 0.84,
+   "confidence": 1.0,
    "match": {
-    "how": "verified",
-    "score": 0.317,
-    "second": 0.299,
-    "semitones": 0,
-    "tempo": 1.11,
-    "reversed_gain": -0.012,
-    "phrase_s": 9.0
-   }
-  },
-  {
-   "orig": {
-    "artist": "Herb Alpert",
-    "song": "Rise",
-    "year": 1979,
-    "prod": "Herb Alpert & Randy Badazz & Andy Armer",
-    "yt": "q7O3eYJptTc",
-    "yt_title": "Herb Alpert - Rise",
-    "yt_channel": "Herb Alpert",
-    "start": 203.12,
-    "dur": 9.0
+    "how": "pinned from v1 (user-approved)",
+    "score": 0.405,
+    "semitones": 1,
+    "tempo": 0.95
    },
-   "flip": {
-    "artist": "The Notorious B.I.G.",
-    "song": "Hypnotize",
-    "year": 1997,
-    "prod": "Deric \"D-Dot\" Angelettie & Ron \"Amen-Ra\" Lawrence & Puff Daddy",
-    "yt": "glEiPXAYE-U",
-    "yt_title": "The Notorious B.I.G. - Hypnotize (Official Music Video) [4K]",
-    "yt_channel": "The Notorious B.I.G.",
-    "start": 51.21,
-    "dur": 9.0
-   },
-   "technique": "*LOOPED*",
-   "documented": {
-    "source": "whosampled",
-    "url": "https://www.whosampled.com/sample/374/The-Notorious-B.I.G.-Hypnotize-Herb-Alpert-Rise/",
-    "orig_at": 203,
-    "flip_at": 0,
-    "throughout": true,
-    "element": "Multiple Elements",
-    "type": "Direct Sample of Multiple Elements",
-    "orig_artist": "Herb Alpert",
-    "orig_year": 1979,
-    "flip_producers": [
-     "Deric \"D-Dot\" Angelettie",
-     "Ron \"Amen-Ra\" Lawrence",
-     "Puff Daddy"
-    ],
-    "orig_producers": [
-     "Herb Alpert",
-     "Randy Badazz",
-     "Andy Armer"
-    ],
-    "wikipedia": {
-     "url": "https://en.wikipedia.org/wiki/Hypnotize_%28The_Notorious_B.I.G._song%29",
-     "quote": "Sean Combs produced \"Hypnotize\" and sampled Herb Alpert's 1979 hit \"Rise\" which was written by Andy Armer and Herb's nephew, Randy \"Badazz\" Alpert."
-    }
-   },
-   "confidence": 0.87,
-   "match": {
-    "how": "verified",
-    "score": 0.366,
-    "second": 0.352,
-    "semitones": 0,
-    "tempo": 1.12,
-    "reversed_gain": -0.0,
-    "phrase_s": 9.0
-   }
-  },
-  {
-   "orig": {
-    "artist": "Isaac Hayes",
-    "song": "Walk On By",
-    "year": 1969,
-    "prod": "Al Bell & Marvell Thomas & Allen Jones",
-    "yt": "t0M58TvgrXw",
-    "yt_title": "Isaac Hayes - Walk on By [OFFICIAL VIDEO] (Dead Presidents OST)",
-    "yt_channel": "The Funk Lovin' Criminal",
-    "start": 55.47,
-    "dur": 4.0
-   },
-   "flip": {
-    "artist": "The Notorious B.I.G.",
-    "song": "Warning",
-    "year": 1994,
-    "prod": "Easy Mo Bee",
-    "yt": "TbSm6HsX_ek",
-    "yt_title": "The Notorious B.I.G. - Warning (Official Music Video)",
-    "yt_channel": "The Notorious B.I.G.",
-    "start": 169.35,
-    "dur": 4.0
-   },
-   "technique": "*LOOPED*",
-   "documented": {
-    "source": "whosampled",
-    "url": "https://www.whosampled.com/sample/65/The-Notorious-B.I.G.-Warning-Isaac-Hayes-Walk-on-By/",
-    "orig_at": 56,
-    "flip_at": 6,
-    "throughout": true,
-    "element": "Multiple Elements",
-    "type": "Direct Sample of Multiple Elements",
-    "orig_artist": "Isaac Hayes",
-    "orig_year": 1969,
-    "flip_producers": [
-     "Easy Mo Bee"
-    ],
-    "orig_producers": [
-     "Al Bell",
-     "Marvell Thomas",
-     "Allen Jones"
-    ]
-   },
-   "confidence": 0.71,
-   "match": {
-    "how": "verified",
-    "score": 0.432,
-    "second": 0.425,
-    "semitones": 4,
-    "tempo": 1.12,
-    "reversed_gain": 0.015,
-    "phrase_s": 4.0
-   }
+   "locate": false,
+   "technique_locked": true
   }
  ],
- "caption": "Mtume into Juicy, Diana Ross into Mo Money Mo Problems, Herb Alpert into Hypnotize, Isaac Hayes into Warning. The records under Biggie.",
+ "caption": "Mtume into Juicy, Diana Ross into Mo Money Mo Problems. The record first, then Biggie.",
  "hashtags": [
   "biggie",
   "notoriousbig",
@@ -245,6 +129,5 @@
   "rnb"
  ],
  "slug": "biggie-80s-rnb",
- "drafted": "2026-09-17",
  "date": "2026-09-17"
 }
