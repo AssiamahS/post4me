@@ -44,7 +44,7 @@ ME = "sly.assiamah@icloud.com"          # my own iMessage thread = a text on my 
 CHAT_DB = os.path.expanduser("~/Library/Messages/chat.db")
 STATE_DIR = os.path.expanduser("~/.post4me")
 STATE = os.path.join(STATE_DIR, "approvals.json")
-YES = re.compile(r"^\s*(yes|y|post|ship|approve|approved|go)\s*(20\d\d-\d\d-\d\d)?\s*[.!]?\s*$", re.I)
+YES = re.compile(r"^\s*(yes|y|post|ship|approve|approved|go)\b[\s.,:!-]*(20\d\d-\d\d-\d\d)?[\s.,:!-]*(?P<fb>.*)$", re.I | re.S)
 NO = re.compile(r"^\s*(no|n|skip|reject|nah|kill)\b[\s.,:!-]*(20\d\d-\d\d-\d\d)?[\s.,:!-]*(?P<fb>.*)$", re.I | re.S)
 NOISE = re.compile(r"^\s*(ok|okay|k|thanks|thx|lol|👍|👌|🔥)\s*[.!]?\s*$", re.I)
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -226,13 +226,23 @@ def read_replies(st, dry):
                 or text.startswith("[IG]") or re.match(r"^\s*(ig|scipio|sc)[:\s]", text, re.I)):   # other bridges share this thread
             continue
         if YES.match(text):
-            verdict, feedback = "yes", ""
+            verdict, feedback = "yes", YES.match(text).group("fb").strip()   # "yes, loved the pacing" = post + note
         elif NO.match(text):
             verdict, feedback = "no", NO.match(text).group("fb").strip()
         else:
             verdict, feedback = "no", text.strip()   # a plain sentence = "not this, do it like X"
         m = DATE.search(text)
-        targets = [k for k in pending if st[k]["date"] == m.group(1)] if m else pending[:1]
+        if not m and len(pending) > 1:
+            # two drafts waiting and no date: never guess which one (a bare "yes" once posted the wrong reel)
+            log(f"ambiguous reply {text[:40]!r} with {len(pending)} pending")
+            if not dry:
+                imessage(text="Two drafts are waiting: " + " / ".join(st[k]["date"] for k in pending)
+                              + ". Reply YES <date> or NO <date>.")
+                for k in pending:
+                    st[k]["prompt_rowid"] = rowid   # don't re-read this reply next pass
+                save_state(st)
+            break
+        targets = [k for k in pending if st[k]["date"] == m.group(1)]
         for k in targets:
             if rowid <= st[k]["prompt_rowid"] or st[k]["decision"]:
                 continue
@@ -267,13 +277,14 @@ def decide_local(key, v, verdict, feedback):
     """A draft rendered on this Mac (scripts/sample_daily.py): publish through Composio right here,
     or mark it skipped and keep the feedback."""
     entry, mp4 = v["local"]["entry"], v["local"]["mp4"]
+    if feedback:
+        with open(os.path.join(ROOT, "roadmap", "FEEDBACK.md"), "a") as fh:
+            fh.write(f"\n- {time.strftime('%Y-%m-%d')} — ({'liked' if verdict == 'yes' else 'rejected'} sample reel {v['date']}) {feedback}\n")
     if verdict != "yes":
         e = json.load(open(entry))
         e["skipped"] = True
         if feedback:
             e["feedback"] = feedback
-            with open(os.path.join(ROOT, "roadmap", "FEEDBACK.md"), "a") as fh:
-                fh.write(f"\n- {time.strftime('%Y-%m-%d')} — (sample reel {v['date']}) {feedback}\n")
         json.dump(e, open(entry, "w"), indent=1, ensure_ascii=False)
         v["outcome"] = "skipped"
         save_state_key(key, v)
