@@ -144,10 +144,13 @@ def thread_messages(after_rowid):
 def sent_guid(after_rowid, prefix):
     """guid of the prompt text I just sent (so a long-press → Reply on it can be matched)."""
     db = sqlite3.connect(f"file:{CHAT_DB}?mode=ro", uri=True)
-    r = db.execute("""SELECT guid FROM message WHERE ROWID > ? AND is_from_me = 1 AND text LIKE ?
-                      ORDER BY ROWID DESC LIMIT 1""", (after_rowid, prefix + "%")).fetchone()
+    rows = db.execute("""SELECT guid, text, attributedBody FROM message WHERE ROWID > ? AND is_from_me = 1
+                         ORDER BY ROWID DESC LIMIT 12""", (after_rowid,)).fetchall()
     db.close()
-    return r[0] if r else None
+    for guid, text, body in rows:  # sent texts keep their body in attributedBody, text is NULL
+        if ((text or _decode_body(body)) or "").startswith(prefix):
+            return guid
+    return None
 
 
 def last_rowid():

@@ -464,6 +464,8 @@ def transcribe(clip, offset, dur, out_dir, tag):
 def lyric_overlays(words, out_dir, tag, per=4):
     """[(png, enable_expr)] — a caption card per 3-4 word beat, shown for exactly its window."""
     out, i = [], 0
+    if len(words) < 3:   # one stray word from a music-heavy clip reads as a glitch, not a lyric
+        return out
     while i < len(words):
         chunk = words[i:i + per]
         i += per
