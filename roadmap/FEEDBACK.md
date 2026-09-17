@@ -11,3 +11,4 @@ strike it through if it stops applying.
   a documentary narrator.
 
 - 2026-09-17 — (liked sample reel 2026-09-17) it looks amazing (v4)
+- 2026-09-17 — (page verdict on the last static-card reel, Ms. Jackson) "This isn't as good as biggie no video just a static image and words. Boring as heck." → static-card lane disabled; every reel is the Biggie recipe: real music-video clips, the record then the flip, 2 pairs, ~30s, dissolve between pairs, fade out.
