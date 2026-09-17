@@ -9,31 +9,128 @@
     "artist": "Leon Haywood",
     "song": "I Want'a Do Something Freaky to You",
     "year": 1975,
-    "prod": "Leon Haywood"
+    "prod": "Leon Haywood",
+    "yt": "uUiy9X_dgRk",
+    "yt_title": "I Want'a Do Something Freaky To You",
+    "yt_channel": "Leon Haywood - Topic",
+    "start": 28.47,
+    "dur": 6.0
    },
    "flip": {
     "artist": "Dr. Dre",
     "song": "Nuthin' but a G Thang",
     "year": 1992,
-    "prod": "Dr. Dre"
+    "prod": "Dr. Dre",
+    "yt": "8GliyDgAGQI",
+    "yt_title": "Dr Dre - Nuthin' But A \"G\" Thang [Official Music Video]",
+    "yt_channel": "Dr. Dre",
+    "start": 161.92,
+    "dur": 6.0
    },
-   "technique": "*LOOP*"
+   "technique": "*LOOP*",
+   "technique_locked": true,
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/435/Dr.-Dre-Snoop-Dogg-Nuthin%27-but-a-%27G%27-Thang-Leon-Haywood-I-Want%27a-Do-Something-Freaky-to-You/",
+    "orig_at": 30,
+    "flip_at": 5,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Direct Sample of Multiple Elements",
+    "orig_artist": "Leon Haywood",
+    "orig_year": 1975,
+    "flip_producers": [
+     "Dr. Dre"
+    ],
+    "orig_producers": [
+     "Leon Haywood"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/Nuthin%27_but_a_%27G%27_Thang",
+     "quote": "The song samples \"I Want'a Do Something Freaky to You\" by Leon Haywood."
+    }
+   },
+   "match": {
+    "how": "audio moment",
+    "score": 0.653,
+    "second": 0.627,
+    "semitones": 0,
+    "tempo": 0.98,
+    "reversed_gain": -0.164,
+    "phrase_s": 6.0
+   },
+   "confidence": 1.0
   },
   {
    "orig": {
     "artist": "Joe Cocker",
     "song": "Woman to Woman",
     "year": 1972,
-    "prod": "Denny Cordell & Nigel Thomas"
+    "prod": "Nigel Thomas",
+    "yt": "ffklJc_vfuk",
+    "yt_title": "Woman To Woman",
+    "yt_channel": "Joe Cocker",
+    "start": 1.28,
+    "dur": 4.5
    },
    "flip": {
     "artist": "2Pac",
     "song": "California Love",
     "year": 1995,
-    "prod": "Dr. Dre"
+    "prod": "Dr. Dre",
+    "yt": "J7_bMdYfSws",
+    "yt_title": "California Love (Original Version)",
+    "yt_channel": "2Pac",
+    "start": 84.81,
+    "dur": 4.5
    },
-   "technique": "*CHOP*"
-  },
+   "technique": "*LOOP*",
+   "technique_locked": true,
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/176/2Pac-Dr.-Dre-Roger-Troutman-California-Love-Joe-Cocker-Woman-to-Woman/",
+    "orig_at": 0,
+    "flip_at": 44,
+    "throughout": true,
+    "element": "Hook / Riff",
+    "type": "Interpolation (Replayed Sample) of Hook / Riff",
+    "orig_artist": "Joe Cocker",
+    "orig_year": 1972,
+    "flip_producers": [
+     "Dr. Dre"
+    ],
+    "orig_producers": [
+     "Nigel Thomas"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/California_Love",
+     "quote": "The hook is taken from EPMD's 1989 song \"Knick Knack Patty Wack\" which in turn is based on a sample taken from Joe Cocker's 1972 song \"Woman to Woman\"."
+    }
+   },
+   "match": {
+    "how": "documented moment",
+    "score": 0.555,
+    "second": 0.549,
+    "semitones": -1,
+    "tempo": 1.02,
+    "reversed_gain": 0.002,
+    "phrase_s": 4.5
+   },
+   "confidence": 0.98
+  }
+ ],
+ "caption": "Leon Haywood into G Thang, Joe Cocker into California Love, Parliament into Let Me Ride, David McCallum into The Next Episode. G-funk, source first.",
+ "hashtags": [
+  "drdre",
+  "gfunk",
+  "deathrow",
+  "sample",
+  "hiphophistory",
+  "westcoast",
+  "pfunk"
+ ],
+ "slug": "dre-funk",
+ "parked": [
   {
    "orig": {
     "artist": "Parliament",
@@ -65,15 +162,6 @@
    "technique": "*LOOP*"
   }
  ],
- "caption": "Leon Haywood into G Thang, Joe Cocker into California Love, Parliament into Let Me Ride, David McCallum into The Next Episode. G-funk, source first.",
- "hashtags": [
-  "drdre",
-  "gfunk",
-  "deathrow",
-  "sample",
-  "hiphophistory",
-  "westcoast",
-  "pfunk"
- ],
- "slug": "dre-funk"
+ "drafted": "2026-09-19",
+ "date": "2026-09-19"
 }

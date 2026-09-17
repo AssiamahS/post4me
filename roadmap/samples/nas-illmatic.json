@@ -9,31 +9,128 @@
     "artist": "Ahmad Jamal",
     "song": "I Love Music",
     "year": 1970,
-    "prod": "Ahmad Jamal"
+    "prod": "Ed Michel",
+    "yt": "fW8NQgqYoVQ",
+    "yt_title": "I Love Music",
+    "yt_channel": "AHMAD JAMAL - Official channel",
+    "start": 432.43,
+    "dur": 6.0
    },
    "flip": {
     "artist": "Nas",
     "song": "The World Is Yours",
     "year": 1994,
-    "prod": "Pete Rock"
+    "prod": "Pete Rock",
+    "yt": "e5PnuIRnJW8",
+    "yt_title": "Nas - The World Is Yours (Official HD Video)",
+    "yt_channel": "Nas",
+    "start": 42.27,
+    "dur": 6.0
    },
-   "technique": "*LOOP*"
+   "technique": "*LOOP*",
+   "technique_locked": true,
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/629/Nas-The-World-Is-Yours-Ahmad-Jamal-Trio-I-Love-Music/",
+    "orig_at": 298,
+    "flip_at": 0,
+    "throughout": true,
+    "element": "Hook / Riff",
+    "type": "Direct Sample of Hook / Riff",
+    "orig_artist": "Ahmad Jamal Trio",
+    "orig_year": 1970,
+    "flip_producers": [
+     "Pete Rock"
+    ],
+    "orig_producers": [
+     "Ed Michel"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/The_World_Is_Yours_%28Nas_song%29",
+     "quote": "It samples T La Rock and Jazzy Jay’s “It’s Yours”, as well as Ahmad Jamal's \"I Love Music\", from ''The Awakening'', and Rock also sings the chorus."
+    }
+   },
+   "match": {
+    "how": "audio moment",
+    "score": 0.501,
+    "second": 0.494,
+    "semitones": 0,
+    "tempo": 1.12,
+    "reversed_gain": -0.009,
+    "phrase_s": 6.0
+   },
+   "confidence": 0.95
   },
   {
    "orig": {
     "artist": "Michael Jackson",
     "song": "Human Nature",
     "year": 1982,
-    "prod": "Quincy Jones"
+    "prod": "Quincy Jones",
+    "yt": "ElN_4vUvTPs",
+    "yt_title": "Michael Jackson - Human Nature (Official Audio)",
+    "yt_channel": "Michael Jackson",
+    "start": 3.7,
+    "dur": 6.0
    },
    "flip": {
     "artist": "Nas",
     "song": "It Ain't Hard to Tell",
     "year": 1994,
-    "prod": "Large Professor"
+    "prod": "Large Professor",
+    "yt": "3hOZaTGnHU4",
+    "yt_title": "Nas - It Ain't Hard To Tell (Official Video)",
+    "yt_channel": "Nas",
+    "start": 4.05,
+    "dur": 6.0
    },
-   "technique": "*CHOP*"
-  },
+   "technique": "*LOOP*",
+   "technique_locked": true,
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/1151/Nas-It-Ain%27t-Hard-to-Tell-Michael-Jackson-Human-Nature/",
+    "orig_at": 5,
+    "flip_at": 27,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Direct Sample of Multiple Elements",
+    "orig_artist": "Michael Jackson",
+    "orig_year": 1982,
+    "flip_producers": [
+     "Large Professor"
+    ],
+    "orig_producers": [
+     "Quincy Jones"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/It_Ain%27t_Hard_to_Tell",
+     "quote": "\"It Ain't Hard to Tell\" was produced by Large Professor, and samples Michael Jackson's 1983 hit single \"Human Nature\", \"N."
+    }
+   },
+   "match": {
+    "how": "audio moment",
+    "score": 0.563,
+    "second": 0.548,
+    "semitones": 0,
+    "tempo": 0.98,
+    "reversed_gain": -0.109,
+    "phrase_s": 6.0
+   },
+   "confidence": 0.99
+  }
+ ],
+ "caption": "Ahmad Jamal into The World Is Yours, Michael Jackson into It Ain't Hard to Tell, Donald Byrd into N.Y. State of Mind, Reuben Wilson into Memory Lane. Illmatic, record by record.",
+ "hashtags": [
+  "nas",
+  "illmatic",
+  "sample",
+  "hiphophistory",
+  "90shiphop",
+  "djpremier",
+  "peterock"
+ ],
+ "slug": "nas-illmatic",
+ "parked": [
   {
    "orig": {
     "artist": "Donald Byrd",
@@ -65,15 +162,6 @@
    "technique": "*LOOP*"
   }
  ],
- "caption": "Ahmad Jamal into The World Is Yours, Michael Jackson into It Ain't Hard to Tell, Donald Byrd into N.Y. State of Mind, Reuben Wilson into Memory Lane. Illmatic, record by record.",
- "hashtags": [
-  "nas",
-  "illmatic",
-  "sample",
-  "hiphophistory",
-  "90shiphop",
-  "djpremier",
-  "peterock"
- ],
- "slug": "nas-illmatic"
+ "drafted": "2026-09-20",
+ "date": "2026-09-20"
 }

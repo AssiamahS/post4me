@@ -51,13 +51,38 @@ def cdp_up():
         return False
 
 
+def _browser_call(method, params):
+    """One call on the browser-level CDP socket (not a page)."""
+    import websocket
+    v = json.load(urllib.request.urlopen(CDP + "/json/version", timeout=5))
+    ws = websocket.create_connection(v["webSocketDebuggerUrl"], timeout=20, suppress_origin=True)
+    try:
+        ws.send(json.dumps({"id": 1, "method": method, "params": params}))
+        while True:
+            m = json.loads(ws.recv())
+            if m.get("id") == 1:
+                return m.get("result", {})
+    finally:
+        ws.close()
+
+
 class Tab:
+    """A page in Dia that never touches the user's own tabs: created in the BACKGROUND, inside a
+    separate window (the user complained about tabs popping over what they were reading)."""
+
     def __init__(self, url):
         import websocket
-        t = json.load(urllib.request.urlopen(urllib.request.Request(
-            CDP + "/json/new?" + urllib.parse.quote(url, safe=""), method="PUT"), timeout=15))
-        self.id = t["id"]
-        self.ws = websocket.create_connection(t["webSocketDebuggerUrl"], timeout=40, suppress_origin=True)
+        r = _browser_call("Target.createTarget", {"url": url, "newWindow": True, "background": True})
+        self.id = r["targetId"]
+        page_ws = None
+        for _ in range(20):
+            for t in json.load(urllib.request.urlopen(CDP + "/json", timeout=5)):
+                if t.get("id") == self.id:
+                    page_ws = t.get("webSocketDebuggerUrl")
+            if page_ws:
+                break
+            time.sleep(0.25)
+        self.ws = websocket.create_connection(page_ws, timeout=40, suppress_origin=True)
         self.n = 0
         for _ in range(40):  # wait for the page (Cloudflare interstitial included) to settle
             time.sleep(0.5)
@@ -77,7 +102,7 @@ class Tab:
     def close(self):
         try:
             self.ws.close()
-            urllib.request.urlopen(CDP + f"/json/close/{self.id}", timeout=5)
+            _browser_call("Target.closeTarget", {"targetId": self.id})
         except Exception:
             pass
 

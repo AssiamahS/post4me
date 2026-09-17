@@ -9,19 +9,124 @@
     "artist": "Beach House",
     "song": "Silver Soul",
     "year": 2010,
-    "prod": "Beach House & Chris Coady",
-    "start": 8.0
+    "prod": "Chris Coady",
+    "start": 8.0,
+    "yt": "njbmwfndFH4",
+    "yt_title": "Beach House - Silver Soul [OFFICIAL VIDEO]",
+    "yt_channel": "Sub Pop",
+    "dur": 5.5
    },
    "flip": {
     "artist": "Kendrick Lamar",
     "song": "Money Trees",
     "year": 2012,
     "prod": "DJ Dahi",
-    "start": 0.0
+    "start": 0.0,
+    "yt": "0nF69UTw99E",
+    "yt_title": "Money Trees",
+    "yt_channel": "Kendrick Lamar",
+    "dur": 5.5
    },
    "technique": "*REVERSE*",
-   "locate": false
+   "locate": false,
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/175111/Kendrick-Lamar-Jay-Rock-Money-Trees-Beach-House-Silver-Soul/",
+    "orig_at": 12,
+    "flip_at": 0,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Direct Sample of Multiple Elements",
+    "orig_artist": "Beach House",
+    "orig_year": 2010,
+    "flip_producers": [
+     "DJ Dahi"
+    ],
+    "orig_producers": [
+     "Chris Coady"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/Money_Trees",
+     "quote": "''Money Trees'' samples the 2010 song \"Silver Soul\" by Beach House, as well as vocals from Lamar's \"Cartoon and Cereal\" and interpolates lyrics from E-40's \"Big Ballin' With My Homies\"."
+    }
+   },
+   "match": {
+    "how": "pinned",
+    "score": 0.0
+   },
+   "confidence": 0.7
   },
+  {
+   "orig": {
+    "artist": "Janet Jackson",
+    "song": "Any Time, Any Place",
+    "year": 1993,
+    "prod": "Jimmy Jam & Terry Lewis & Janet Jackson",
+    "yt": "7KcIAmqkXOU",
+    "yt_title": "Any Time, Any Place",
+    "yt_channel": "Janet Jackson",
+    "start": 398.99,
+    "dur": 4.5
+   },
+   "flip": {
+    "artist": "Kendrick Lamar",
+    "song": "Poetic Justice",
+    "year": 2012,
+    "prod": "Scoop DeVille",
+    "yt": "yyr2gEouEMM",
+    "yt_title": "Kendrick Lamar - Poetic Justice (Explicit) ft. Drake",
+    "yt_channel": "Kendrick Lamar",
+    "start": 14.8,
+    "dur": 4.5
+   },
+   "technique": "*LOOP*",
+   "technique_locked": true,
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/174851/Kendrick-Lamar-Drake-Poetic-Justice-Janet-Jackson-Any-Time,-Any-Place/",
+    "orig_at": 106,
+    "flip_at": 130,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Direct Sample of Multiple Elements",
+    "orig_artist": "Janet Jackson",
+    "orig_year": 1993,
+    "flip_producers": [
+     "Scoop DeVille"
+    ],
+    "orig_producers": [
+     "Jimmy Jam & Terry Lewis",
+     "Janet Jackson"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/Poetic_Justice_%28song%29",
+     "quote": "DeVille sampled Janet Jackson's \"Any Time, Any Place."
+    }
+   },
+   "match": {
+    "how": "audio moment",
+    "score": 0.497,
+    "second": 0.495,
+    "semitones": -2,
+    "tempo": 1.1,
+    "reversed_gain": 0.004,
+    "phrase_s": 4.5
+   },
+   "confidence": 0.95
+  }
+ ],
+ "caption": "Beach House into Money Trees, The Isley Brothers into i, Janet Jackson into Poetic Justice, Boom Clap Bachelors into Don't Kill My Vibe. Kendrick, source first.",
+ "hashtags": [
+  "kendricklamar",
+  "tde",
+  "sample",
+  "hiphophistory",
+  "goodkidmaadcity",
+  "producer",
+  "crate digging"
+ ],
+ "slug": "kendrick-samples",
+ "parked": [
   {
    "orig": {
     "artist": "The Isley Brothers",
@@ -39,21 +144,6 @@
   },
   {
    "orig": {
-    "artist": "Janet Jackson",
-    "song": "Any Time, Any Place",
-    "year": 1993,
-    "prod": "Jimmy Jam & Terry Lewis"
-   },
-   "flip": {
-    "artist": "Kendrick Lamar",
-    "song": "Poetic Justice",
-    "year": 2012,
-    "prod": "Scoop DeVille"
-   },
-   "technique": "*CHOP*\n[+ SPEED]"
-  },
-  {
-   "orig": {
     "artist": "Boom Clap Bachelors",
     "song": "Tiden Flyver",
     "year": 2010,
@@ -68,15 +158,6 @@
    "technique": "*LOOP*"
   }
  ],
- "caption": "Beach House into Money Trees, The Isley Brothers into i, Janet Jackson into Poetic Justice, Boom Clap Bachelors into Don't Kill My Vibe. Kendrick, source first.",
- "hashtags": [
-  "kendricklamar",
-  "tde",
-  "sample",
-  "hiphophistory",
-  "goodkidmaadcity",
-  "producer",
-  "crate digging"
- ],
- "slug": "kendrick-samples"
+ "drafted": "2026-09-21",
+ "date": "2026-09-21"
 }

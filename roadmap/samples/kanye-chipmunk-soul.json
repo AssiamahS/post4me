@@ -9,16 +9,132 @@
     "artist": "Chaka Khan",
     "song": "Through the Fire",
     "year": 1984,
-    "prod": "David Foster"
+    "prod": "David Foster & Humberto Gatica & Arif Mardin",
+    "yt": "TjWmw-8-OEk",
+    "yt_title": "Chaka Khan - Through the Fire (Official Music Video) [HD Remaster]",
+    "yt_channel": "Chaka Khan",
+    "start": 9.02,
+    "dur": 4.5
    },
    "flip": {
     "artist": "Kanye West",
     "song": "Through the Wire",
     "year": 2003,
-    "prod": "Kanye West"
+    "prod": "Kanye West",
+    "yt": "AE8y25CcE6s",
+    "yt_title": "Through The Wire",
+    "yt_channel": "Kanye West",
+    "start": 28.24,
+    "dur": 4.5
    },
-   "technique": "*PITCHED UP*\n[+ SPEED]"
+   "technique": "*LOOP*",
+   "technique_locked": true,
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/346/Kanye-West-Through-the-Wire-Chaka-Khan-Through-the-Fire/",
+    "orig_at": 242,
+    "flip_at": 155,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Direct Sample of Multiple Elements",
+    "orig_artist": "Chaka Khan",
+    "orig_year": 1984,
+    "flip_producers": [
+     "Kanye West"
+    ],
+    "orig_producers": [
+     "David Foster",
+     "Humberto Gatica",
+     "Arif Mardin"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/Through_the_Wire",
+     "quote": "The song prominently samples (and its title is a play on) Chaka Khan's 1985 single \"Through the Fire\", and thus, Tom Keane of The Keane Brothers, Cynthia Weil, and David Foster, who wrote \"Through the Fire\", earn writing credits."
+    }
+   },
+   "match": {
+    "how": "audio moment",
+    "score": 0.489,
+    "second": 0.483,
+    "semitones": -3,
+    "tempo": 1.12,
+    "reversed_gain": 0.005,
+    "phrase_s": 4.5
+   },
+   "confidence": 0.94
   },
+  {
+   "orig": {
+    "artist": "Daft Punk",
+    "song": "Harder, Better, Faster, Stronger",
+    "year": 2001,
+    "prod": "Guy-Manuel de Homem-Christo & Thomas Bangalter",
+    "yt": "gAjR4_CbPpQ",
+    "yt_title": "Daft Punk - Harder, Better, Faster, Stronger (Official Video)",
+    "yt_channel": "Daft Punk",
+    "start": 0.26,
+    "dur": 6.0
+   },
+   "flip": {
+    "artist": "Kanye West",
+    "song": "Stronger",
+    "year": 2007,
+    "prod": "Kanye West & Mike Dean",
+    "yt": "PsO6ZnUZI0g",
+    "yt_title": "Kanye West - Stronger",
+    "yt_channel": "Kanye West",
+    "start": 39.57,
+    "dur": 6.0
+   },
+   "technique": "*LOOP*",
+   "technique_locked": true,
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/12/Kanye-West-Stronger-Daft-Punk-Harder,-Better,-Faster,-Stronger/",
+    "orig_at": 121,
+    "flip_at": 0,
+    "throughout": true,
+    "element": "Vocals / Lyrics",
+    "type": "Direct Sample of Vocals / Lyrics",
+    "orig_artist": "Daft Punk",
+    "orig_year": 2001,
+    "flip_producers": [
+     "Kanye West",
+     "Mike Dean"
+    ],
+    "orig_producers": [
+     "Guy-Manuel de Homem-Christo",
+     "Thomas Bangalter"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/Stronger_%28Kanye_West_song%29",
+     "quote": "Daft Punk were credited as co-writers due to their work being sampled; West decided to sample \"Harder, Better, Faster, Stronger\" after first hearing the duo's work when touring in 2006, then made the beat and spent months re-writing his ver"
+    }
+   },
+   "match": {
+    "how": "intro moment",
+    "score": 0.367,
+    "second": 0.355,
+    "semitones": 0,
+    "tempo": 1.11,
+    "reversed_gain": -0.014,
+    "phrase_s": 6.0
+   },
+   "confidence": 0.87
+  }
+ ],
+ "caption": "Chaka Khan into Through the Wire, Curtis Mayfield into Touch the Sky, Otis Redding into Otis, Daft Punk into Stronger. The chipmunk soul era, record first, flip second.",
+ "hashtags": [
+  "kanye",
+  "chipmunksoul",
+  "sample",
+  "hiphophistory",
+  "collegedropout",
+  "soul",
+  "producer"
+ ],
+ "slug": "kanye-chipmunk-soul",
+ "parked": [
   {
    "orig": {
     "artist": "Curtis Mayfield",
@@ -48,32 +164,8 @@
     "prod": "Kanye West"
    },
    "technique": "*CHOP*"
-  },
-  {
-   "orig": {
-    "artist": "Daft Punk",
-    "song": "Harder, Better, Faster, Stronger",
-    "year": 2001,
-    "prod": "Daft Punk"
-   },
-   "flip": {
-    "artist": "Kanye West",
-    "song": "Stronger",
-    "year": 2007,
-    "prod": "Kanye West"
-   },
-   "technique": "*LOOP*"
   }
  ],
- "caption": "Chaka Khan into Through the Wire, Curtis Mayfield into Touch the Sky, Otis Redding into Otis, Daft Punk into Stronger. The chipmunk soul era, record first, flip second.",
- "hashtags": [
-  "kanye",
-  "chipmunksoul",
-  "sample",
-  "hiphophistory",
-  "collegedropout",
-  "soul",
-  "producer"
- ],
- "slug": "kanye-chipmunk-soul"
+ "drafted": "2026-09-18",
+ "date": "2026-09-18"
 }
