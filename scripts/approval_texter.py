@@ -127,15 +127,21 @@ def _decode_body(blob):
     return blob[i:i + n].decode("utf-8", "replace")
 
 
-def thread_messages(after_rowid):
-    """[(rowid, text)] in my own thread newer than after_rowid."""
+def thread_messages(after_rowid, prompt_guids=()):
+    """[(rowid, text)] in my own thread newer than after_rowid, plus any Reply on a draft prompt.
+    A Reply sent from the phone can land in the phone-number copy of my thread as is_from_me = 1
+    (2026-10-04: a 'Yes' on the Eminem draft sat unread there), so match those by the prompt guid."""
     db = sqlite3.connect(f"file:{CHAT_DB}?mode=ro", uri=True)
+    guids = [g for g in prompt_guids if g]
+    marks = ",".join("?" * len(guids)) or "NULL"
     rows = db.execute(
-        """SELECT m.ROWID, m.text, m.attributedBody, m.thread_originator_guid FROM message m
+        f"""SELECT DISTINCT m.ROWID, m.text, m.attributedBody, m.thread_originator_guid FROM message m
            JOIN chat_message_join j ON j.message_id = m.ROWID
            JOIN chat c ON c.ROWID = j.chat_id
-           WHERE c.chat_identifier = ? AND m.ROWID > ? AND m.is_from_me = 0 ORDER BY m.ROWID""",
-        (ME, after_rowid)).fetchall()
+           WHERE m.ROWID > ? AND ((c.chat_identifier = ? AND m.is_from_me = 0)
+                                  OR m.thread_originator_guid IN ({marks}))
+           ORDER BY m.ROWID""",
+        (after_rowid, ME, *guids)).fetchall()
     db.close()
     # attachment-only messages decode to U+FFFC (object replacement) — not a reply
     return [(r[0], t, r[3] or "") for r in rows for t in [(r[1] or _decode_body(r[2])).replace("\ufffc", "").strip()] if t]
@@ -288,7 +294,8 @@ def read_replies(st, dry):
     if not pending:
         return
     floor = min(st[k]["prompt_rowid"] for k in pending)
-    for rowid, text, thread in thread_messages(floor):
+    guids = [g for k in pending for g in [st[k].get("prompt_guid"), *st[k].get("prompt_guids", [])]]
+    for rowid, text, thread in thread_messages(floor, guids):
         if (not text or NOISE.match(text) or text.startswith("REEL DRAFT") or text.startswith("post4me")
                 or text.startswith("[IG]") or re.match(r"^\s*(ig|scipio|sc)[:\s]", text, re.I)):   # other bridges share this thread
             continue
