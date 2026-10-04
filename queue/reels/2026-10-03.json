@@ -1,0 +1,249 @@
+{
+ "slug": "eminem-samples",
+ "series": "SAMPLE SOURCE",
+ "title": "Eminem's samples",
+ "hook": "EMINEM (SAMPLES)",
+ "hook_voice": "The songs hiding under Eminem's biggest records.",
+ "pairs": [
+  {
+   "orig": {
+    "artist": "Dido",
+    "song": "Thank You",
+    "year": 1999,
+    "prod": "Dido & Rollo",
+    "yt": "1TO48Cnl66w",
+    "yt_title": "Dido - Thank You (Official Video)",
+    "yt_channel": "Dido",
+    "start": 20.42,
+    "dur": 6.0
+   },
+   "flip": {
+    "artist": "Eminem",
+    "song": "Stan",
+    "year": 2000,
+    "prod": "The 45 King & Eminem",
+    "yt": "gOMhN-hfMtY",
+    "yt_title": "Eminem - Stan (Long Version) ft. Dido",
+    "yt_channel": "EminemMusic",
+    "start": 83.86,
+    "dur": 6.0
+   },
+   "technique": "*LOOPED*",
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/104/Eminem-Dido-Stan-Dido-Thank-You/",
+    "orig_at": 0,
+    "flip_at": 129,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Direct Sample of Multiple Elements",
+    "orig_artist": "Dido",
+    "orig_year": 1999,
+    "flip_producers": [
+     "The 45 King",
+     "Eminem"
+    ],
+    "orig_producers": [
+     "Dido",
+     "Rollo"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/Stan_%28song%29",
+     "quote": "\"'''Stan'''\" is a song by American rapper Eminem, with vocals sampled from the opening lines of English singer Dido's song \"Thank You\"."
+    }
+   },
+   "match": {
+    "how": "audio moment",
+    "score": 0.576,
+    "second": 0.503,
+    "semitones": 0,
+    "tempo": 1.0,
+    "reversed_gain": -0.276,
+    "phrase_s": 6.0
+   },
+   "confidence": 1.0
+  },
+  {
+   "orig": {
+    "artist": "Aerosmith",
+    "song": "Dream On",
+    "year": 1973,
+    "prod": "Adrian Barber",
+    "yt": "89dGC8de0CA",
+    "yt_title": "Aerosmith - Dream On (Audio)",
+    "yt_channel": "Aerosmith",
+    "start": 124.05,
+    "dur": 6.0
+   },
+   "flip": {
+    "artist": "Eminem",
+    "song": "Sing for the Moment",
+    "year": 2002,
+    "prod": "Jeff Bass & Eminem",
+    "yt": "D4hAVemuQXY",
+    "yt_title": "Eminem - Sing For The Moment (Official Music Video)",
+    "yt_channel": "EminemMusic",
+    "start": 69.95,
+    "dur": 6.0
+   },
+   "technique": "*REPLAYED*\n[+5% SPEED]\n[PITCHED DOWN 1 SEMITONE]",
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/277/Eminem-Sing-for-the-Moment-Aerosmith-Dream-On/",
+    "orig_at": 124,
+    "flip_at": 71,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Interpolation (Replayed Sample) of Multiple Elements",
+    "orig_artist": "Aerosmith",
+    "orig_year": 1973,
+    "flip_producers": [
+     "Jeff Bass",
+     "Eminem"
+    ],
+    "orig_producers": [
+     "Adrian Barber"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/Sing_for_the_Moment",
+     "quote": "The song samples \"Dream On\" by American rock band Aerosmith."
+    }
+   },
+   "match": {
+    "how": "documented moment",
+    "score": 0.671,
+    "second": 0.637,
+    "semitones": 0,
+    "tempo": 1.05,
+    "reversed_gain": -0.139,
+    "phrase_s": 6.0
+   },
+   "confidence": 1.0
+  },
+  {
+   "orig": {
+    "artist": "Labi Siffre",
+    "song": "I Got The...",
+    "year": 1975,
+    "prod": "Jim Sullivan & Derek Lawrence",
+    "yt": "A4JWkW0oROg",
+    "yt_title": "I Got The... (2006 Remaster)",
+    "yt_channel": "Labi Siffre ",
+    "start": 151.84,
+    "dur": 6.0
+   },
+   "flip": {
+    "artist": "Eminem",
+    "song": "My Name Is",
+    "year": 1999,
+    "prod": "Dr. Dre",
+    "yt": "sNPnbI1arSE",
+    "yt_title": "Eminem - My Name Is (Official Music Video)",
+    "yt_channel": "EminemMusic",
+    "start": 76.44,
+    "dur": 6.0
+   },
+   "technique": "*REPLAYED*",
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/31/Eminem-My-Name-Is-Labi-Siffre-I-Got-The.../",
+    "orig_at": 152,
+    "flip_at": 31,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Interpolation (Replayed Sample) of Multiple Elements",
+    "orig_artist": "Labi Siffre",
+    "orig_year": 1975,
+    "flip_producers": [
+     "Dr. Dre"
+    ],
+    "orig_producers": [
+     "Jim Sullivan",
+     "Derek Lawrence"
+    ]
+   },
+   "match": {
+    "how": "documented moment",
+    "score": 0.52,
+    "second": 0.489,
+    "semitones": 0,
+    "tempo": 1.0,
+    "reversed_gain": -0.234,
+    "phrase_s": 6.0
+   },
+   "confidence": 0.86
+  },
+  {
+   "orig": {
+    "artist": "Martika",
+    "song": "Toy Soldiers",
+    "year": 1988,
+    "prod": "Michael Jay",
+    "yt": "LvdLovAaYzM",
+    "yt_title": "Martika - Toy Soldiers",
+    "yt_channel": "Martika Martika",
+    "start": 150.65,
+    "dur": 4.5
+   },
+   "flip": {
+    "artist": "Eminem",
+    "song": "Like Toy Soldiers",
+    "year": 2004,
+    "prod": "Eminem",
+    "yt": "lexLAjh8fPA",
+    "yt_title": "Eminem - Like Toy Soldiers (Official Music Video)",
+    "yt_channel": "EminemMusic",
+    "start": 15.96,
+    "dur": 4.5
+   },
+   "technique": "*REPLAYED*",
+   "documented": {
+    "source": "whosampled",
+    "url": "https://www.whosampled.com/sample/411/Eminem-Like-Toy-Soldiers-Martika-Toy-Soldiers/",
+    "orig_at": 243,
+    "flip_at": 22,
+    "throughout": true,
+    "element": "Multiple Elements",
+    "type": "Interpolation (Replayed Sample) of Multiple Elements",
+    "orig_artist": "Martika",
+    "orig_year": 1988,
+    "flip_producers": [
+     "Eminem"
+    ],
+    "orig_producers": [
+     "Michael Jay"
+    ],
+    "wikipedia": {
+     "url": "https://en.wikipedia.org/wiki/Like_Toy_Soldiers",
+     "quote": "The song samples the 1989 song \"Toy Soldiers\" by Martika."
+    }
+   },
+   "match": {
+    "how": "audio moment",
+    "score": 0.713,
+    "second": 0.697,
+    "semitones": 0,
+    "tempo": 1.12,
+    "reversed_gain": -0.157,
+    "phrase_s": 4.5
+   },
+   "confidence": 1.0
+  }
+ ],
+ "caption": "Dido into Stan, Aerosmith into Sing for the Moment, Labi Siffre into My Name Is, Martika into Like Toy Soldiers. Shady, source first.",
+ "hashtags": [
+  "eminem",
+  "slimshady",
+  "sample",
+  "hiphophistory",
+  "shadyrecords",
+  "detroit"
+ ],
+ "drafted": "2026-10-03",
+ "date": "2026-10-03",
+ "posted": {
+  "media_id": "18131538010742386",
+  "permalink": "https://www.instagram.com/reel/DeEx449kcd9/",
+  "local": "/Users/djsly/post4me/build/samples/eminem-samples/reel.mp4"
+ }
+}
