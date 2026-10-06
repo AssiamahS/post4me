@@ -38,7 +38,7 @@ def next_entry(slug=None):
         e = json.load(open(p))
         if slug and e.get("slug") != slug:
             continue
-        if not slug and (e.get("posted") or e.get("skipped") or e.get("drafted")):
+        if not slug and (e.get("posted") or e.get("skipped") or e.get("drafted") or e.get("render_failed")):
             continue
         return p, e
     return None, None
@@ -55,15 +55,25 @@ def main():
     if key in st and not a.render_only:
         print(f"{key} already drafted ({st[key].get('decision') or 'pending'})")
         return
-    path, e = next_entry(a.slug)
-    if not e:
-        sys.exit("no sample reel left to draft — add one to roadmap/samples/")
-    out = os.path.join(ROOT, "build", "samples", e["slug"])
-    print(f"rendering {e['slug']} → {out}", flush=True)
-    r = subprocess.run([VENV_PY, os.path.join(ROOT, "scripts", "sample_reel.py"), path, out],
-                       capture_output=True, text=True, timeout=1500)
-    if r.returncode != 0:
-        sys.exit(f"render failed:\n{r.stderr[-1500:]}")
+    # a failed render (e.g. no official upload for one pair) used to exit here and the next
+    # morning picked the SAME entry again, so the lane sat on jay-z-samples from 10-04 on.
+    # Now the entry is marked render_failed (retry with --slug) and the next one renders.
+    while True:
+        path, e = next_entry(a.slug)
+        if not e:
+            sys.exit("no sample reel left to draft — add one to roadmap/samples/")
+        out = os.path.join(ROOT, "build", "samples", e["slug"])
+        print(f"rendering {e['slug']} → {out}", flush=True)
+        r = subprocess.run([VENV_PY, os.path.join(ROOT, "scripts", "sample_reel.py"), path, out],
+                           capture_output=True, text=True, timeout=1500)
+        if r.returncode == 0:
+            break
+        print(f"render failed, skipping {e['slug']}:\n{r.stderr[-1500:]}", flush=True)
+        if a.slug:
+            sys.exit(1)
+        e = json.load(open(path))
+        e["render_failed"] = {"date": a.date, "reason": (r.stderr.strip().splitlines() or ["?"])[-1][:300]}
+        json.dump(e, open(path, "w"), indent=1, ensure_ascii=False)
     meta = json.loads(r.stdout.strip().splitlines()[-1])
     e = json.load(open(path))  # sample_reel pinned yt ids + starts into it
     if a.render_only:
